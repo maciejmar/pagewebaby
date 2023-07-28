@@ -1,0 +1,26 @@
+on:
+  schedule:
+    - cron: '59 4,8,15,19 * * *'
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+    timeout-minutes: 602
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: ng serve --port 4204
