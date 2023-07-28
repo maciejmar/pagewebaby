@@ -1,0 +1,23 @@
+@use 'sass:math';
+@import './../../styles.scss';
+
+
+
+body{
+  background-color: $base-black;
+}
+// Colors for the animation
+$color-list: rgb(10, 10, 10), rgb(47, 47, 65),rgb(121, 121, 211),rgb(207, 207, 250), white;
+
+@keyframes colorwave {
+  @for $i from 1 through length($color-list) {
+    #{percentage($i* math.div(1, length($color-list))  )} {
+      color: nth($color-list, $i);
+    }
+  }
+}
+
+.colorwave {
+  animation: colorwave 5s infinite linear;
+  animation-direction: reverse; // for right to left direction
+}

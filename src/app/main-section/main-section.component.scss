@@ -1,0 +1,33 @@
+@import './../../styles.scss';
+
+body{
+color:burlywood;
+background-color: $base-black !important;
+}
+.img_fit{
+  max-width:280px;
+  max-height:280px;
+  background:center/cover url("./../../assets/wbbaby24.png") no-repeat;
+  background-color:rgb(221, 224, 154) 10
+  0%;
+}
+@keyframes move {
+  0% {
+      background-position: 180px 0;
+  }
+  50% {
+      background-position: -20px 0;
+  }
+  100% {
+      background-position: 180px 0;
+  }
+}
+
+.divImg {
+  width: 800px;
+  height: 280px;
+  background: linear-gradient(to right, rgba(0,0,255,0) 0%, rgba(8, 8, 159, 0.564) 50%, rgba(0,0,255,0) 100%);
+  background-size: 180px 280px;
+  background-repeat: no-repeat;
+  animation: move 5s linear infinite;
+}
