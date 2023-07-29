@@ -1,4 +1,4 @@
-name: Page for Webbaby with CI/CD proccess
+
 on:
   schedule:
     - cron: '59 4,8,15,19 * * *'
