@@ -14,7 +14,7 @@ html,body {
   $isToDisplay: true;
   $background-img: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.60)), center/cover url("./assets/cover2.png") no-repeat;
    @if $isToDisplay == true {
-    background: $background-img;
+    background: linear-gradient(rgba(0, 0, 0, 0.90), rgba(41, 20, 180, 0.6))//$background-img;
 
    }
    cursor: url('./assets/cursorSword.png'), auto;
