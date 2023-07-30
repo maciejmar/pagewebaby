@@ -13,10 +13,13 @@
 
 @keyframes color-change {
   0% { color: rgb(20, 6, 55); }
-  20% { color: blue; }
-  40% { color: rgb(79, 142, 230); }
-  60% { color: rgb(197, 197, 220); }
+  10% { color: rgb(2, 21, 167);}
+  20% { color: rgb(79, 142, 230); }
+  30% { color: rgb(222, 222, 238); }
+  40% { color: rgb(197, 197, 220); }
+  60% { color: rgb(79, 142, 230); }
   80% { color: blue; }
+  90% { color: rgb(2, 21, 167);}
   100% { color: rgb(20, 6, 55); }
 }
 

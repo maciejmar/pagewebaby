@@ -1,11 +1,14 @@
-<div class="game-badge">
-  <img src="./../../assets/NicponRunWithSword.png" alt="Game Preview" ngClass="img_fit" />
-  <h3>
-    Example heading <span class="badge bg-secondary">New Life</span>
-    Game Title
-  </h3>
-  <p>Short game description...</p>
+<div *ngFor="let game of gamesjson">
+  <div class="game-badge">
+      <img src="./../../assets/NicponRunWithSword.png" alt="Game Preview" ngClass="img_fit" />
+      <div class="gameHeader">
+        {{ game.name }} <span class="badge bg-secondary">{{game.category}}</span>
+
+      </div>
+      <div class="bg-dark text-white" style="border-radius: 12px; margin-left:4px; padding:4px; opacity:0.4">{{game.description}}</div>
+
+  </div>
+  <button type="button" class="btn btn-primary" style="margin-top:7px;">
+    {{game.createdAt}} <span class="badge bg-secondary">4</span>
+  </button>
 </div>
-<button type="button" class="btn btn-primary">
-  Notifications <span class="badge bg-secondary">4</span>
-</button>
