@@ -1,14 +1,19 @@
 <div class="main-section">
   <div class="divImg">
-    <div class="logo">
-      <img src="./../../assets/wbbaby24b.png" alt="Company Logo" class="img_fit" />
+    <div class="logo" *ngIf="showElement then logoBlack else logoWhite" >
+
     </div>
   </div>
   <br>
   <br>
   <div class="game-badges">
     <app-game-badge></app-game-badge>
-    <app-game-badge></app-game-badge>
-    <app-game-badge></app-game-badge>
   </div>
 </div>
+<ng-template #logoBlack >
+  <img src="./../../assets/wbbaby24b.png" alt="Company Logo" class="img_fit" />
+</ng-template>
+
+<ng-template #logoWhite>
+  <img src="./../../assets/wbbaby24a.png" alt="Company Logo" class="img_fit" />
+</ng-template>

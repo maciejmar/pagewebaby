@@ -1,8 +1,26 @@
 .img_fit{
-  max-width:100px;
-  max-height:100px;
+  max-width:200px;
+  max-height:200px;
 }
 .gameHeader{
   font-size:20px;
-  color:antiquewhite;
+  color:rgb(177, 143, 99);
+}
+.spaceBetween{
+  height:110px;
+}
+.container{
+  display:flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.btn-buttonforGameAge{
+  margin: 2% 0;
+  padding: 1%;
+}
+.bg-textWhite{
+  border-radius: 12px;
+  margin: 3% 0;
+  padding: 1%;
+   opacity:0.4
 }
