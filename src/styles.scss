@@ -4,6 +4,7 @@ $base-color: #042c5c;
 $base-black: #051223;
 $dimed-blackcolor:#042c5c5f;
 $box-shadow: 0 0.5rem 1rem rgba($base-black, 0.15) !default;
+$glow-color: #a7950f;
 /* fonts */
 
 $font-base: serif sans-serif,'Roboto';
@@ -11,12 +12,12 @@ $font-base: serif sans-serif,'Roboto';
 
 html,body {
   background-color: $base-black !important;
-  $isToDisplay: true;
-  $background-img: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.60)), center/cover url("./assets/cover2.png") no-repeat;
-   @if $isToDisplay == true {
-    background: linear-gradient(rgba(0, 0, 0, 0.90), rgba(10, 1, 104, 0.9),rgba(105, 92, 189, 0.1) )//$background-img;
+  // $isToDisplay: true;
+  // $background-img: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.60)), center/cover url("./assets/cover2.png") no-repeat;
+  //  @if $isToDisplay == true {
+  //   background: linear-gradient(rgba(0, 0, 0, 0.90), rgba(10, 1, 104, 0.9),rgba(105, 92, 189, 0.1) )//$background-img;
 
-   }
+  //  }
    cursor: url('./assets/cursorSword4.png'), auto;
 
    //cursor: url('./assets/frog-face-cursor.png'), pointer auto;

@@ -16,25 +16,25 @@ export class GameBadgeComponent implements OnInit {
   ngOnInit(): void {
 
       this.gamesjson =[ {
-      name: "Nicpoń.Zaginione literki",
+      name: "Abecadłowo \nZagubione literki",
       category: [
         "Przygodowa",
         "Edukacyjna"
       ],
       age:"7-100",
-      image: "./../../assets/NicponRunWithSword.png",
+      image: "./../../assets/cover-9.1c.png",
       description:"Przygody chłopca, który ratuje swoją krainę przed zagładą. Podczas brawurowej wyprawy po zaginione litery sam doznaje przemiany w dobrego, odważnego młodzieńca.",
       price:12,
       createdAt: Date.now()
       },
       {
-       name: "Kto złapie miśka Lutka",
+       name: "Kto złapie miśka",
         category: [
           "Arcade",
           "Zręcznościowa"
         ],
         age:"9",
-        image:"./../../assets/cover2.png",
+        image:"./../../assets/landscapeGO.png",
         description:"Niedźwiedź Lutek wybiera się w niebezpieczną podróż by zdobyć pożywienie dla swej rodziny. Po drodze spotykają go różne przygody, w których musi wykazać się zręcznością i pomysłowością.",
         price:12,
         createdAt: Date.now()

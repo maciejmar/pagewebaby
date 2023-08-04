@@ -3,12 +3,32 @@
   background-color: $dimed-blackcolor;
   color:antiquewhite;
   height: 120px;
+  
+  
 }
 .container{
   width:auto;
   height:120px;
+  
+
 }
 .block{
   width:320px;
   height:30px;
 }
+
+.icons-container{
+  width: auto;
+  display:flex;
+  flex-direction: row;
+  gap:30px;
+  margin-top:5%;
+  row-gap:6%;
+}
+.box{
+  background-color: rgb(140, 140, 26);
+  width:100px;
+  height:100px;
+
+}
+

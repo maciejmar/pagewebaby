@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SharedBetweenSiblingsService } from './../shared-between-siblings.service';
 @Component({
   selector: 'app-navbar',
@@ -8,11 +9,13 @@ import { SharedBetweenSiblingsService } from './../shared-between-siblings.servi
 export class NavbarComponent implements OnInit {
 
 
-  constructor(private sharedService:SharedBetweenSiblingsService ) { }
+  constructor(private sharedService:SharedBetweenSiblingsService, private router: Router ) { }
 
   ngOnInit(): void {
   }
   buttonClicked() {
     this.sharedService.setClickedButton('Button was clicked');
   }
+
+  
 }

@@ -1,18 +1,34 @@
-<div *ngFor="let game of gamesjson">
-  <div class="container">
-  <div class="game-badge">
-      <img [src]=game.image alt="Game Preview" ngClass="img_fit" />
-      <div class="gameHeader">
-        {{ game.name }} <span class="badge bg-secondary">{{game.category}}</span>
+<div class="container">
+  <div *ngFor="let game of gamesjson">
+    <div class="game-badge">
+          <div>
+            <img [src]=game.image  ngClass="img_fit" />
+          </div>
+          <div class="game-info">
+            <div class="gameHeader">
+              {{ game.name }} <span class="badge bg-secondary bg-transparent">{{game.category}}</span>
+            </div>
 
-      </div>
-      <div class="badge bg-dark bg-textWhite"
-      >{{game.description}}</div>
-
+            <div class="card cr-transparent">
+              <h5 class="card-header">
+                <a class="btn btn-outline-warning" routerLink="/logo">Kup grę</a>
+                <!-- <button class="btn btn-outline-warning">
+                   Kup grę
+                </button> -->
+              </h5>
+              <div class="card-body">
+                <h5 class="card-title">{{game.name}}</h5>
+                <p class="card-text">{{game.description}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" class="glow-on-hover">
+                  {{game.createdAt}} <span class="badge bg-secondary">{{game.age}}</span>
+              </button>
+            </div>
+          </div>
+    </div>
+    <div class="spaceBetween"></div>
   </div>
-  <button type="button" class="btn btn-primary btn-buttonforGameAge">
-    {{game.createdAt}} <span class="badge bg-secondary">{{game.age}}</span>
-  </button>
-  <div class="spaceBetween"></div>
-</div>
 </div>

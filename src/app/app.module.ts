@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { MainSectionComponent } from './main-section/main-section.component';
 import { GameBadgeComponent } from './game-badge/game-badge.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { IntroComponent } from './intro/intro.component';
+import { MainComponent } from './main/main.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     FooterComponent,
     MainSectionComponent,
     GameBadgeComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    IntroComponent,
+    MainComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

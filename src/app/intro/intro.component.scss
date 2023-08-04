@@ -1,0 +1,140 @@
+*{
+  padding: 0 ;
+  margin: 0 ;
+  box-sizing: border-box;
+  font-size: 100px;
+}
+body{
+  
+  min-width: 100%;
+    min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:black;
+  perspective: 20em;
+  perspective-origin: 77px 100px;
+  
+} 
+
+.cube{
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: animate 15s linear infinite;
+
+
+}
+@keyframes animate{
+to{
+  transform: rotateY(360deg);
+}
+}
+.shadow{
+   position: absolute;
+   background: aqua;
+   width: 2em;
+   height: 2em;
+  transform:translateZ(-130px)
+   rotateX(90deg) rotateZ(3deg);
+   bottom: 0em;  left: 4em;
+   box-shadow: 0 120px 100px 10px blue , 
+               50px 120px 200px 10px blue  ;
+   filter: blur(100px);
+}
+
+
+.top , .bottom , .left , .right , .front , .back{
+  height: 2em;
+  width: 2em;
+  background: aqua;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 50px 10px  blue  inset,
+          0 0 0 2em aqua inset ;
+    
+}
+
+
+
+
+.front{
+  transform: translateZ(1em);
+}
+
+.back{
+  transform: translateZ(-1em);
+}
+
+
+.top{
+  transform: translateY(-1em) rotateX(90deg);
+}
+.bottom{
+  transform: translateY(1em) rotateX(90deg);
+}
+.right{
+ 
+  
+  transform: translateX(1em) rotateY(90deg);
+}
+.left{
+  transform: translateX(-1em) rotateY(90deg);
+}
+a{font-family:'Segoe UI', sans-serif}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+.logo{
+  
+  background-image:url("./../../assets/wbbaby24a.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  min-width:400px;
+  min-height:400px;
+  -webkit-animation:spin 4s linear 3s;
+  -moz-animation:spin 4s linear 3s;
+  animation:spin 4s linear 3s;
+  
+}
+  @-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg);
+     }
+    
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg);
+     } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+        
+    } 
+}
+  
+
+.logo_container{
+  width:300px;
+  height:300px;
+  
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+

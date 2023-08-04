@@ -1,5 +1,8 @@
 <footer class="footer">
   <div class="container">
+    <div class="icons-container">
+      <div *ngFor="let icon of icons"> <i [ngClass]="icon"></i></div>
+    </div>
     <div class="block">
       <span class="nav nav-pills" style="margin-top:10px;">© 2023 Webaby Gaming Company</span>
     </div>

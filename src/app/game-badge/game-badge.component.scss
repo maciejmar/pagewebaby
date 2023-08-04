@@ -1,26 +1,153 @@
+@import "./../../styles.scss";
+
+.container{
+  max-width:100%;
+  display:flex;
+  flex-direction: column;
+  gap:50px;
+  margin: 2%;
+}
+
+.cr-transparent{
+  background: #3f87a6;
+  opacity:0.4;
+  color:black;
+  border-radius: 15px;
+}
+
 .img_fit{
-  max-width:200px;
-  max-height:200px;
+  width:800px;
+  height:500px;
+}
+
+
+.bg-textWhite{
+  border-radius: 12px;
+  margin: 2% 0;
+  padding: 1%;
+  opacity:0.9;
+  max-width:30px;
+
+}
+.game-badge{
+  display:flex;
+  flex-direction:row;
+  gap:30px;
+  width:50%;
+  gap:2%;
+}
+
+game-info{
+  display:flex;
+  flex-direction:row;
+  width:100px;
 }
 .gameHeader{
-  font-size:20px;
-  color:rgb(177, 143, 99);
-}
+  font-size: 2em;
+  color:black;
+  margin: 4% 0;
+  background-color:$glow-color;
+  border-radius:15px;
+  margin-left:2%;
+  padding: 1ch;
+  }
+  .gameHeader:hover{
+      border-width: 0px;
+      box-shadow: 0 0 5px $glow-color,
+      0 0 25px $glow-color, 0 0 50px $glow-color,
+      0 0 100px $glow-color, 0 0 200px $glow-color; 
+  }
 .spaceBetween{
-  height:110px;
+  height:110%;
 }
 .container{
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content:space-around;
+
 }
 .btn-buttonforGameAge{
   margin: 2% 0;
   padding: 1%;
+
 }
-.bg-textWhite{
-  border-radius: 12px;
-  margin: 3% 0;
-  padding: 1%;
-   opacity:0.4
+.btn-buttonforGameAge:hover{
+  color:rgb(38, 47, 47);
+  background: repeating-linear-gradient(45deg, #3f87a6, #ebf8e1 15%, #f69d3c 20%);;
+}
+.bg-transparent{
+  opacity:30%;
+}
+
+.glow-on-hover {
+  border-radius: 9px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin: 2% 0;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.btn-glow{
+  background-color:$glow-color;
+}
+.btn-glow:hover{
+    border-width: 0px;
+    box-shadow: 0 0 5px $glow-color,
+    0 0 25px $glow-color, 0 0 50px $glow-color,
+    0 0 100px $glow-color, 0 0 200px $glow-color;
+
 }

@@ -1,6 +1,7 @@
 @import './_animations.scss';
 @import './../../styles.scss';
 
+
 .text {
   @extend .colorwave;
 }
@@ -10,6 +11,7 @@
   font-size: 1em;
   animation: color-change 3s infinite;
 }
+
 
 @keyframes color-change {
   0% { color: rgb(20, 6, 55); }
@@ -36,5 +38,6 @@ body {
   display:flex;
   background-color:$base-black !important;
 }
+
 
 

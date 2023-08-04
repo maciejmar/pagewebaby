@@ -31,3 +31,9 @@ background-color: $base-black !important;
   background-repeat: no-repeat;
   animation: move 5s linear infinite;
 }
+.game-badges{
+
+  display:flex;
+  flex-direction: column;
+}
+
