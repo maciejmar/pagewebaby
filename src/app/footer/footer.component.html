@@ -7,4 +7,41 @@
       <span class="nav nav-pills" style="margin-top:10px;">© 2023 Webaby Gaming Company</span>
     </div>
   </div>
+
+<div>here various contents </div>
+<!-- Templates for the varying wrappers -->
+<ng-template #trueCondition let-content>
+  <div class="true-condition-wrapper">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #falseCondition let-content>
+  <div class="false-condition-wrapper">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </div>
+</ng-template>
+
+<!-- Main content encapsulated in another template -->
+<ng-template #mainContentTemplate>
+ <div> This is the main content that remains unchanged.</div>
+</ng-template>
+
+<!-- Using *ngIf to decide which wrapper to use and passing the main content template to it -->
+<ng-container *ngIf="random_boolean; then trueBlock; else falseBlock"></ng-container>
+
+<ng-template #trueBlock>
+  <ng-container data-aos="fade-up" data-aos-duration="3000" *ngTemplateOutlet="trueCondition; context: {content: mainContentTemplate}"></ng-container>
+</ng-template>
+
+<ng-template #falseBlock>
+  <ng-container data-aos="fade-left" data-aos-duration="3000" *ngTemplateOutlet="falseCondition; context: {content: mainContentTemplate}"></ng-container>
+</ng-template>
+
+<!-- The rest of your code that remains unchanged regardless of the condition -->
+<div>
+  Rest of the code...
+</div>
+
+
 </footer>

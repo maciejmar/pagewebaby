@@ -1,13 +1,30 @@
 <div class="container">
-    <nav  class="navbar navbar-expand-lg " style="font-size:30px">
-      <span class="badge bg-primary" [hidden]=true>WeBaby Game Company</span>
+    <nav  class="navbar navbar-expand-lg " style="font-size:3em;">
+      <span  class="badge bg-primary" [hidden]=true>WeBaby Game Company</span>
 
       <br>
+      <div *ngIf="val > 1" class="video-background video-opacity-low-down">
+        <div class="video-background" *ngIf="val > 0">
+          <video class="video" [autoplay]="true" [muted]="true" [loop]="false"  type="video/mp4">
+            <source src="./../../assets/video/movie-sprites-2.0.mp4" >
+          </video>
+        </div>
+      </div>
+     
       <br>
-      <button  class="btn btn-colorchange" (click)="buttonClicked()">
-          WeBaby We are in play
-      </button>
-      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div *ngIf="showNeonEffect">
+        <div class="text-effect">
+          <!-- Select the text in the preview and type in your own -->
+          <div class="neon" data-text="WeBaby" contenteditable>WeBaby</div>
+          <div class="gradient"></div>
+          <div class="spotlight"></div>
+        </div>
+        
+          <button  class="btn btn-colorchange" (click)="buttonClicked()">
+              WeBaby <span class="campaign_motto">We are in play</span>
+          </button>
+      </div>
+      <div *ngIf="showNeonEffect"  class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">Login</a>
@@ -16,6 +33,9 @@
             <a class="nav-link" href="#">Register</a>
           </li>
         </ul>
+      </div>
+      <div *ngIf="showNeonEffect" data-aos="zoom-out-left" class="img_fit">
+        <img src="../../assets/wbbaby24b.png"/>
       </div>
     </nav>
 </div>

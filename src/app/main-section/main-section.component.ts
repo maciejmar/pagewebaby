@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SharedBetweenSiblingsService } from './../shared-between-siblings.service';
-import { Subscription } from 'rxjs';
+import { Subscription,timer } from 'rxjs';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-main-section',
@@ -10,14 +11,17 @@ import { Subscription } from 'rxjs';
 export class MainSectionComponent implements OnInit {
   message: string='';
   showElement = true;
+  ad_campaign_motto = ['E','n','t','e','r',' ','i','n','t','o',' ','t','h','e',' ','G','a','m','e'];
   private subscription: Subscription = Subscription.EMPTY;
-
-  constructor(private sharedService:SharedBetweenSiblingsService) { }
+  val=10;
+  constructor(private sharedService:SharedBetweenSiblingsService) { 
+    timer(5500).subscribe(() => (this.val = -1));
+  }
 
   ngOnInit(): void {
     this.subscription = this.sharedService.clickedButton$.subscribe(data => {
         this.toggleDisplay(data)
-
+    AOS.init();
     });
   }
 

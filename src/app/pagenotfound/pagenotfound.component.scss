@@ -15,9 +15,9 @@ section .air{
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 100%;
   background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
-  background-size: 1000px 100px
+  background-size: 100% 50%
 }
 section .air.air1{
   animation: wave 30s linear infinite;
@@ -72,16 +72,20 @@ body {
 }
 
 .text-container {
-  height: 100vh;
-  width: 100vw;
+  height: 50%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 40rem;
+  font-family:'Roboto', sans-serif;
+  letter-spacing: -1rem;
+  font-weight:600;
 }
 
 .text-container a{
   margin: 0;
-  font-size: 150px;
+  font-size: 25%;
   color: rgba(225,225,225, .01);
   background-image: url("./../../assets/animated-background2.jpg");
   background-repeat: repeat;
@@ -89,7 +93,7 @@ body {
   animation: animate 15s ease-in-out infinite;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 4rem;
 }
 
   @keyframes animate {
@@ -106,8 +110,8 @@ body {
       background-position: right top;
     }   
 }
-
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
+a        { font-size:4em;}
+a:link   { text-decoration: none; }
+a:visited{ text-decoration: none; }
+a:hover  { text-decoration: none; }
 a:active { text-decoration: none; }

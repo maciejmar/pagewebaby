@@ -3,72 +3,87 @@
 .container{
   max-width:100%;
   display:flex;
-  flex-direction: column;
-  gap:50px;
-  margin: 2%;
+  flex-direction:column;
+  
+  
 }
 
 .cr-transparent{
   background: #3f87a6;
   opacity:0.4;
   color:black;
-  border-radius: 15px;
+  border-radius: 2%;
+  
 }
 
 .img_fit{
-  width:800px;
-  height:500px;
+  width:100%;
+  height:100%;
+}
+.image_socket{
+  width:100%;
+  height:100%;
+  border: 3px solid rgba(77, 85, 8, 0.6);
+  border-radius: 0%;
+
+  animation: fadeInAnimation ease 6s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
 
-
 .bg-textWhite{
-  border-radius: 12px;
-  margin: 2% 0;
-  padding: 1%;
-  opacity:0.9;
-  max-width:30px;
+  border-radius: 1%;
+  opacity:0.6;
+  max-width:10%;
 
 }
 .game-badge{
   display:flex;
   flex-direction:row;
-  gap:30px;
-  width:50%;
+  width:100%;
   gap:2%;
 }
 
-game-info{
+.game-info{
   display:flex;
-  flex-direction:row;
-  width:100px;
+  flex-direction:column;
+  border-radius:1vh;
+  width:30%;
+  gap:2%;
+
 }
 .gameHeader{
   font-size: 2em;
   color:black;
-  margin: 4% 0;
   background-color:$glow-color;
-  border-radius:15px;
-  margin-left:2%;
-  padding: 1ch;
+  border-radius:1vh;
+  padding: 3%;
   }
   .gameHeader:hover{
-      border-width: 0px;
       box-shadow: 0 0 5px $glow-color,
       0 0 25px $glow-color, 0 0 50px $glow-color,
       0 0 100px $glow-color, 0 0 200px $glow-color; 
   }
 .spaceBetween{
-  height:110%;
+  height:2.4vh;
 }
 .container{
   display:flex;
   flex-direction: column;
-  justify-content:space-around;
+  gap:22%;
 
 }
 .btn-buttonforGameAge{
-  margin: 2% 0;
-  padding: 1%;
+  margin: 3% 0;
+  padding: 3%;
 
 }
 .btn-buttonforGameAge:hover{
@@ -77,20 +92,21 @@ game-info{
 }
 .bg-transparent{
   opacity:30%;
+  border-radius:1vh;
 }
 
 .glow-on-hover {
-  border-radius: 9px;
-  width: 220px;
-  height: 50px;
-  border: none;
+  border-radius: 5%;
+  width: 100%;
+  height: 90%;
+  border: dotted 1px rgb(77, 32, 150);
   outline: none;
   color: #fff;
   background: #111;
   cursor: pointer;
   position: relative;
   z-index: 0;
-  border-radius: 10px;
+  border-radius: 5%;
   margin: 2% 0;
 }
 
@@ -109,6 +125,7 @@ game-info{
   opacity: 0;
   transition: opacity .3s ease-in-out;
   border-radius: 10px;
+  border:none;
 }
 
 .glow-on-hover:active {
@@ -130,9 +147,9 @@ game-info{
   width: 100%;
   height: 100%;
   background: #111;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
+  left: 0%;
+  top: 0%;
+  border-radius: 5%;
 }
 
 @keyframes glowing {
@@ -145,8 +162,8 @@ game-info{
   background-color:$glow-color;
 }
 .btn-glow:hover{
-    border-width: 0px;
-    box-shadow: 0 0 5px $glow-color,
+    border-width: 0%;
+    box-shadow: 0 0 6% $glow-color,
     0 0 25px $glow-color, 0 0 50px $glow-color,
     0 0 100px $glow-color, 0 0 200px $glow-color;
 

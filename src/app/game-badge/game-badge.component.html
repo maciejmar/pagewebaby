@@ -1,29 +1,26 @@
 <div class="container">
   <div *ngFor="let game of gamesjson">
-    <div class="game-badge">
-          <div>
+    <div class="game-badge" data-aos-duration="3000"  data-aos="fade-up" >
+          <div class="image_socket">
             <img [src]=game.image  ngClass="img_fit" />
           </div>
           <div class="game-info">
-            <div class="gameHeader">
+            <div  data-aos-duration="3000"  data-aos="fade-up" class="gameHeader">
               {{ game.name }} <span class="badge bg-secondary bg-transparent">{{game.category}}</span>
             </div>
 
             <div class="card cr-transparent">
-              <h5 class="card-header">
+              <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header">
                 <a class="btn btn-outline-warning" routerLink="/logo">Kup grę</a>
-                <!-- <button class="btn btn-outline-warning">
-                   Kup grę
-                </button> -->
-              </h5>
-              <div class="card-body">
-                <h5 class="card-title">{{game.name}}</h5>
+              </div>
+              <div data-aos-duration="3000"  data-aos="fade-up"  class="card-body">
+                <div data-aos-duration="3000"  data-aos="fade-up" class="card-title">{{game.name}}</div>
                 <p class="card-text">{{game.description}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">Go UP</a>
               </div>
             </div>
             <div>
-              <button type="button" class="glow-on-hover">
+              <button data-aos-duration="3000"  data-aos="fade-left" type="button" class="glow-on-hover">
                   {{game.createdAt}} <span class="badge bg-secondary">{{game.age}}</span>
               </button>
             </div>

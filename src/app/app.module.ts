@@ -11,6 +11,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { IntroComponent } from './intro/intro.component';
 import { MainComponent } from './main/main.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { CampaignMottoComponent } from './campaign-motto/campaign-motto.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     SideMenuComponent,
     IntroComponent,
     MainComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    CampaignMottoComponent
   ],
   imports: [
     BrowserModule,

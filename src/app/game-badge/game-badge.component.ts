@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Game} from '../game'
-
+import AOS from "aos";
 
 @Component({
   selector: 'app-game-badge',
@@ -10,11 +10,14 @@ import {Game} from '../game'
 export class GameBadgeComponent implements OnInit {
   gameimg = "./../../assets/NicponRunWithSword.png";
   gamesjson:Game[]=[]
-  constructor() {}
+  
 
+  constructor() {}
+ 
 
   ngOnInit(): void {
-
+      
+      AOS.init();
       this.gamesjson =[ {
       name: "Abecadłowo \nZagubione literki",
       category: [
@@ -55,5 +58,6 @@ export class GameBadgeComponent implements OnInit {
 
     ]
   }
+   random_boolean = Math.random() < 0.5;
 
 }

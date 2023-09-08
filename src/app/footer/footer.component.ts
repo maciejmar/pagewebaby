@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-footer',
@@ -6,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
+    AOS.init();
   }
 
   icons=[ "bi bi-youtube", "bi bi-facebook",
    "bi bi-twitter", "bi bi-instagram","bi bi-linkedin", "bi bi-envelope"];
+
+   random_boolean = Math.random() < 0.5;
 }
+
