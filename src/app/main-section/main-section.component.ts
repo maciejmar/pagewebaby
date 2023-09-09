@@ -11,7 +11,7 @@ import AOS from 'aos';
 export class MainSectionComponent implements OnInit {
   message: string='';
   showElement = true;
-  ad_campaign_motto = ['E','n','t','e','r',' ','i','n','t','o',' ','t','h','e',' ','G','a','m','e'];
+  
   private subscription: Subscription = Subscription.EMPTY;
   val=10;
   constructor(private sharedService:SharedBetweenSiblingsService) { 

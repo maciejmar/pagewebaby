@@ -1,7 +1,18 @@
 <div class="main-section" data-aos="fade-up">
-  <div data-aos="fade-up" class="divImg">
-    <div data-aos="zoom-out-right" data-aos="fade-up" data-aos-duration="9000" class="logo" *ngIf="showElement then logoBlack else logoWhite" ></div>
-    <app-campaign-motto></app-campaign-motto>
+  <div class="logo-motto-container">
+      <div data-aos="fade-up" data-aos-duration="3000" class="divImg-1 glow-logo" >
+        <!--
+        <div class="background">
+          <div class="pie astronaut"> </div>
+          <div class="pie greenpea"> </div>
+          <div class="pie greenpea greenpea2"> </div>
+          <div class="pie cello"> </div>
+          <div class="pie wineberry"> </div>
+        </div> -->
+        <div data-aos="zoom-out-right" data-aos="fade-up" data-aos-duration="9000" class="logo" *ngIf="showElement then logoBlack else logoWhite">
+        </div>
+      </div>
+      <app-campaign-motto></app-campaign-motto>
   </div>
   <br>
   <br>

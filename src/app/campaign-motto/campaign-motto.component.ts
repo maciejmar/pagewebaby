@@ -7,7 +7,7 @@ import AOS from 'aos';
   styleUrls: ['./campaign-motto.component.scss']
 })
 export class CampaignMottoComponent implements AfterViewInit {
-  word = 'Enter into the Game!';
+  word = '      Enter into the Game!';
   displayedLetters: string[] = [];
   isDOMLoaded = false;
 
@@ -15,8 +15,13 @@ export class CampaignMottoComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.isDOMLoaded = true;
-    this.displayLetterByLetter();
     AOS.init();
+    this.displayLetterByLetter();
+    
+
+
+    
+    
   }
    
 
@@ -24,7 +29,7 @@ export class CampaignMottoComponent implements AfterViewInit {
     this.word.split('').forEach((letter, index) => {
       setTimeout(() => {
         this.displayedLetters.push(letter);
-      }, index * 300);  // 200ms delay for each letter
+      }, index * 400);  // 200ms delay for each letter
     });
   }
 }
