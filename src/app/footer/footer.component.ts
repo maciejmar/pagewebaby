@@ -14,8 +14,8 @@ export class FooterComponent implements OnInit {
     AOS.init();
   }
 
-  icons=[ "bi bi-youtube", "bi bi-facebook",
-   "bi bi-twitter", "bi bi-instagram","bi bi-linkedin", "bi bi-envelope"];
+  icons=[ "bi bi-youtube h1", "bi bi-facebook h1",
+   "bi bi-twitter h1", "bi bi-instagram h1","bi bi-linkedin h1", "bi bi-envelope h1"];
 
    random_boolean = Math.random() < 0.5;
 }

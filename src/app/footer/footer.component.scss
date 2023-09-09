@@ -1,13 +1,14 @@
 @import "./../../styles.scss";
+
 .footer{
   background-color: $dimed-blackcolor;
   color:antiquewhite;
   height: 30%;
-  
+  width:100%;
   
 }
 .container{
-  width:auto;
+  width:100%;
   height:100%;
   
 
@@ -18,14 +19,15 @@
 }
 
 .icons-container{
-  width: auto;
-  height: 10vh;
+  width: 50vw;
+  height: 30vh;
   display:flex;
   flex-direction: row;
-  gap:2%;
-  margin-top:3%;
+  gap:5%;
   row-gap:6%;
+  
 }
+
 .box{
   background-color: rgb(140, 140, 26);
   width:90%;
@@ -33,6 +35,8 @@
 
 }
 .icon{
-  width:10vw;
+  width:20vw;
+  height:20vh;
+  font-size:30vh;
 }
 
