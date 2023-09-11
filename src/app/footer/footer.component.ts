@@ -7,7 +7,7 @@ import AOS from 'aos';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  
+  visible = false;
   constructor() { }
 
   ngOnInit(): void {
