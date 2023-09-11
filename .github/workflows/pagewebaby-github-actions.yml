@@ -24,6 +24,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+    #- run: kill -9 `lsof -w -n -i tcp:4204 | awk '$2!="PID" {print $2;}'`    
     - run: npm ci
     - run: npm run pm2-check
     - run: npm run pm2-restart
