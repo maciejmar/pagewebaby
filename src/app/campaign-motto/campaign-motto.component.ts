@@ -7,7 +7,7 @@ import AOS from 'aos';
   styleUrls: ['./campaign-motto.component.scss']
 })
 export class CampaignMottoComponent implements AfterViewInit {
-  word = '       Enter into the Game!';
+  word = 'Enter into the Game';
   displayedLetters: string[] = [];
   isDOMLoaded = false;
 
