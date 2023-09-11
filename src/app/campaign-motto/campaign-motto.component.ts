@@ -29,7 +29,7 @@ export class CampaignMottoComponent implements AfterViewInit {
     this.word.split('').forEach((letter, index) => {
       setTimeout(() => {
         this.displayedLetters.push(letter);
-      }, index * 400);  // 200ms delay for each letter
+      }, index * 350);  // 200ms delay for each letter
     });
   }
 }
