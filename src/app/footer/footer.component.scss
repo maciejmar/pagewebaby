@@ -2,7 +2,7 @@
 
 .footer{
   background-color: $dimed-blackcolor;
-  color:antiquewhite;
+  color:rgb(219, 216, 168);
   height: 10%;
   width:100%;
 }
@@ -20,7 +20,7 @@
 
 .icons-container{
   width: 50vw;
-  height: 20vh;
+  height: 15vh;
   display:flex;
   flex-direction: row;
   gap:5%;
@@ -39,6 +39,26 @@
   height:10vh;
   font-size:30vh;
 }
+
+
+
+.ibi:hover{
+  animation: ibi 1s ease infinite;
+  color:rgb(228, 131, 20);
+}
+
+@keyframes ibi {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 .spaceBetweenBlockAndIcons{
   height:2vh;
 }

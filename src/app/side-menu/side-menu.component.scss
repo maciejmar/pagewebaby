@@ -7,6 +7,7 @@ body{
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    
   }
 
 
@@ -16,7 +17,7 @@ a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
 
 
-a:hover { text-decoration: none; }
+a:hover { text-decoration: none; color:antiquewhite; }
 
 
 a:active { text-decoration: none; }
@@ -32,9 +33,25 @@ ul {
   gap:4%;
   background-color:rgba($color: #120b75, $alpha: 0.4)
 }
-.li :hover{
+
+ 
+  
+
+.awrap:hover {
   background-color: (255,255,255,0.2);
-  color:rgba(255,255,255,0.3)l
+  color:rgba(173, 199, 138, 0.9);
+  animation: awrap 1s ease infinite;
+}
+@keyframes awrap {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 
