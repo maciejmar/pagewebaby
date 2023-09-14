@@ -3,8 +3,10 @@
 .container{
   max-width:100%;
   display:flex;
-  flex-direction:column;
-  
+  flex-direction:row;
+  @media (min-width: $breakpoint ) {
+    flex-direction: column;
+  }
   
 }
 
@@ -118,17 +120,22 @@ bg-transparent {
 
 .game-badge{
   display:flex;
-  flex-direction:row;
+  flex-direction: column;
+  @media (min-width: $breakpoint ) {
+    flex-direction: row;
+  }
+
   width:100%;
   gap:2%;
 }
 
 .game-info{
   display:flex;
-  flex-direction:column;
+  flex-direction: column;
   border-radius:1vh;
   width:30%;
   gap:2%;
+  min-width:156px;
 
 }
 .gameHeader{

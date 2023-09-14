@@ -8,4 +8,5 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'pagewebaby';
   @Input() isToDisplay:boolean = false;
+  @Input () introEnded: boolean = false;
 }

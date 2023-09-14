@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedBetweenSiblingsService } from './../shared-between-siblings.service';
 import { timer } from 'rxjs';
@@ -10,7 +10,7 @@ import AOS from 'aos'
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  
+  @Input() introEnded: boolean = false;
   val = 10;
   showNeonEffect = false;
   constructor(private sharedService:SharedBetweenSiblingsService, private router: Router ) {

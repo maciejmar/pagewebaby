@@ -105,7 +105,10 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
 .game-badges{
 
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
+  @media (min-width: $breakpoint ) {
+    flex-direction: column;
+  }
   flex-wrap:wrap;
   flex-shrink:3;
 }
