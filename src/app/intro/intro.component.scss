@@ -4,7 +4,7 @@ body{
   min-width: 100%;
     min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   perspective: 20em;
   perspective-origin: 30% 45%;
@@ -20,11 +20,12 @@ a:active { text-decoration: none; }
 
 .logo{
   
+  
   background-image:url("./../../assets/wbbaby24a.png");
   background-repeat: no-repeat;
   background-size:contain;
-  min-width:50vd;
-  min-height: 50vh;
+  min-width: 70vd;
+  min-height: 70vh;
   -webkit-animation:spin 4s linear 3s;
   -moz-animation:spin 4s linear 3s;
   animation:spin 4s linear 3s;
@@ -49,8 +50,11 @@ a:active { text-decoration: none; }
   
 
 .logo_container{
-  width:30vw;
-  height:30vh;
+  display:flex;
+  flex:column;
+  justify-content: flex-start;
+  width:50vw;
+  height:100vh;
 }
 
 @keyframes fadeInOut {

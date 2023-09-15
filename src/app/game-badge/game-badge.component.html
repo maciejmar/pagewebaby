@@ -28,7 +28,7 @@
             </div>
             <div>
               <button data-aos-duration="3000"  data-aos="fade-left" type="button" class="glow-on-hover">
-                  {{game.createdAt}} <span class="badge bg-secondary">{{game.age}}</span>
+                  PUBLISHED on {{game.createdAt | date:'dd MMM YYYY HH:mm:ss' }} <span class="badge bg-secondary">AGE: {{game.age}}</span>
               </button>
             </div>
           </div>
