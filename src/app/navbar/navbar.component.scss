@@ -1,7 +1,9 @@
 @import './_animations.scss';
 @import './../../styles.scss';
 
-
+body{
+  background-color: black !important;
+}
 .text {
   @extend .colorwave;
   font-family: 'Roboto', sans-serif;

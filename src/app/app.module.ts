@@ -12,6 +12,7 @@ import { IntroComponent } from './intro/intro.component';
 import { MainComponent } from './main/main.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CampaignMottoComponent } from './campaign-motto/campaign-motto.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CampaignMottoComponent } from './campaign-motto/campaign-motto.componen
     IntroComponent,
     MainComponent,
     PagenotfoundComponent,
-    CampaignMottoComponent
+    CampaignMottoComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

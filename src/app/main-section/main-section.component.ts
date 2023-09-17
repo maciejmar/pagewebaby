@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';
 import { SharedBetweenSiblingsService } from './../shared-between-siblings.service';
 import { Subscription,timer } from 'rxjs';
 import AOS from 'aos';
@@ -11,6 +11,7 @@ import AOS from 'aos';
 export class MainSectionComponent implements OnInit {
   message: string='';
   showElement = true;
+  @Output() introEnded= new EventEmitter<boolean>();
   
   private subscription: Subscription = Subscription.EMPTY;
   val=10;
@@ -31,6 +32,8 @@ export class MainSectionComponent implements OnInit {
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.introEnded.emit(true);
+    
   }
 
 

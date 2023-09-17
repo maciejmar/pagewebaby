@@ -2,7 +2,7 @@
 body{
   background-color: black !important;
   min-width: 100%;
-    min-height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -19,8 +19,6 @@ a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
 .logo{
-  
-  
   background-image:url("./../../assets/wbbaby24a.png");
   background-repeat: no-repeat;
   background-size:contain;
@@ -69,3 +67,38 @@ a:active { text-decoration: none; }
   }
 }
 
+.video{
+
+  width:80%;
+  height:80%;
+  opacity:100%;
+  
+  
+}
+
+.video-background {
+  color:white;
+}
+.video-opacity-low-down {
+  -webkit-animation: fadein 3s ease-in alternate infinite;
+  -moz-animation: fadein 3s ease-in alternate infinite;
+  animation: fadein 3s ease-in alternate infinite;
+}
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#video-background {
+  color:white;
+}

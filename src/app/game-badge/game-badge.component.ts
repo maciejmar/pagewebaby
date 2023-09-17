@@ -25,7 +25,7 @@ export class GameBadgeComponent implements OnInit {
         "Edukacyjna"
       ],
       age:"7-100",
-      image: "./../../assets/cover-5.3.png",
+      image: "./../../assets/cover-45.2.png",
       description:"Przygody chłopca, który ratuje swoją krainę przed zagładą. Podczas brawurowej wyprawy po zaginione litery sam doznaje przemiany w dobrego, odważnego młodzieńca.",
       price:12,
       createdAt: Date.now()

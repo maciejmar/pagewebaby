@@ -3,5 +3,25 @@
 <div class="logo_container">
    <div class="logo">
    </div>  
+   <nav  class="navbar navbar-expand-lg " style="font-size:3em;">
+      <span  class="badge bg-primary" [hidden]=true>WeBaby Game Company</span>
+
+      <br>
+      <div #videoPlayer *ngIf="val > 1" class="video-background video-opacity-low-down">
+        <div class="video-background" *ngIf="val > 0">
+          <video #videoPlayer class="video" [autoplay]="true" 
+             [muted]="true" [loop]="false"  type="video/mp4"
+             (ended)="onVideoEnd()" controls
+          >
+            <source src="./../../assets/video/movie-sprites-3.0.mp4" >
+          </video>
+        </div>
+      </div>
+   </nav>
 </div>
+
+<video #videoPlayer (ended)="onVideoEnd()" controls>
+  <source src="path_to_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
