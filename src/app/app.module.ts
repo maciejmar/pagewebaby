@@ -13,6 +13,7 @@ import { MainComponent } from './main/main.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CampaignMottoComponent } from './campaign-motto/campaign-motto.component';
 import { GameComponent } from './game/game.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { GameComponent } from './game/game.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
