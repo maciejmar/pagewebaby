@@ -1,8 +1,10 @@
 @import "./../../styles.scss";
-.body{
+.body,html{
     background-color: black !important;
     width: 100vw;  
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .button-container {
@@ -12,8 +14,8 @@
     flex-direction:row;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
 
 
     button {
@@ -40,9 +42,10 @@
     }
   }
 .image-container {
+  
   position: relative;
   width: 100vw;  
-  height: 100vh;
+  height: auto;
   //overflow: hidden;
   display: flex;
   align-items: center;
@@ -51,8 +54,8 @@
   .color-image {
     position: relative;
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     //object-fit: cover;
     z-index: 1;
 
@@ -78,12 +81,11 @@
 
 .abcLand{
 
-    font-size:3em;
-    font-weight:400;
+    font-size:3vw;
+    font-weight:20%;
     font-family:'Roboto',sans-serif;
     z-index:100;
-   
-    
+    color:antiquewhite;
     opacity:100%;
 }
 
@@ -120,14 +122,16 @@ svg{
     left: 15%;  // Adjust this percentage to move the div left/right
     width: 20%;  // Adjust this to set the width of the div as a percentage of the container
     padding-bottom: 10%;
-    font-size:4rem;
+    font-size:3vw;
     font-family:'Roboto',sans-serif; 
-    line-height: 70%;
+    line-height: 80%;
+    color:white;
   }
   .game-subtitle{
-    font-size:1.5rem;
+    font-size:1.5vw;
     letter-spacing:30%;
     color:burlywood;
+    line-height: 80%;
   }
   .storesIcons{
     width:100%;
@@ -139,5 +143,6 @@ svg{
   @media only screen and (max-width: $breakpoint) {
     .allOnBackgroundImage {
       align-content:center;  // Adjust the size according to your needs
+      display:flex;
     }
   }
