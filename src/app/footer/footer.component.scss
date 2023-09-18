@@ -1,10 +1,22 @@
 @import "./../../styles.scss";
 
+body, html{
+  background-color: $base-black !important;
+}
+
 .footer{
-  background-color: $dimed-blackcolor;
+  background-color: black;
   color:rgb(219, 216, 168);
   height: 10%;
   width:100%;
+
+  &.default-bg {
+    background-color: #333 !important;  // default color
+  }
+
+  &.alternate-bg {
+    background-color: #f00; // alternate color
+  }
 }
 .container{
   width:100%;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import AOS from 'aos';
 
 @Component({
@@ -8,6 +8,7 @@ import AOS from 'aos';
 })
 export class FooterComponent implements OnInit {
   visible = false;
+  @Input () bgClass: string = 'default-bg';
   constructor() { }
 
   ngOnInit(): void {

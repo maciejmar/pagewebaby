@@ -1,6 +1,8 @@
 @import './../styles.scss';
 
-
+body,html{
+  background-color: $base-black;
+}
 body {
   font-family:  $font-base;
   font-size: 2em;
