@@ -8,7 +8,7 @@
             <div class="game-subtitle">Zagubione literki</div>
          </div>
         <div class="button-container" [@fadeIn]="buttonsState">
-            <button class="transparent-button">
+            <button class="transparent-button" (click)="scrollToElement(target)">
                 O grze 
             </button>
             <button class="transparent-button">
@@ -34,5 +34,13 @@
         </svg>
     </div>
     
+</div>
+<div #target class="badges-container">
+    <div *ngFor = "let i of cardTable">
+        <div class="card cardS" [ngClass]="i.bgc" data-aos-duration="3000"  data-aos="fade-up">
+            {{i.name}}
+            <img class="card-img-top" src="./../../assets/bird-face.png" alt="Card image cap">
+        </div>
+    </div>
 </div>
 <app-footer bgClass="alternate-bg"></app-footer>

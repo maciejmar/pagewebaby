@@ -15,7 +15,7 @@ $font-base: serif sans-serif,'Roboto';
   src: url('./assets/fonts/Handjet-SemiBold.ttf');
 }
 html,body {
-  background-color: $base-black; //!important;
+  background-color: black !important;
   // $isToDisplay: true;
   // $background-img: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.60)), center/cover url("./assets/cover2.png") no-repeat;
   //  @if $isToDisplay == true {

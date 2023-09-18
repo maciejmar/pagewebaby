@@ -16,6 +16,7 @@
     justify-content: center;
     width: 80%;
     height: 80%;
+    
 
 
     button {
@@ -145,4 +146,41 @@ svg{
       align-content:center;  // Adjust the size according to your needs
       display:flex;
     }
+  }
+
+  .badges-container{
+    display:flex;
+    flex-direction: row;
+    gap:2%;
+    margin:0.5em;
+    width:100vw;
+    height: auto;
+    background-color:black;
+    border:black;
+    font-size:2em;
+    word-spacing:2%;
+    font-family:'Roboto', sans-serif;
+
+  }
+  .card{
+    border-radius:3% 4%;
+    padding:2%;
+  }
+  .card-yellow{
+    background-color: rgb(180, 169, 17);
+  }
+  .card-cyan{
+    background-color: rgb(58, 120, 170);
+  }
+  .card-violet{
+    background-color: rgb(75, 16, 70);
+    color:antiquewhite;
+  }
+  .card-red{
+    background-color: rgb(124, 4, 4);
+    color:antiquewhite;
+  }
+
+  .cardS{
+    width:22vw;
   }

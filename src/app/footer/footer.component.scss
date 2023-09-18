@@ -1,17 +1,17 @@
 @import "./../../styles.scss";
 
-body, html{
+body, html {
   background-color: $base-black !important;
 }
 
 .footer{
-  background-color: black;
+  background-color: $base-black;
   color:rgb(219, 216, 168);
   height: 10%;
   width:100%;
 
   &.default-bg {
-    background-color: #333 !important;  // default color
+    background-color: #333 !important; // default color
   }
 
   &.alternate-bg {
