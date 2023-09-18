@@ -39,7 +39,7 @@
     <div *ngFor = "let i of cardTable">
         <div class="card cardS" [ngClass]="i.bgc" data-aos-duration="3000"  data-aos="fade-up">
             {{i.name}}
-            <img class="card-img-top" src="./../../assets/bird-face.png" alt="Card image cap">
+            <img class="card-img-top" [src]="i.image" alt="Card image cap">
         </div>
     </div>
 </div>

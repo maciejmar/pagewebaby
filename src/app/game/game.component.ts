@@ -34,16 +34,20 @@ export class GameComponent implements AfterViewInit {
   viewBox!: string;
   cardTable=[{
     'name':'Game Description',
-    'bgc':'card-yellow'
+    'bgc':'card-yellow',
+    'image': './../../assets/bird-face.png',
   },{
     'name':'Next releases',
-    'bgc':'card-red'
+    'bgc':'card-red',
+    'image': './../../assets/NicponRunWithSword.png',
   },{
     'name':'Best practices',
-    'bgc':'card-cyan'
+    'bgc':'card-cyan',
+    'image': './../../assets/eyesLettersMaterial.png',
   },{
     'name':'Tips & Tricks',
-    'bgc':'card-violet'
+    'bgc':'card-violet',
+    'image': './../../assets/frog-face.png',
   }]
 
   constructor() {
