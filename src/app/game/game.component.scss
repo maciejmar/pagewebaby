@@ -103,6 +103,9 @@ svg{
     color: #333;  /* Text color */
     cursor: pointer;  /* Changes the cursor when hovering over the button */
     transition: 0.3s;  /* Smoothens the hover effect */
+    width:auto;
+    height:13%;
+    
 }
 
 .transparent-button:hover {
@@ -164,7 +167,9 @@ svg{
   }
   .card{
     border-radius:3% 4%;
-    padding:2%;
+    padding:3%;
+    line-height:90%;
+
   }
   .card-yellow{
     background-color: rgb(180, 169, 17);
@@ -185,3 +190,7 @@ svg{
     width:22vw;
     height:22vw;
   }
+.card-img-top{
+    width:80%;
+    height:auto;
+}
