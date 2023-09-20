@@ -32,6 +32,7 @@ export class GameComponent implements AfterViewInit {
   imageWidth = 100;
   imageHeight: number; // This depends on the aspect ratio
   viewBox!: string;
+  abecadlowo=['A', 'b', 'e','c','a', 'd', 'ł','o','w','o'];
   cardTable=[{
     'name':'Game Description',
     'bgc':'card-yellow',

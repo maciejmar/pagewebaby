@@ -177,7 +177,6 @@ svg{
     animation: rotation 0.8s linear;
   }
   
-  
   @keyframes rotation {
     30%{
         transform: rotate(360deg);
@@ -217,4 +216,7 @@ svg{
 .card-img-top{
     width:80%;
     height:auto;
+}
+.abecadlowo{
+    display: flex;
 }
