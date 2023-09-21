@@ -14,6 +14,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CampaignMottoComponent } from './campaign-motto/campaign-motto.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SmokeComponent } from './smoke/smoke.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainComponent,
     PagenotfoundComponent,
     CampaignMottoComponent,
-    GameComponent
+    GameComponent,
+    SmokeComponent
   ],
   imports: [
     BrowserModule,
