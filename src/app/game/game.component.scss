@@ -2,20 +2,22 @@
 .body,html{
     background-color: black !important;
     width: 100vw;  
-    height: 100vh;
+    height: auto;
     margin: 0;
     padding: 0;
 }
 
 .button-container {
     position: absolute;
+    top:10%;
+    
     z-index: 1;  // Ensure the buttons are above the image
     display: flex;
     flex-direction:row;
     align-items: center;
     justify-content: center;
     width: 80%;
-    height: 80%;
+    height: auto;
     
 
 
@@ -27,6 +29,7 @@
         border:solid 0.2 bisque;
         border-color:bisque;
         color:bisque;
+        align-items: center;
     }
    button:hover{
     background-color:rgba(216, 152, 74, 0.4);
@@ -40,6 +43,7 @@
 @media only screen and (max-width: $breakpoint) {
     .button-container {
       flex-direction:column;  // Adjust the size according to your needs
+      align-items:center;
     }
   }
 .image-container {
@@ -49,8 +53,10 @@
   height: auto;
   //overflow: hidden;
   display: flex;
-  align-items: center;
+  flex-direction:column;
+  align-items:self-start;
   justify-content: center;
+  
 
   .color-image {
     position: relative;
@@ -106,6 +112,7 @@ svg{
     width:auto;
     height:13%;
     
+    
 }
 
 .transparent-button:hover {
@@ -121,15 +128,20 @@ svg{
   }
 
   .game-title{
-    position: absolute;
-    top: 5%;  // Adjust this percentage to move the div up/down
-    left: 15%;  // Adjust this percentage to move the div left/right
-    width: 20%;  // Adjust this to set the width of the div as a percentage of the container
+    //position: absolute;
+    z-index: 1;
+    padding-left:5%;
+    padding-top:5%;
+    top:5%;
+    left:5%;
+    width: 100vh;  // Adjust this to set the width of the div as a percentage of the container
+    height:auto;
     padding-bottom: 10%;
     font-size:3vw;
     font-family:'Roboto',sans-serif; 
     line-height: 80%;
     color:white;
+    align-self: flex-start;
   }
   .game-subtitle {
     font-size:1.5vw;
@@ -140,20 +152,30 @@ svg{
   .storesIcons{
     width:100%;
     height:100%;
+    
   }
   .allOnBackgroundImage{
     width:100%;
+    height: 20vh;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    align-content:center;
+    
   }
   @media only screen and (max-width: $breakpoint) {
     .allOnBackgroundImage {
-      align-content:center;  // Adjust the size according to your needs
-      display:flex;
+      
+       display:flex;
+       align-content:center;  // Adjust the size according to your needs
+       align-items: center;
     }
   }
 
   .badges-container{
     display:flex;
     flex-direction: row;
+    align-items: center;
     gap:2%;
     margin:0.5em;
     width:100vw;
@@ -221,4 +243,4 @@ svg{
     display: flex;
 }
 
-//smoke
+

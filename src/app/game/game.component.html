@@ -2,13 +2,15 @@
     <img  class="color-image" src="./../../assets/cover-45.2.png"/>
 </div> -->
 <div class="image-container">
+   
     <div class="allOnBackgroundImage" >
         <div class="game-title">
-          Abecadłowo 
-            <div class="game-subtitle">Zagubione literki</div>
-         </div>
-         <div class="Abecadłowo" *ngFor="let abc of abecadlowo"><ul>{{abc}}</ul></div>
+            Abecadłowo 
+              <div class="game-subtitle">Zagubione literki</div>
+        </div>
+        <!-- <div class="Abecadłowo" *ngFor="let abc of abecadlowo"><ul>{{abc}}</ul></div>   -->
         <div class="button-container" [@fadeIn]="buttonsState">
+          
             <button class="transparent-button" (click)="scrollToElement(target)">
                 O grze
             </button>
@@ -19,22 +21,23 @@
                 <img class="storesIcons" src="./../../assets/icons/googlePayIco.ico">
             </button>
         </div>
-        <app-smoke></app-smoke>
-        <svg [attr.viewBox]="viewBox" preserveAspectRatio="xMidYMid meet" style="width: 100vw; height: auto;">
-            <!-- Mask definition -->
-            <defs>
-                <mask id="revealMask">
-                    <rect x="0" y="0" width="100" height="100" fill="white" />
-                    <rect x="0" y="0" width="100" [attr.height]="maskHeight" fill="black" />
-                </mask>
-            </defs>
-            <!-- Grayscale image -->
-            <image [attr.href]="grayImage" x="0" y="0" height="100%" width="100%"/>
-
-            <!-- Color image with mask applied -->
-            <image [attr.href]="colorImage" x="0" y="0" height="100%" width="100%" mask="url(#revealMask)"/>
-        </svg>
+     
     </div>
+    <app-smoke></app-smoke>
+    <svg [attr.viewBox]="viewBox" preserveAspectRatio="xMidYMid meet" style="width: 100vw; height: auto;">
+        <!-- Mask definition -->
+        <defs>
+            <mask id="revealMask">
+                <rect x="0" y="0" width="100" height="100" fill="white" />
+                <rect x="0" y="0" width="100" [attr.height]="maskHeight" fill="black" />
+            </mask>
+        </defs>
+        <!-- Grayscale image -->
+        <image [attr.href]="grayImage" x="0" y="0" height="100%" width="100%"/>
+
+        <!-- Color image with mask applied -->
+        <image [attr.href]="colorImage" x="0" y="0" height="100%" width="100%" mask="url(#revealMask)"/>
+    </svg>
     
 </div>
 <div #target class="badges-container">
