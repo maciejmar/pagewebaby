@@ -8,15 +8,19 @@
 }
 
 .button-container {
+    // position: absolute;
+    // top:10%;
     position: absolute;
-    top:10%;
+    top: 30%; 
+    left: 5%; 
+    //transform: translate(-50%, -50%); 
     
     z-index: 1;  // Ensure the buttons are above the image
     display: flex;
     flex-direction:row;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 70%;
     height: auto;
     
 

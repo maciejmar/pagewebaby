@@ -21,7 +21,7 @@ html, body {
 
 .text {
   position: absolute;
-  top: 40%;
+  top: 55%;
   left: 0;
   right: 0;
   bottom: 0;
@@ -32,7 +32,8 @@ html, body {
 }
 
 span {
-  font-size: 100px;
+  font-size: 10vw;
+  font-family:'Roboto',sans-serif;
   display: inline-block;
   text-shadow: 0 0 0 whitesmoke;
   animation: smoky 5s 3s both;
