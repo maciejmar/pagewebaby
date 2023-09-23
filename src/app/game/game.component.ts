@@ -24,7 +24,7 @@ import AOS from "aos";
 })
 export class GameComponent implements AfterViewInit {
   @ViewChild('target') target!: ElementRef;
-
+  show: boolean = false;
   buttonsState: 'hidden' | 'visible' = 'hidden';
   grayImage = './../../assets/cover-45.2-grayscale.png';
   colorImage = './../../assets/cover-45.2.png';
@@ -77,7 +77,17 @@ animateMask():void {
   scrollToElement(element: HTMLDivElement): void {
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+ togleShow(){ 
+  this.show = !this.show;
 
+ }
+ showBounce() { 
+  this.show = true;
+}
+
+hideBounce() {
+  this.show = false;
+}
 
 }
 

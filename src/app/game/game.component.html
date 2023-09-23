@@ -3,10 +3,25 @@
 </div> -->
 <div class="image-container">
    
+    
     <div class="allOnBackgroundImage" >
-        <div class="game-title">
-            Abecadłowo 
-              <div class="game-subtitle">Zagubione literki</div>
+        <div class="game-title" tabindex="0" (mouseover)="showBounce()" (mouseout)="hideBounce()">
+            <div [hidden]="show">Abecadłowo</div>
+            <div [hidden]="!show" class="bounce-container">
+                <div class="bounce">
+                    <span>A</span>
+                    <span>b</span>
+                    <span>e</span>
+                    <span>c</span>
+                    <span>a</span>
+                    <span>d</span>
+                    <span>ł</span>
+                    <span>o</span>
+                    <span>w</span>
+                    <span>o</span>      
+                </div>
+            </div> 
+            <div class="game-subtitle">Zagubione literki</div>
         </div>
         <!-- <div class="Abecadłowo" *ngFor="let abc of abecadlowo"><ul>{{abc}}</ul></div>   -->
         <div class="button-container" [@fadeIn]="buttonsState">
@@ -48,5 +63,7 @@
         </div>
     </div>
 </div>
+
 <app-smoke></app-smoke>
+  
 <app-footer bgClass="alternate-bg"></app-footer>
