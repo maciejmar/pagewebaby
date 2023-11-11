@@ -26,8 +26,8 @@ export class GameComponent implements AfterViewInit {
   @ViewChild('target') target!: ElementRef;
   show: boolean = false;
   buttonsState: 'hidden' | 'visible' = 'hidden';
-  grayImage = './../../assets/cover-45.2-grayscale.png';
-  colorImage = './../../assets/cover-45.2.png';
+  grayImage = './../../assets/nicpon-11-3.png';
+  colorImage = './../../assets/nicpon-11black.png';
   maskHeight = 0;
   imageWidth = 100;
   imageHeight: number; // This depends on the aspect ratio
