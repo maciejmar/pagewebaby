@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit {
   }
 
   icons=[ "bi bi-youtube h1", "bi bi-facebook h1",
-   "bi bi-twitter h1", "bi bi-instagram h1","bi bi-linkedin h1", "bi bi-envelope h1"];
+   "bi bi-twitter-x h1", "bi bi-instagram h1","bi bi-linkedin h1", "bi bi-envelope h1", "bi bi-discord h1"];
 
    random_boolean = Math.random() < 0.5;
 }

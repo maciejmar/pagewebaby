@@ -23,7 +23,7 @@
     "@angular/router": "~13.2.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.1",
-    "bootstrap-icons": "^1.10.5",
+    "bootstrap-icons": "^1.11.3",
     "jquery": "^3.7.0",
     "rxjs": "~7.5.0",
     "three": "^0.156.1",
