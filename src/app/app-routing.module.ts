@@ -8,7 +8,7 @@ import { GameComponent } from './game/game.component';
 
 const routes: Routes = [
     //{ path: '', redirectTo: '/', pathMatch: 'full' },
-    {path: '', component: MainComponent },
+    { path: '', component: MainComponent },
     { path: 'logo', component: IntroComponent },
     { path: 'game', component: GameComponent },
     { path: 'abecadlowo', component: AppComponent },
