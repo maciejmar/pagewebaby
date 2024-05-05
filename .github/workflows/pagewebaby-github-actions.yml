@@ -35,9 +35,9 @@ jobs:
     - name: Setup SSH Key
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H ${{ secrets.OVH_VPS_IP }} >> ~/.ssh/known_hosts 
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/new_key
+        chmod 600 ~/.ssh/new_key
+        ssh-keyscan -H your_host >> ~/.ssh/known_hosts 
 
     # Deploy the built application to the server
     - name: Deploy to Server
