@@ -33,10 +33,6 @@ jobs:
 
     # Setup SSH key and known hosts for secure deployment
     - name: Setup SSH Key
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ~/.ssh/new_key2
-    - name: Deploy prerequisites
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.NEW_PRIVATE_KEY }}" > ~/.ssh/id_rsa
