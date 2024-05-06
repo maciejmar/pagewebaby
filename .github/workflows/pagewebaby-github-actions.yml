@@ -37,7 +37,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H ${{ secrets.OVH_VPS_IP }} >> ~/.ssh/known_hosts 
+        ssh-keyscan -Hv ${{ secrets.OVH_VPS_IP }} >> ~/.ssh/known_hosts 
 
     # Deploy the built application to the server
     - name: Deploy to Server
