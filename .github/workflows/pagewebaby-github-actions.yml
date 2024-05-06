@@ -30,6 +30,10 @@ jobs:
     # Building the app in production mode
     - name: Build Angular App for Production
       run: npm run build -- --prod
+      
+    # Printing current directory  
+    - name: Print Current Directory
+      run: pwd
 
     # Setup SSH key and known hosts for secure deployment
     - name: Setup SSH Key
