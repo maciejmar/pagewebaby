@@ -46,10 +46,10 @@ jobs:
     # Deploy the built application to the server
     - name: Deploy to Server
       run: rsync -avz --delete ./dist/ ubuntu@${{ secrets.OVH_VPS_IP }}:/home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.NEW_PRIVATE_KEY }}
+      #env:
+      # SSH_PRIVATE_KEY: 
 
-        
+
     # Optional: Restart Nginx to pick up new changes
     - name: Restart Nginx
       run:  ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.OVH_VPS_IP }} << 'EOF'
