@@ -45,7 +45,7 @@ jobs:
 
     # Deploy the built application to the server
     - name: Deploy to Server
-      run: rsync -avz --delete ./dist/ ubuntu@${{ secrets.OVH_VPS_IP }}:/home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/
+      run: rsync -avz --delete -v ./dist/ ubuntu@${{ secrets.OVH_VPS_IP }}:/home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/
       #env:
       # SSH_PRIVATE_KEY: 
 
