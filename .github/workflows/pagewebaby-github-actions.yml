@@ -39,7 +39,7 @@ jobs:
     - name: Deploy prerequisites
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        echo "${{ secrets.NEW_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -Hv ${{ secrets.OVH_VPS_IP }} >> ~/.ssh/known_hosts 
 
