@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host '::' --port 4204",
+    "start": "ng serve --host '::' --port 8090",
     "pm2-start": "pm2 start npm --name pagewebaby -- run start",
     "pm2-restart": "pm2 restart pagewebaby",
     "pm2-check": "pm2 describe pagewebaby > /dev/null 2>&1 || npm run pm2-start",
