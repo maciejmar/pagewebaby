@@ -52,18 +52,16 @@ jobs:
 
     # Optional: Restart Nginx to pick up new changes
     - name: Restart Nginx
-      run:  ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.OVH_VPS_IP }} << 'EOF'
-    - run: |
-      
-        sudo systemctl restart nginx
-        # Check if the application is managed by PM2 and restart or start accordingly
-        pm2 describe pagewebaby > /dev/null
-        if [ $? -eq 0 ]; then
-            echo "pagewebaby is already managed by PM2, restarting..."
-            pm2 restart pagewebaby
-        else
-            echo "pagewebaby is not managed by PM2, starting..."
-            pm2 start npm --name pagewebaby -- run start
-        fi
-        pm2 save  # Save the current PM2 list to ensure it starts on reboot
-        EOF
+      run: |
+            ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.OVH_VPS_IP }} << 'EOF'
+            sudo systemctl restart nginx
+            pm2 describe pagewebaby > /dev/null
+            if [ $? -eq 0 ]; then
+                echo "pagewebaby is already managed by PM2, restarting..."
+                pm2 restart pagewebaby --update-env
+            else
+                echo "pagewebaby is not managed by PM2, starting..."
+                pm2 start npm --name pagewebaby -- run start
+            fi
+            pm2 save
+            EOF
