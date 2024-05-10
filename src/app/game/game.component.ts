@@ -29,7 +29,7 @@ export class GameComponent implements AfterViewInit {
   grayImage = './../../assets/runningNicponColor.png';
   colorImage = './../../assets/runningNicponbw.png';
   maskHeight = 0;
-  imageWidth = 100;
+  imageWidth = 10;
   imageHeight: number; // This depends on the aspect ratio
   viewBox!: string;
   abecadlowo=['A', 'b', 'e','c','a', 'd', 'ł','o','w','o'];
