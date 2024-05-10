@@ -9,6 +9,7 @@ import AOS from 'aos';
 export class FooterComponent implements OnInit {
   visible = false;
   @Input () bgClass: string = 'default-bg';
+  showModal: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -19,5 +20,9 @@ export class FooterComponent implements OnInit {
    "bi bi-twitter-x h1", "bi bi-instagram h1","bi bi-linkedin h1", "bi bi-envelope h1", "bi bi-discord h1"];
 
    random_boolean = Math.random() < 0.5;
+
+   togglePrivacyPolicyModal() {
+    this.showModal = !this.showModal;
+  }
 }
 
