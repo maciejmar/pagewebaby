@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import AOS from 'aos';
 
 @Component({
@@ -8,9 +8,10 @@ import AOS from 'aos';
 })
 export class FooterComponent implements OnInit {
   visible = false;
+  
   @Input () bgClass: string = 'default-bg';
   showModal: boolean = false;
-  constructor() { }
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     AOS.init();
@@ -21,8 +22,10 @@ export class FooterComponent implements OnInit {
 
    random_boolean = Math.random() < 0.5;
 
-   togglePrivacyPolicyModal() {
+   togglePrivacyPolicyModal(): void {
     this.showModal = !this.showModal;
+    this.cdRef.detectChanges();
+    console.log('Modal should be:', this.showModal); 
   }
 }
 
