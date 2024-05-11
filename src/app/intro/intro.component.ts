@@ -13,17 +13,29 @@ export class IntroComponent implements OnInit {
   
   val = 10;
 
-  onVideoEnd() {
-    this.videoEnded.emit();
-  }
+ 
+
+  
   constructor(private sharedService:SharedBetweenSiblingsService, private router: Router ) {
     timer(5500).subscribe(() => (this.val = -1));
    }
-
-
-  ngOnInit(): void {
-    
+  
+   ngOnInit(): void {
+    this.sharedService.getVideoState().subscribe(play => {
+      if (play) {
+        this.val = 10; // Show video
+      } else {
+        this.val = -1; // Hide video
+      }
+    });
   }
+
+  onVideoEnd() {
+    this.val = -1; // Hide video after playing
+    this.sharedService.triggerVideo(false); // Reset video state in service
+  }
+
+  
   ngOnDestroy():void{
    
       

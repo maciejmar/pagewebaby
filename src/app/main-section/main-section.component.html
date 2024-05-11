@@ -1,30 +1,37 @@
+
+
 <div class="main-section" data-aos="fade-up">
-  <div class="logo-motto-container">
-      <div data-aos="fade-up" data-aos-duration="3000" class="divImg-1 glow-logo" >
-        <!--
-        <div class="background">
-          <div class="pie astronaut"> </div>
-          <div class="pie greenpea"> </div>
-          <div class="pie greenpea greenpea2"> </div>
-          <div class="pie cello"> </div>
-          <div class="pie wineberry"> </div>
-        </div> -->
-        
-         <div data-aos="zoom-out-right" data-aos="fade-up" data-aos-duration="9000" class="logo" *ngIf="showElement then logoBlack else logoWhite">
-         </div>
-      </div>
-      <div>
-         <app-campaign-motto></app-campaign-motto>
-      </div>   
+  <div class="logo-motto-container" [class.fade-in]="videoHasEnded" >
+
+
+
+
+  <div *ngIf="!showVideo" data-aos="fade-up" data-aos-duration="3000" class="divImg-1 glow-logo" (click)="playVideo()">
+    <div data-aos="zoom-out-right" data-aos-duration="9000" class="logo" *ngIf="!showVideo">
+      <ng-container *ngTemplateOutlet="showElement ? logoBlack : logoWhite"></ng-container>
+    </div>
   </div>
-  <br>
-  <br>
-  <div class="game-badges" >
+
+  <!-- Video displayed only when showVideo is true -->
+  <div *ngIf="showVideo" class="video-container">
+      <video #videoPlayer  autoplay insline [muted]="true" [loop]="false" type="video/mp4" (ended)="onVideoEnd()">
+          <source src="./../../assets/video/movie-sprites-3.0.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+
+    <div>
+      <app-campaign-motto></app-campaign-motto>
+    </div>   
+  </div>
+  <br><br>
+  <div class="game-badges">
     <app-game-badge></app-game-badge>
   </div>
 </div>
-<ng-template #logoBlack >
-  <img src="./../../assets/wbbaby24a.png" alt="Company Logo" class="img_fit" />
+
+<ng-template #logoBlack>
+  <img src="./../../assets/wbbaby24b.png" alt="Company Logo" class="img_fit" />
 </ng-template>
 
 <ng-template #logoWhite>

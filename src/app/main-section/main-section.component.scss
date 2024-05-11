@@ -6,7 +6,17 @@ body,html {
 .logo-motto-container{
   display:flex;
   flex-direction:row;
+
+  opacity: 0;
+  transition: opacity 2s ease; /* Adjust the duration as needed */
 }
+
+/* Class to apply when the container should be visible */
+.fade-in {
+  opacity: 1;
+}
+
+
 
 .img_fit{
   max-width:100%;
@@ -181,4 +191,17 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
       color: #7e0fff;
     }
   }
+}
+.video-container {
+  position: relative; /* Ensures the video is positioned relative to this container */
+  width: 80%; /* Container takes the full width allotted to it */
+  height: auto; /* Height is set automatically based on content */
+  display: flex; /* Utilizes Flexbox for centering */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+}
+
+.video-container video {
+  width: 100%; /* Video takes up 50% of the container's width */
+  height: auto; /* Height is adjusted automatically to maintain aspect ratio */
 }

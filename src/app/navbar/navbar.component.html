@@ -3,13 +3,20 @@
       <span  class="badge bg-primary" [hidden]=true>WeBaby Game Company</span>
 
       <br>
+     
+
       <div *ngIf="val > 1" class="video-background video-opacity-low-down">
         <div class="video-background" *ngIf="val > 0">
-          <video class="video" [autoplay]="true" [muted]="true" [loop]="false"  type="video/mp4">
-            <source src="./../../assets/video/movie-sprites-3.0.mp4" >
+          <video class="video" [autoplay]="true" [muted]="true" [loop]="false" type="video/mp4">
+            <source src="./../../assets/video/movie-sprites-3.0.mp4">
           </video>
         </div>
       </div>
+      
+      
+        
+        
+      
      
       <br>
       <div *ngIf="showNeonEffect">

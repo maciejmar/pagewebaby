@@ -79,10 +79,7 @@ a:active { text-decoration: none; }
   
 }
 
-.video-background {
-  color:white;
-  
-}
+
 .video-opacity-low-down {
   -webkit-animation: fadein 3s ease-in alternate infinite;
   -moz-animation: fadein 3s ease-in alternate infinite;
@@ -103,8 +100,16 @@ a:active { text-decoration: none; }
   to { opacity: 1; }
 }
 
-#video-background {
+.video-background {
+  width: 100%;  // Ensures the container is full width
+  height: auto;  // Adjust based on your layout needs
+  visibility: visible;  // Makes sure it's not hidden
   color:white;
+}
+
+.video {
+  width: 100%;
+  height: auto;  // Adjust based on your layout needs
 }
 
 .video-size{

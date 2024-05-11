@@ -7,14 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   isTrue = false;
-  showVideoPlayer = true;
+  showVideoPlayer = false;
 
-  handleVideoEnd() {
-    this.showVideoPlayer = false;
-  }
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  
+
+  playVideo(): void {
+    this.showVideoPlayer = true;
+  }
+
+  handleVideoEnd(): void {
+    this.showVideoPlayer = false;
   }
 
 }
