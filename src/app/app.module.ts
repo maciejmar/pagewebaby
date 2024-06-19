@@ -15,6 +15,8 @@ import { CampaignMottoComponent } from './campaign-motto/campaign-motto.componen
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SmokeComponent } from './smoke/smoke.component';
+import { LiteMotiveComponent } from './lite-motive/lite-motive.component';
+
 
 @NgModule({
   declarations: [
@@ -29,12 +31,15 @@ import { SmokeComponent } from './smoke/smoke.component';
     PagenotfoundComponent,
     CampaignMottoComponent,
     GameComponent,
-    SmokeComponent
+    SmokeComponent,
+    LiteMotiveComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

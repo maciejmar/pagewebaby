@@ -1,7 +1,7 @@
 @import './../../styles.scss';
 body{
   background-color: $base-black !important;
-  color:antiquewhite;
+  color:rgb(252, 52, 85);
 }
   .sticky {
     position: -webkit-sticky;
@@ -12,13 +12,22 @@ body{
   }
 
 
-a:link { text-decoration: none; }
+a:link {
+  text-decoration: none;
+  color: $menuFontColorActive;    
+}
 
 
-a:visited { text-decoration: none; }
+a:visited { 
+  text-decoration: none;
+  color: $menuFontColorActive;    
+}
 
 
-a:hover { text-decoration: none; color:antiquewhite; }
+a:hover { 
+  text-decoration: none; 
+  color: menuFontColorActive;
+}
 
 
 a:active { text-decoration: none; }
@@ -27,12 +36,12 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size:2em;
-  font-weight: 400;
+  font-size:4em;
+  font-weight: 500;
   letter-spacing: 0.09em;
   display:flex;
   gap:4%;
-  background-color:rgba($color: #051223, $alpha: 0.4)
+  background-color:rgba($color: #05230a, $alpha: 0.4)
 }
 
  
@@ -40,7 +49,7 @@ ul {
 
 .awrap:hover {
   background-color: (255,255,255,0.2);
-  color:rgba(173, 199, 138, 0.9);
+  color:rgba(123, 160, 77, 0.1);
   animation: awrap 1s ease infinite;
 }
 @keyframes awrap {

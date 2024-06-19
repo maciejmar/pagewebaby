@@ -3,8 +3,23 @@
 
 body {
   font-family: serif sans-serif monospace;
-  font-size: 2em;
+  font-size: 3em;
+  color:antiquewhite !important;
   //background-color: $base-black !important;
   background-color:black !important;
   
+}
+
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+.container{
+  width:100%;
+}
+
+.logo-and-text {
+  display: flex;
+  align-items: center;
 }

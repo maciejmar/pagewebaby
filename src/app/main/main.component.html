@@ -1,9 +1,28 @@
+ <app-navbar hidden></app-navbar>
+<div>
+  <app-intro *ngIf="showVideoPlayer" (videoEnded)="handleVideoEnd()"></app-intro>
+  <div >  <!--class="container"-->
+    <app-side-menu></app-side-menu>
+   <!-- <app-lite-motive></app-lite-motive>  --->
+    <app-main-section></app-main-section>
+    
+  </div>
+  <app-footer></app-footer>
+</div> 
+
+<!--
 <app-navbar hidden></app-navbar>
 <div>
   <app-intro *ngIf="showVideoPlayer" (videoEnded)="handleVideoEnd()"></app-intro>
   <div class="container">
     <app-side-menu></app-side-menu>
-    <app-main-section></app-main-section>
+    <app-lite-motive></app-lite-motive>
+    <div class="logo-and-text">
+      <app-main-section></app-main-section>
+      
+    </div>
   </div>
   <app-footer></app-footer>
 </div>
+
+-->

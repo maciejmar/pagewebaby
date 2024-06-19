@@ -5,11 +5,16 @@
 
 
 
-
+<!--
   <div *ngIf="!showVideo" data-aos="fade-up" data-aos-duration="3000" class="divImg-1 glow-logo" (click)="playVideo()">
     <div data-aos="zoom-out-right" data-aos-duration="9000" class="logo" *ngIf="!showVideo">
       <ng-container *ngTemplateOutlet="showElement ? logoBlack : logoWhite"></ng-container>
     </div>
+  </div> 
+-->
+
+  <div *ngIf="!showVideo" (click)="playVideo()">
+    <ng-container *ngTemplateOutlet="showElement ? logoWhite : logoBlack"></ng-container>
   </div>
 
   <!-- Video displayed only when showVideo is true -->
@@ -20,9 +25,9 @@
       </video>
   </div>
 
-    <div>
+    <!-- <div>
       <app-campaign-motto></app-campaign-motto>
-    </div>   
+    </div>    -->
   </div>
   <br><br>
   <div class="game-badges">
@@ -31,11 +36,11 @@
 </div>
 
 <ng-template #logoBlack>
-  <img src="./../../assets/wbbaby24b.png" alt="Company Logo" class="img_fit" />
+  <img src="./../../assets/wbbaby24white.png" alt="Company Logo" class="img_fit" />
 </ng-template>
 
 <ng-template #logoWhite>
-  <img src="./../../assets/wbbaby24b.png" alt="Company2 Logo" class="img_fit" />
+  <img src="./../../assets/wbbaby24white.png" alt="Company2 Logo" class="img_fit" />
 </ng-template>
 
 

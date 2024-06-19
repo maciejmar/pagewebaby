@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Game} from '../game'
 import AOS from "aos";
+import { ResizeFontDirective } from '../resize-font.directive';
 
 @Component({
   selector: 'app-game-badge',

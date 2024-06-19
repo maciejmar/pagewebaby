@@ -19,14 +19,19 @@
       
      
       <br>
+      <!--
       <div *ngIf="showNeonEffect">
         <div class="text-effect">
-          <!-- Select the text in the preview and type in your own -->
+          
           <div class="neon" data-text="WeBaby" contenteditable>WeBaby</div>
           <div class="gradient"></div>
           <div class="spotlight"></div>
         </div>
-        
+      
+      
+
+      </div>-->
+      <div > 
           <button  class="btn btn-colorchange" (click)="buttonClicked()">
               WeBaby <span class="campaign_motto">We are in play</span>
           </button>
@@ -41,8 +46,12 @@
           </li>
         </ul>
       </div>
+      
       <div *ngIf="showNeonEffect" data-aos="zoom-out-left" class="img_fit">
-        <img src="../../assets/wbbaby24b.png"/>
+        <img src="../../assets/wbbaby24white.png"/>
+      </div>
+      <div *ngIf="!showNeonEffect">
+        <img src="../../assets/wbbaby24white.png"/>
       </div>
     </nav>
 </div>

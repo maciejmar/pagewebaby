@@ -4,6 +4,7 @@ import { SharedBetweenSiblingsService } from './../shared-between-siblings.servi
 import { Subscription,timer } from 'rxjs';
 import AOS from 'aos';
 
+
 @Component({
   selector: 'app-main-section',
   templateUrl: './main-section.component.html',
@@ -61,6 +62,10 @@ export class MainSectionComponent implements AfterViewInit  {
     this.showVideo = false;
     this.videoHasEnded = true; // Set to true when video ends to trigger fade-in
   }
+
+
+
+  
 }
 
   

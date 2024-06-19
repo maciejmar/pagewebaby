@@ -6,7 +6,7 @@
             <img [src]=game.image  ngClass="img_fit" />
           </div>
           <div class="game-info">
-            <div  data-aos-duration="3000"  data-aos="fade-up" class="gameHeader">
+            <div  data-aos-duration="3000"  data-aos="fade-up" class="gameHeader" >
               {{ game.name }} <br>
                   <span *ngFor="let cat of game.category; let i=index;" class="bg-transparent">{{cat}}
                      <span *ngIf ="i< game.category.length-1" ></span>
