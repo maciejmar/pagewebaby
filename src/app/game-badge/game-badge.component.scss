@@ -16,7 +16,7 @@
   color:black;
   border-radius: 2%;
 
-  padding:13%;
+  padding: 5%;
   
 }
 
@@ -113,7 +113,7 @@ bg-transparent {
 
 @media only screen and (min-width: 900px) {
   .bg-transparent {
-    font-size: 5vw;
+    font-size: 50vw;
   }
 }
 
@@ -171,7 +171,7 @@ bg-transparent {
 .bg-transparent{
   opacity:30%;
   border-radius:1vh;
-  font-size:7vh;
+  font-size:5vh;
   height:auto;
   width:auto;
 }
@@ -194,6 +194,7 @@ bg-transparent {
   align-content:center;
   align-items: center;
   column-gap:2%;
+  margin-bottom:2%;
 }
 
 .glow-on-hover:before {
@@ -253,4 +254,7 @@ bg-transparent {
     0 0 25px $glow-color, 0 0 50px $glow-color,
     0 0 100px $glow-color, 0 0 200px $glow-color;
 
+}
+.font-size-header{
+  font-size:2em;
 }
