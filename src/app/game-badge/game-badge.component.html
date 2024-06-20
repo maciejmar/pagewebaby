@@ -14,7 +14,7 @@
             </div>
 
             <div class="card cr-transparent">
-              <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header">
+              <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header card-header-font-size">
                 <a class="btn btn-outline-warning font-size-header" routerLink="/game">Kup grę</a>
               </div>
               <div data-aos-duration="3000"  data-aos="fade-up"  class="card-body">
@@ -25,7 +25,7 @@
             </div>
             <div>
               <button data-aos-duration="3000"  data-aos="fade-left" type="button" class="glow-on-hover">
-                  PUBLISHED on {{game.createdAt | date:'dd MMM YYYY HH:mm:ss' }} <span class="badge bg-secondary">AGE: {{game.age}}</span>
+                  Gra opublikowana w dniu {{game.createdAt | date:'dd MMM YYYY HH:mm:ss' }} <span class="badge bg-secondary">Od lat: {{game.age}}</span>
               </button>
             </div>
           </div>

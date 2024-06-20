@@ -32,26 +32,26 @@ export class GameBadgeComponent implements OnInit {
       createdAt: Date.now()
       },
       {
-       name: "Kto złapie miśka",
+       name: "ABC-land wersja anglojęzyczna",
         category: [
-          "Arcade",
-          "Zręcznościowa"
+          "Przygodowa",
+          "Edukacyjna"
         ],
         age:"9",
         image:"./../../assets/nicpon6b.jpg",
-        description:"Niedźwiedź Lutek wybiera się w niebezpieczną podróż by zdobyć pożywienie dla swej rodziny. Po drodze spotykają go różne przygody, w których musi wykazać się zręcznością i pomysłowością.",
+        description:"Anglojęzyczna wersja popularnej gry, w której bohaterem staje się chłopiec, który początkowo nie rokuje wielkich szans w byciu wybawcą swoich pobraymców. Po drodze spotykają go różne przygody, w których musi wykazać się zręcznością i pomysłowością.",
         price:12,
         createdAt: Date.now()
       },
       {
-        name: "Rybki uciekają",
+        name: "Buchstabenland - wersja niemieckojęzyczna",
         category: [
-          "Sensoryczna",
-          "Zręcznościowa"
+          "Przygotowa",
+          "Edukacyjna"
         ],
         age:"3",
         image:"./../../assets/nicpon8b.jpg",
-        description:"Polem gry jest akwarium podzielone na kwadraty. W kolejnych kwadratach pojawiają się rybki, którymi trzeba kierować, żeby trafiły tam gdzie chcemy. Gracz wygrywa, jeśli uda mu się zagonić wszystkie rybki do domku-muszli.",
+        description:"Abecadłowo w wesji niemieckojęzycznej. Nicpoń musi uratować swoją krainę, ale by tego dokonać musi odbyć daleką podróż w nieznane. Oprócz wrogów i wysłanników złego władcy Sarsenbaja napotka też na szczęście tych, którzy staną się jego przyjaciółmi",
         price:12,
         createdAt: Date.now()
       }
