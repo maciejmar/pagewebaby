@@ -14,7 +14,7 @@
   background: #3f87a6;
   opacity:0.4;
   color:black;
-  border-radius: 2%;
+  border-radius: 1vh;
 
   padding: 5%;
   
@@ -178,7 +178,7 @@ bg-transparent {
 }
 
 .glow-on-hover {
-  border-radius: "25%/50%"; 
+  border-radius: 1vh; 
   box-sizing: "border-box"; 
   font-size:3em;
   padding:3%;
@@ -245,7 +245,7 @@ bg-transparent {
 }
 .card-text{
   text-align: left;
-  color:#816c97;
+  color: black; /*#816c97;*/
 }
 
 @keyframes glowing {
@@ -265,9 +265,15 @@ bg-transparent {
 
 }
 .font-size-header{
-  font-size:2em;
+  font-size:4em;
+  
 }
 
 .card-header-font-size{
   font-size:3em;
+  color:black;
+}
+.card-text-description{
+  color:#3f87a6;
+  opacity: 0.4;
 }
