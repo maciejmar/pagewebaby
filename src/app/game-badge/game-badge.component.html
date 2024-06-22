@@ -24,9 +24,14 @@
               </div>
             </div>
             <div>
-              <button data-aos-duration="3000"  data-aos="fade-left" type="button" class="glow-on-hover">
-                  Gra opublikowana w dniu {{game.createdAt | date:'dd MMM YYYY HH:mm:ss' }} <span class="badge bg-secondary">Od lat: {{game.age}}</span>
-              </button>
+              <button data-aos-duration="3000"  data-aos="fade-left" type="button" class="card glow-on-hover">
+                <div [hidden]="true">
+                  Gra opublikowana w dniu {{game.createdAt | date:'dd MMM YYYY HH:mm:ss' }} <span class="card card-body glow-on-hover">Od lat: {{game.age}}</span>
+                </div>
+                <div class="card-text"> 
+                   Zobacz filmy o grze. Dowiesz się, więcej o rozgrywce, o bohaterach gry i o sposobach na wykonanie niektórych zadań
+                </div>
+                </button>
             </div>
           </div>
     </div>

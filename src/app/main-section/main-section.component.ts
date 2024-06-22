@@ -28,7 +28,7 @@ export class MainSectionComponent implements AfterViewInit  {
   animationState: string = 'out';
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
-
+  
   ngAfterViewInit() {
     this.videoPlayer.nativeElement.play(); // This will now work without TypeScript errors.
   }

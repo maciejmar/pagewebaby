@@ -16,6 +16,7 @@ import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SmokeComponent } from './smoke/smoke.component';
 import { LiteMotiveComponent } from './lite-motive/lite-motive.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { LiteMotiveComponent } from './lite-motive/lite-motive.component';
     GameComponent,
     SmokeComponent,
     LiteMotiveComponent,
+    PrivacyPolicyComponent,
     
   ],
   imports: [

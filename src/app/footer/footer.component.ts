@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter } from '@angular/core';
 import AOS from 'aos';
-
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -8,13 +8,24 @@ import AOS from 'aos';
 })
 export class FooterComponent implements OnInit {
   visible = false;
-  
+  language_pl :boolean =true;
   @Input () bgClass: string = 'default-bg';
   showModal: boolean = false;
-  constructor(private cdRef: ChangeDetectorRef) {}
+  
+  
+  
+  constructor(private cdRef: ChangeDetectorRef, private router: Router) {}
+
 
   ngOnInit(): void {
     AOS.init();
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+       
+        this.showModal = false;
+        console.log('showModal ', this.showModal)
+      }
+    });
   }
 
   icons=[ "bi bi-youtube h1", "bi bi-facebook h1",
