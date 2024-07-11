@@ -217,7 +217,7 @@ bg-transparent {
   box-sizing: "border-box"; 
   border:none;
   text-align: left;
-  border-radius: "25%/50%";
+  border-radius: 1vh;
 }
 
 .glow-on-hover:active {
@@ -241,6 +241,7 @@ bg-transparent {
   background: #111;
   left: 0%;
   top: 0%;
+  border-radius: 1vh;
   
 }
 .card-text{

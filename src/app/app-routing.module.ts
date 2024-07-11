@@ -6,12 +6,14 @@ import { MainComponent } from './main/main.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { GameComponent } from './game/game.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { PolicyPrivacyEnComponent } from './policy-privacy-en/policy-privacy-en.component';
 
 const routes: Routes = [
     //{ path: '', redirectTo: '/', pathMatch: 'full' },
     
     { path: '', component: MainComponent },
     { path: 'privacy-policy', component: PrivacyPolicyComponent },
+    { path: 'privacy-policy-en', component: PolicyPrivacyEnComponent},
     { path: 'logo', component: IntroComponent },
     { path: 'game', component: GameComponent },
     { path: 'abecadlowo', component: AppComponent },

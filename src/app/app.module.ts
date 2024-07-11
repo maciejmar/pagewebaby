@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SmokeComponent } from './smoke/smoke.component';
 import { LiteMotiveComponent } from './lite-motive/lite-motive.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { PolicyPrivacyEnComponent } from './policy-privacy-en/policy-privacy-en.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     SmokeComponent,
     LiteMotiveComponent,
     PrivacyPolicyComponent,
+    PolicyPrivacyEnComponent,
     
   ],
   imports: [
