@@ -54,6 +54,18 @@ export class GameBadgeComponent implements OnInit {
         description:"Abecadłowo w wesji niemieckojęzycznej. Nicpoń musi uratować swoją krainę, ale by tego dokonać musi odbyć daleką podróż w nieznane. Oprócz wrogów i wysłanników złego władcy Sarsenbaja napotka też na szczęście tych, którzy staną się jego przyjaciółmi",
         price:12,
         createdAt: Date.now()
+      },
+      {
+        name: "Basketball shots",
+        category: [
+          "Sportowa",
+          "Zręcznościowa"
+        ],
+        age:"3",
+        image:"./../../assets/basketShotsWebaby.jpg",
+        description:"Mecz rzutów do kosza. Gracz może grać ze sobą lub z komputerem. Trzy poziomy trudności. Każda drużyna ma pięciu zawodników. Każdy z zawodników rzuca pięć razy.",
+        price:12,
+        createdAt: Date.now()
       }
 
 
