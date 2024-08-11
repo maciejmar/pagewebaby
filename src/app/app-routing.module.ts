@@ -7,6 +7,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { GameComponent } from './game/game.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { PolicyPrivacyEnComponent } from './policy-privacy-en/policy-privacy-en.component';
+import { PrivacyPolicyBasketballComponent } from './privacy-policy-basketball/privacy-policy-basketball.component';
 
 const routes: Routes = [
     //{ path: '', redirectTo: '/', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: '', component: MainComponent },
     { path: 'privacy-policy', component: PrivacyPolicyComponent },
     { path: 'privacy-policy-en', component: PolicyPrivacyEnComponent},
+    { path: 'privacy-policy-basketball', component: PrivacyPolicyBasketballComponent },
     { path: 'logo', component: IntroComponent },
     { path: 'game', component: GameComponent },
     { path: 'abecadlowo', component: AppComponent },
