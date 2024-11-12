@@ -19,6 +19,7 @@ import { LiteMotiveComponent } from './lite-motive/lite-motive.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { PolicyPrivacyEnComponent } from './policy-privacy-en/policy-privacy-en.component';
 import { PrivacyPolicyBasketballComponent } from './privacy-policy-basketball/privacy-policy-basketball.component';
+import { PrivacyPolicyEquationsComponent } from './privacy-policy-equations/privacy-policy-equations.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { PrivacyPolicyBasketballComponent } from './privacy-policy-basketball/pr
     PrivacyPolicyComponent,
     PolicyPrivacyEnComponent,
     PrivacyPolicyBasketballComponent,
+    PrivacyPolicyEquationsComponent,
     
   ],
   imports: [
