@@ -11,11 +11,9 @@ export class ResizeFontDirective implements OnInit {
   constructor(private el: ElementRef) {
     this.element = el.nativeElement;
   }
-
   ngOnInit() {
     this.adjustFontSize();
   }
-
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.adjustFontSize();
