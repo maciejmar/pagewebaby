@@ -41,7 +41,6 @@ import { PrivacyPolicyEquationsComponent } from './privacy-policy-equations/priv
     PolicyPrivacyEnComponent,
     PrivacyPolicyBasketballComponent,
     PrivacyPolicyEquationsComponent,
-    
   ],
   imports: [
     BrowserModule,

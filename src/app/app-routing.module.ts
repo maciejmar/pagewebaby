@@ -23,8 +23,6 @@ const routes: Routes = [
     { path: 'abecadlowo', component: AppComponent },
     { path: '**', component: PagenotfoundComponent },
     
-    
-    
 ];
 
 @NgModule({
