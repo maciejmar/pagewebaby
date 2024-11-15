@@ -66,6 +66,18 @@ export class GameBadgeComponent implements OnInit {
         description:"Mecz rzutów do kosza. Gracz może grać ze sobą lub z komputerem. Trzy poziomy trudności. Każda drużyna ma pięciu zawodników. Każdy z zawodników rzuca pięć razy.",
         price:12,
         createdAt: Date.now()
+      },
+      {
+        name: "System of equations",
+        category: [
+          "Użytkowa",
+          "Kalkulator"
+        ],
+        age:"3",
+        image:"./../../assets/system-of-equations-image.png",
+        description:"Rozwiązywanie układów równań liniowych z wieloma niewiadommymi. Aplikacja pozwala rozwiązywać układy siedmiu równań. Wystarczy podać współczynniki przy niewiadomych w każdym równaniu i wyrazy wolne",
+        price:12,
+        createdAt: Date.now()
       }
 
 
