@@ -87,7 +87,7 @@ export class GameBadgeComponent implements OnInit {
         ],
         age:"3",
         image:"./../../assets/bubble-graphics.png",
-        description:"Gra edukacyjno-zręcznościowa, polegająca na rozbijaniu baniek niosących literki. Gracz ma za zadanie w jak najkrótszym czasie ułożyć litery w jak najwięcej słów",
+        description:"Gra edukacyjno-zręcznościowa, polegająca na rozbijaniu baniek niosących literki. Gracz ma za zadanie w jak najkrótszym czasie ułożyć litery, w jak najwięcej słów",
         price:12,
         createdAt: Date.now()
       }
