@@ -78,6 +78,18 @@ export class GameBadgeComponent implements OnInit {
         description:"Rozwiązywanie układów równań liniowych z wieloma niewiadommymi. Aplikacja pozwala rozwiązywać układy siedmiu równań. Wystarczy podać współczynniki przy niewiadomych w każdym równaniu i wyrazy wolne",
         price:12,
         createdAt: Date.now()
+      },
+      {
+        name: "Bubbles word",
+        category: [
+          "Edukacyjna",
+          "Zręcznościowa"
+        ],
+        age:"3",
+        image:"./../../assets/bubble-graphics.png",
+        description:"Gra edukacyjno-zręcznościowa, polegająca na rozbijaniu baniek niosących literki. Gracz ma za zadanie w jak najkrótszym czasie ułożyć litery w jak najwięcej słów",
+        price:12,
+        createdAt: Date.now()
       }
 
 
