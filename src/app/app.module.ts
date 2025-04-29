@@ -20,6 +20,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { PolicyPrivacyEnComponent } from './policy-privacy-en/policy-privacy-en.component';
 import { PrivacyPolicyBasketballComponent } from './privacy-policy-basketball/privacy-policy-basketball.component';
 import { PrivacyPolicyEquationsComponent } from './privacy-policy-equations/privacy-policy-equations.component';
+import { AppAdsComponent } from './app-ads/app-ads.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { PrivacyPolicyEquationsComponent } from './privacy-policy-equations/priv
     PolicyPrivacyEnComponent,
     PrivacyPolicyBasketballComponent,
     PrivacyPolicyEquationsComponent,
+    AppAdsComponent,
   ],
   imports: [
     BrowserModule,
