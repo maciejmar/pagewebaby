@@ -15,8 +15,14 @@
 
             <div class="card cr-transparent">
               <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header card-header-font-size">
-                <a class="btn btn-outline-warning font-size-header" routerLink="/game">Kup grę</a>
+                <a class="btn btn-outline-warning font-size-header"
+                  [routerLink]="game.name === 'Basketball shots' ? '/basketball-shots' : '/game'">
+                  Kup grę
+                </a>
               </div>
+              <!-- <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header card-header-font-size">
+                <a class="btn btn-outline-warning font-size-header" routerLink="/game">Kup grę</a>
+              </div> -->
               <div data-aos-duration="3000"  data-aos="fade-up"  class="card-body">
                 <div data-aos-duration="3000"  data-aos="fade-up" class="card-title">{{game.name}}</div>
                 <p class="card-text font-size-header">{{game.description}}</p>

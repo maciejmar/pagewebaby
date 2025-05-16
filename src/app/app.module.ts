@@ -21,6 +21,9 @@ import { PolicyPrivacyEnComponent } from './policy-privacy-en/policy-privacy-en.
 import { PrivacyPolicyBasketballComponent } from './privacy-policy-basketball/privacy-policy-basketball.component';
 import { PrivacyPolicyEquationsComponent } from './privacy-policy-equations/privacy-policy-equations.component';
 import { AppAdsComponent } from './app-ads/app-ads.component';
+import { BasketballShotsComponent } from './basketball-shots/basketball-shots.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -43,11 +46,18 @@ import { AppAdsComponent } from './app-ads/app-ads.component';
     PrivacyPolicyBasketballComponent,
     PrivacyPolicyEquationsComponent,
     AppAdsComponent,
+    BasketballShotsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
     
   ],
   providers: [],

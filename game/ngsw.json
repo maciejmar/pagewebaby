@@ -1,0 +1,133 @@
+{
+  "configVersion": 1,
+  "timestamp": 1747438486885,
+  "index": "/game/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/game/chunk-22UH7C4C.js",
+        "/game/chunk-AXJFEP4V.js",
+        "/game/chunk-I23Z6BCC.js",
+        "/game/chunk-KHF5W7NE.js",
+        "/game/chunk-QRUIJ27W.js",
+        "/game/favicon.ico",
+        "/game/index.html",
+        "/game/main-6HZ53HKS.js",
+        "/game/manifest.webmanifest",
+        "/game/polyfills-FFHMD2TL.js",
+        "/game/scripts-LGHYJXS5.js",
+        "/game/styles-6ASAPWG5.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/game/assets/angleButton.png",
+        "/game/assets/background-basketball.png",
+        "/game/assets/ball.png",
+        "/game/assets/basket-icon.jpg",
+        "/game/assets/basket-shots-advertising.jpg",
+        "/game/assets/basket_down.png",
+        "/game/assets/basket_up.png",
+        "/game/assets/icons/icon-128x128.png",
+        "/game/assets/icons/icon-144x144.png",
+        "/game/assets/icons/icon-152x152.png",
+        "/game/assets/icons/icon-192x192.png",
+        "/game/assets/icons/icon-384x384.png",
+        "/game/assets/icons/icon-512x512.png",
+        "/game/assets/icons/icon-72x72.png",
+        "/game/assets/icons/icon-96x96.png",
+        "/game/assets/infoButton.png",
+        "/game/assets/mock-basket-down.png",
+        "/game/assets/mock-basket-up.png",
+        "/game/assets/mock-basket.png",
+        "/game/assets/player_1.png",
+        "/game/assets/player_2.png",
+        "/game/assets/player_3.png",
+        "/game/assets/player_4.png",
+        "/game/assets/powerButton.png",
+        "/game/assets/quit-button.png",
+        "/game/assets/scoreButton.png",
+        "/game/assets/target.png",
+        "/game/media/bootstrap-icons-OCU552PF.woff",
+        "/game/media/bootstrap-icons-X6UQXWUS.woff2"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/game/assets/angleButton.png": "12f7bd2d2eef23c469ae3aeabdf5833232031769",
+    "/game/assets/background-basketball.png": "cb59b3662a4cc80060729913859b7c0b7b88e915",
+    "/game/assets/ball.png": "a8ed3b7a3860c9b0787c7242089381fe4ed98d7d",
+    "/game/assets/basket-icon.jpg": "cc13bd7088a8b8a639edce73d6f467a123572b5b",
+    "/game/assets/basket-shots-advertising.jpg": "8a38b14d8520aa93563431dfbd4b0af8c41cfce1",
+    "/game/assets/basket_down.png": "b21e190ea6c1d4aef9771bcf70053487f55a8c12",
+    "/game/assets/basket_up.png": "9778eaf79d5297b38d38e0cb9acf9b19bd3ccabd",
+    "/game/assets/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/game/assets/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/game/assets/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/game/assets/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/game/assets/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/game/assets/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/game/assets/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/game/assets/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/game/assets/infoButton.png": "cc75d1543b9f2d076c082216a205cbb33d84e5fb",
+    "/game/assets/mock-basket-down.png": "395557ad943d00a6a73017f234984482454321a5",
+    "/game/assets/mock-basket-up.png": "51cf27bb75bd1e50d89436a29c600c65e8394cf1",
+    "/game/assets/mock-basket.png": "60b26bb244df8d79399d3e7df8143f98029f7ff2",
+    "/game/assets/player_1.png": "87f635cfbd7b0ebab61dbb21a53551d1bf88a296",
+    "/game/assets/player_2.png": "04885d3ab543f11a8a2f6293ebce7cf19e8f93a3",
+    "/game/assets/player_3.png": "d3c3eb43d636f07a6819a39f4efb619813d7a18a",
+    "/game/assets/player_4.png": "9a1e5930a36724a8c689a8df9b91ec3ae053c4dc",
+    "/game/assets/powerButton.png": "fae03a70d6cc05c45866f3341fb3aa3d24e5a64d",
+    "/game/assets/quit-button.png": "b3dc252212093fd20121b30b40f4159e421fb5f7",
+    "/game/assets/scoreButton.png": "979410931e4071029d99efe92e326a6479cd45b7",
+    "/game/assets/target.png": "9b1b16dc2ac1e3f5c0831002b24b05ca2aa3de29",
+    "/game/chunk-22UH7C4C.js": "79c4ce2f4624fde166d72b83cb2d6530c2998378",
+    "/game/chunk-AXJFEP4V.js": "559a0993293abeaec8f102b8739d7f824680dd18",
+    "/game/chunk-I23Z6BCC.js": "a6e3d9debd5f0bed58b344cb3b37078b796a1e50",
+    "/game/chunk-KHF5W7NE.js": "7948879643a2aa393f7deae193b9cc275ad2cc6e",
+    "/game/chunk-QRUIJ27W.js": "c3e7f9277b14b4fd12acf055c9f4d389adfe25ef",
+    "/game/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/game/index.html": "818573b9422be733c4b890ba75d7822818d23996",
+    "/game/main-6HZ53HKS.js": "149dfc32f24be00293a2c9d57a95da460ee9c2ee",
+    "/game/manifest.webmanifest": "17066fedbaba76b504f6a240c55cc0ec0c0ecdf5",
+    "/game/media/bootstrap-icons-OCU552PF.woff": "d5831fd39baf13aff7626e483b9a089730f18604",
+    "/game/media/bootstrap-icons-X6UQXWUS.woff2": "020c3c6f9280a315e8425d7f92e15bcd0cdda1b2",
+    "/game/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/game/scripts-LGHYJXS5.js": "375030f8e785331dcfa6a8594bda06041bb14738",
+    "/game/styles-6ASAPWG5.css": "4a0c41c07b619ecd04b6da5f5aa9dd0ff51d1e64"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
