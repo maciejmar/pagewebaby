@@ -28,9 +28,18 @@ export class FooterComponent implements OnInit {
     });
   }
 
-  icons=[ "bi bi-youtube h1", "bi bi-facebook h1",
-   "bi bi-twitter-x h1", "bi bi-instagram h1","bi bi-linkedin h1", "bi bi-envelope h1", "bi bi-discord h1"];
+  // icons=[ "bi bi-youtube h1", "bi bi-facebook h1",
+  //  "bi bi-twitter-x h1", "bi bi-instagram h1","bi bi-linkedin h1", "bi bi-envelope h1", "bi bi-discord h1"];
 
+  icons = [
+    { class: "bi bi-youtube h1", url: "https://www.youtube.com/@webabygames9383" },
+    { class: "bi bi-facebook h1", url: "https://www.facebook.com/twojProfil" },
+    { class: "bi bi-twitter-x h1", url: "https://twitter.com/twojProfil" },
+    { class: "bi bi-instagram h1", url: "https://www.instagram.com/twojProfil" },
+    { class: "bi bi-linkedin h1", url: "https://www.linkedin.com/in/twojProfil" },
+    { class: "bi bi-envelope h1", url: "mailto:kontakt@twojadomena.pl" },
+    { class: "bi bi-discord h1", url: "https://discord.gg/link-do-serwera" }
+  ];
    random_boolean = Math.random() < 0.5;
 
    togglePrivacyPolicyModal(): void {

@@ -1,8 +1,15 @@
 <footer class="footer">
   <div class="container">
     <div class="spaceBetweenBlockAndIcons"></div>
-    <div class="icons-container">
+
+    <!-- <div class="icons-container">
       <div *ngFor="let icon of icons"> <div class="ibi"> <i [ngClass]="icon"></i></div></div>
+    </div> -->
+
+    <div *ngFor="let icon of icons">
+      <a [href]="icon.url" target="_blank" rel="noopener noreferrer" class="ibi">
+        <i [ngClass]="icon.class"></i>
+      </a>
     </div>
     
     <div class="policy_privacy" (click)="togglePrivacyPolicyModal()">Privacy Policy</div>
