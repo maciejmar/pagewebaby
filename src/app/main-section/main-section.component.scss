@@ -21,7 +21,7 @@ body,html {
 .img_fit{
   max-width:100%;
   max-height:100%;
-  background:center/cover url("./../../assets/wbbaby24.png") no-repeat;
+  background:center/cover url("./../../assets/wbbaby24b-2.png") no-repeat;
   background-color:rgb(244, 247, 192) 100%;
 
 }
@@ -205,3 +205,51 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
   width: 40%; /* Video takes up 50% of the container's width */
   height: auto; /* Height is adjusted automatically to maintain aspect ratio */
 }
+
+.sand-fill-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 300px; // dostosuj do rozmiaru obrazka
+  height: auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      #ff9800,
+      #ff9800 10px,
+      #ffc107 10px,
+      #ffc107 20px,
+      #ff5722 20px,
+      #ff5722 30px
+    );
+    background-size: 200% 200%;
+    animation: sandMove 5s linear infinite;
+    mask-image: url('./../../assets/wbbaby24b-2.png');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    // dla WebKit (Safari)
+    -webkit-mask-image: url('./../../assets/wbbaby24b-2.png');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+}
+
+.sand-fill-image {
+  opacity: 0; // ukrywamy oryginał, używamy go jako maska
+}
+
+@keyframes sandMove {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
