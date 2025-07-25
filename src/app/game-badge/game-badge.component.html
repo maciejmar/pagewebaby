@@ -14,12 +14,36 @@
             </div>
 
             <div class="card cr-transparent">
-              <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header card-header-font-size">
+              <!-- <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header card-header-font-size">
                 <a class="btn btn-outline-warning font-size-header"
-                  [routerLink]="game.name === 'Basketball shots' ? '/basketball-shots' : '/game'">
+                  [routerLink]="game.name === 'Basketball shots' ? '/basketball-shots' : '/basketball-pwa'">
                   Kup grę
                 </a>
-              </div>
+              </div> -->
+
+              <ng-container *ngIf="game.slug === 'basketball-shots'; else pwaLink"> 
+                <a
+                  class="btn btn-outline-warning font-size-header"
+                  data-aos-duration="3000"
+                  data-aos="fade-right"
+                  routerLink="/basketball-shots"
+                >
+                  Kup grę
+                </a>
+              </ng-container>
+              
+              <ng-template #pwaLink>
+                <a
+                  class="btn btn-outline-warning font-size-header"
+                  data-aos-duration="3000"
+                  data-aos="fade-right"
+                  href="/basketball-pwa"
+                  target="_blank"
+                >
+                  Kup grę
+                </a>
+              </ng-template>
+              
               <!-- <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header card-header-font-size">
                 <a class="btn btn-outline-warning font-size-header" routerLink="/game">Kup grę</a>
               </div> -->

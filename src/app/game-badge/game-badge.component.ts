@@ -57,10 +57,13 @@ export class GameBadgeComponent implements OnInit {
       },
       {
         name: "Basketball shots",
+        slug: "basketball-shots",
+        isPwa: true,
         category: [
           "Sportowa",
           "Zręcznościowa"
         ],
+        
         age:"3",
         image:"./../../assets/basketShotsWebaby.jpg",
         description:"Mecz rzutów do kosza. Gracz może grać ze sobą lub z komputerem. Trzy poziomy trudności. Każda drużyna ma pięciu zawodników. Każdy z zawodników rzuca pięć razy.",
