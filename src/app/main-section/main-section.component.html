@@ -5,26 +5,24 @@
 
 
 
-<!--
-  <div *ngIf="!showVideo" data-aos="fade-up" data-aos-duration="3000" class="divImg-1 glow-logo" (click)="playVideo()">
+<!--here neon logo-->
+  <!-- <div *ngIf="!showVideo" data-aos="fade-up" data-aos-duration="3000" class="divImg-1 glow-logo" (click)="playVideo()">
     <div data-aos="zoom-out-right" data-aos-duration="9000" class="logo" *ngIf="!showVideo">
       <ng-container *ngTemplateOutlet="showElement ? logoBlack : logoWhite"></ng-container>
     </div>
-  </div> 
--->
+  </div>   -->
 
-  <div *ngIf="!showVideo" (click)="playVideo()">
+
+  <!-- <div *ngIf="!showVideo" (click)="playVideo()">
     <ng-container *ngTemplateOutlet="showElement ? logoWhite : logoBlack"></ng-container>
-  </div>
+  </div> -->
 
   <!-- Video displayed only when showVideo is true -->
-  <div *ngIf="showVideo" class="video-container">
-      <video #videoPlayer  autoplay insline [muted]="true" [loop]="false" type="video/mp4" (ended)="onVideoEnd()">
-          <source src="./../../assets/video/movie-sprites-3.0.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-  </div>
+  <div class="logo-light-container">
+  <div class="light-inside"></div>
+</div>
 
+    <!--Campaign motto showing letter by letter - Enter into the game-->
     <!-- <div>
       <app-campaign-motto></app-campaign-motto>
     </div>    -->
@@ -35,14 +33,19 @@
   </div>
 </div>
 
+<div class="fog-container">
+  <div class="fog-layer"></div>
+  <div class="logo-mask"></div>
+</div>
+
+
 <ng-template #logoBlack>
-  <img src="./../../assets/wbbaby24b-2.png" alt="Company Logo" class="img_fit send_fill_wrapper" />
+  <img src="./../../assets/wbbaby24b-2.png" alt="Company Logo" class="img_fit sand-effect" />
 </ng-template>
 
 <ng-template #logoWhite>
-  <img src="./../../assets/wbbaby24b-2.png" alt="Company2 Logo" class="img_fit send_fill_wrapper" />
+  <img src="./../../assets/wbbaby24b-2.png" alt="Company2 Logo" class="img_fit sand-effect" />
 </ng-template>
-
 
 
 

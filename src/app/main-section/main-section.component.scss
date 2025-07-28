@@ -202,54 +202,61 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
 }
 
 .video-container video {
-  width: 40%; /* Video takes up 50% of the container's width */
+  width: 60%; /* Video takes up 50% of the container's width */
   height: auto; /* Height is adjusted automatically to maintain aspect ratio */
 }
 
-.sand-fill-wrapper {
+
+.logo-light-container {
   position: relative;
-  display: inline-block;
-  width: 300px; // dostosuj do rozmiaru obrazka
-  height: auto;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      #ff9800,
-      #ff9800 10px,
-      #ffc107 10px,
-      #ffc107 20px,
-      #ff5722 20px,
-      #ff5722 30px
-    );
-    background-size: 200% 200%;
-    animation: sandMove 5s linear infinite;
-    mask-image: url('./../../assets/wbbaby24b-2.png');
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
-
-    // dla WebKit (Safari)
-    -webkit-mask-image: url('./../../assets/wbbaby24b-2.png');
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-size: contain;
-  }
+  width: 100vw;
+  height: 100vh;
+  background: black; // mocny kontrast dla widoczności
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.sand-fill-image {
-  opacity: 0; // ukrywamy oryginał, używamy go jako maska
+.logo-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
 }
 
-@keyframes sandMove {
-  0% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 100% 0%;
-  }
+.light-inside {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  z-index: 1;
+
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0.05) 80%, rgba(0, 0, 0, 0.7) 100%);
+  filter: blur(30px);
+
+  mask-image: url('./../../assets/wbbaby24b-2.png');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  -webkit-mask-image: url('./../../assets/wbbaby24b-2.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
+  mix-blend-mode: screen; // pozwala rozświetlić
+  pointer-events: none;
 }
 
+@keyframes pulseLight {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}

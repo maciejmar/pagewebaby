@@ -7,12 +7,13 @@ body{
 .text {
   @extend .colorwave;
   font-family: 'Roboto', sans-serif;
+  font-size:0.5em;
 }
 
 .btn-colorchange {
   font-family: 'Roboto', sans-serif;
   letter-spacing: -0.09em;
-  font-size: 1em;
+  font-size: 0.5em;
   animation: color-change 3s infinite;
 }
 
@@ -46,7 +47,7 @@ body {
   background-color:$base-black !important;
 }
 .campaign_motto{
-  font-size:60%;
+  font-size:50%;
   font-family: 'Roboto', sans-serif;
   letter-spacing: -0.09em;
 }
@@ -100,45 +101,31 @@ body {
   animation: fadein 3s ease-in alternate infinite;
 }
 
-.sand-fill-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 300px; // dostosuj do rozmiaru obrazka
-  height: auto;
+.sand-effect {
+  width: 300px;
+  height: 300px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff9800,
+    #ffc107 10px,
+    #ff5722 20px,
+    #4caf50 30px
+  );
+  background-size: 400% 400%;
+  animation: sandFlow 6s linear infinite;
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      #ff9800,
-      #ff9800 10px,
-      #ffc107 10px,
-      #ffc107 20px,
-      #ff5722 20px,
-      #ff5722 30px
-    );
-    background-size: 200% 200%;
-    animation: sandMove 5s linear infinite;
-    mask-image: url('./../../assets/wbbaby24b-2.png');
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
+  mask-image: url('../../assets/wbbaby24b-2.png');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
 
-    // dla WebKit (Safari)
-    -webkit-mask-image: url('./../../assets/wbbaby24b-2.png');
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-size: contain;
-  }
+  -webkit-mask-image: url('../../assets/wbbaby24b-2.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
 }
 
-.sand-fill-image {
-  opacity: 0; // ukrywamy oryginał, używamy go jako maska
-}
-
-@keyframes sandMove {
+@keyframes sandFlow {
   0% {
     background-position: 0% 100%;
   }
@@ -146,9 +133,3 @@ body {
     background-position: 100% 0%;
   }
 }
-
-
-
-
-
-

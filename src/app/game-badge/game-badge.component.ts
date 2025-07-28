@@ -39,7 +39,7 @@ export class GameBadgeComponent implements OnInit {
         ],
         age:"9",
         image:"./../../assets/nicpon6b.jpg",
-        description:"Anglojęzyczna wersja popularnej gry, w której bohaterem staje się chłopiec, który początkowo nie rokuje wielkich szans w byciu wybawcą swoich pobraymców. Po drodze spotykają go różne przygody, w których musi wykazać się zręcznością i pomysłowością.",
+        description:"Anglojęzyczna wersja popularnej gry, w której bohaterem staje się chłopiec, który początkowo nie rokuje wielkich szans w byciu wybawcą swoich pobratymców. Po drodze spotykają go różne przygody, w których musi wykazać się zręcznością i pomysłowością.",
         price:12,
         createdAt: Date.now()
       },

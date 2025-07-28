@@ -8,7 +8,7 @@
           <div class="game-info">
             <div  data-aos-duration="3000"  data-aos="fade-up" class="gameHeader" >
               {{ game.name }} <br>
-                  <span *ngFor="let cat of game.category; let i=index;" class="bg-transparent">{{cat}}
+                  <span *ngFor="let cat of game.category; let i=index;" class=" header-description">{{cat}}
                      <span *ngIf ="i< game.category.length-1" ></span>
                   </span>
             </div>
@@ -21,7 +21,8 @@
                 </a>
               </div> -->
 
-              <ng-container *ngIf="game.slug === 'basketball-shots'; else pwaLink"> 
+
+              <!-- <ng-container *ngIf="game.slug === 'basketball-shots'; else pwaLink"> 
                 <a
                   class="btn btn-outline-warning font-size-header"
                   data-aos-duration="3000"
@@ -30,26 +31,27 @@
                 >
                   Kup grę
                 </a>
-              </ng-container>
+              </ng-container> -->
               
-              <ng-template #pwaLink>
-                <a
-                  class="btn btn-outline-warning font-size-header"
-                  data-aos-duration="3000"
-                  data-aos="fade-right"
-                  href="/basketball-pwa"
-                  target="_blank"
-                >
-                  Kup grę
-                </a>
-              </ng-template>
               
-              <!-- <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header card-header-font-size">
+              
+              <div  data-aos-duration="3000"  data-aos="fade-right" class="card-header card-header-font-size">
                 <a class="btn btn-outline-warning font-size-header" routerLink="/game">Kup grę</a>
-              </div> -->
+              </div>
               <div data-aos-duration="3000"  data-aos="fade-up"  class="card-body">
                 <div data-aos-duration="3000"  data-aos="fade-up" class="card-title">{{game.name}}</div>
                 <p class="card-text font-size-header">{{game.description}}</p>
+                <ng-template #pwaLink>
+                  <a
+                    class="btn btn-outline-warning font-size-header"
+                    data-aos-duration="3000"
+                    data-aos="fade-right"
+                    href="/basketball-pwa"
+                    target="_blank"
+                  >
+                    Kup grę
+                  </a>
+              </ng-template>
                 <a href="#" class="btn btn-primary font-size-header">Go UP</a>
               </div>
             </div>
