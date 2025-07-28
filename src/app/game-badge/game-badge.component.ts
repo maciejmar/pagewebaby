@@ -99,5 +99,4 @@ export class GameBadgeComponent implements OnInit {
     ]
   }
    random_boolean = Math.random() < 0.5;
-
 }
