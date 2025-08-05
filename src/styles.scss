@@ -25,13 +25,17 @@ html,body {
   //  @if $isToDisplay == true {
   //   background: linear-gradient(rgba(0, 0, 0, 0.90), rgba(10, 1, 104, 0.9),rgba(105, 92, 189, 0.1) )//$background-img;
   //  }
-   cursor: url('./assets/cursorSword4.png'), auto;
-   font-size:9px;
-
+   //for Cursor Sword uncomment
+   //cursor: url('./assets/cursorSword4.png'), auto;
+   color:rgb(125, 125, 209);
+   font-size:9px;  //9px originally
+   //for Cursor Sword uncomment
    //cursor: url('./assets/frog-face-cursor.png'), pointer auto;
 
 }
  app-root {
   background:$base-black;
-  cursor: url('./assets/cursorSword4.png') !important;
+  color:rgb(125, 125, 209);
+  //for Cursor-Sword uncomment
+  //cursor: url('./assets/cursorSword4.png') !important;
 }

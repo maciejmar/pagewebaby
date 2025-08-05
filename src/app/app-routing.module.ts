@@ -21,7 +21,7 @@ const routes: Routes = [
     { path: 'privacy-policy-system-of-equations', component: PrivacyPolicyEquationsComponent },
     { path: 'basketball-shots', component: BasketballShotsComponent },
     { path: 'logo', component: IntroComponent },
-    { path: 'games', component: GameComponent },
+    { path: 'game', component: GameComponent },
     { path: 'abecadlowo', component: AppComponent },
     //{ path: 'app-ads.txt', component:AppComponent},
     { path: '**', component: PagenotfoundComponent },
