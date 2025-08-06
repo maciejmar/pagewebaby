@@ -6,10 +6,12 @@ import { MainComponent } from './main/main.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { GameComponent } from './game/game.component';
 import { BasketballShotsComponent } from './basketball-shots/basketball-shots.component';
+import { BasketballPwaComponent } from './basketball-pwa/basketball-pwa.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { PolicyPrivacyEnComponent } from './policy-privacy-en/policy-privacy-en.component';
 import { PrivacyPolicyBasketballComponent } from './privacy-policy-basketball/privacy-policy-basketball.component';
 import { PrivacyPolicyEquationsComponent } from './privacy-policy-equations/privacy-policy-equations.component';
+
 
 const routes: Routes = [
     //{ path: '', redirectTo: '/', pathMatch: 'full' },
@@ -23,6 +25,7 @@ const routes: Routes = [
     { path: 'logo', component: IntroComponent },
     { path: 'game', component: GameComponent },
     { path: 'abecadlowo', component: AppComponent },
+    { path: 'basketball-pwa', component: BasketballPwaComponent },
     //{ path: 'app-ads.txt', component:AppComponent},
     { path: '**', component: PagenotfoundComponent },
     

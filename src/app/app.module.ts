@@ -24,6 +24,7 @@ import { AppAdsComponent } from './app-ads/app-ads.component';
 import { BasketballShotsComponent } from './basketball-shots/basketball-shots.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { BasketballPwaComponent } from './basketball-pwa/basketball-pwa.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { environment } from '../environments/environment';
     PrivacyPolicyEquationsComponent,
     AppAdsComponent,
     BasketballShotsComponent,
+    BasketballPwaComponent,
   ],
   imports: [
     BrowserModule,
