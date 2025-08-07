@@ -25,7 +25,6 @@ const routes: Routes = [
     { path: 'logo', component: IntroComponent },
     { path: 'game', component: GameComponent },
     { path: 'abecadlowo', component: AppComponent },
-    { path: 'basketball-pwa', component: BasketballPwaComponent },
     //{ path: 'app-ads.txt', component:AppComponent},
     { path: '**', component: PagenotfoundComponent },
     
