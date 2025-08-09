@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class BasketballPwaComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit(): void {
   }
 
