@@ -1,58 +1,53 @@
 name: pagewebaby runner
 on:
-
   schedule:
     - cron: '0 8,20 * * *'
   push:
     branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: self-hosted
     timeout-minutes: 602
-
     strategy:
       fail-fast: false
       matrix:
         node-version: [16.x]
 
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    #- run: kill -9 `lsof -w -n -i tcp:4204 | awk '$2!="PID" {print $2;}'`    
-    - run: npm ci
+      - uses: actions/checkout@v3
 
-    # Building the app in production mode
-    - name: Build Angular App for Production
-      run: npm run build -- --prod
-      
-    # Printing current directory  
-    - name: Print Current Directory
-      run: pwd
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-    # Setup SSH key and known hosts for secure deployment
-    - name: Setup SSH Key
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.NEW_PUB_KEY }}" > ~/.ssh/id_rsa.pub
-        chmod 600 ~/.ssh/id_rsa.pub
-        ssh-keyscan -Hv ${{ secrets.OVH_VPS_IP }} >> ~/.ssh/known_hosts 
+      - name: Install deps
+        run: npm ci
 
-    # Deploy the built application to the server
-    - name: Deploy to Server
-      run: |
-            scp -r ./dist/* ubuntu@${{ secrets.OVH_VPS_IP }}:/home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/
-      #env:
-      # SSH_PRIVATE_KEY: 
+      # Twój build – zostawiasz jak jest (bo tworzy też dist/pagewebaby/basketball-pwa/)
+      - name: Build Angular App for Production
+        run: npm run build -- --prod
 
-    # Optional: Restart Nginx to pick up new changes
-    - name: Restart Nginx
-      run:  ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.OVH_VPS_IP }} << 'EOF'
-    - run:  sudo systemctl restart nginx
-    - run:  npm run pm2-check
-    - run:  npm run pm2-restart
+      # (opcjonalnie) pokaż, że PWA jest w dist/
+      - name: Show PWA build
+        run: ls -lah dist/pagewebaby/basketball-pwa || true
+
+      # ► DEPLOY LOKALNY zamiast scp
+      - name: Deploy dist/ to Nginx docroot
+        run: |
+          rsync -az --delete ./dist/ \
+            /home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/
+
+      # ► Poprawny reload Nginx
+      - name: Reload Nginx
+        run: sudo nginx -t && sudo systemctl reload nginx
+
+      # (opcjonalnie) szybka weryfikacja po stronie serwera
+      - name: Verify deployed files
+        run: |
+          ls -lah /home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/pagewebaby | head -n 50
+          echo "---- /basketball-pwa ----"
+          ls -lah /home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/pagewebaby/basketball-pwa | head -n 50
