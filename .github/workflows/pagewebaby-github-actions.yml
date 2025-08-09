@@ -14,62 +14,60 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x]
+        node-version: [20.x]   # <── Angular CLI wymaga ≥ 18.13, dajemy 20.x
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
+      - run: node -v && npm -v
+
+      # ─── Build strony (root)
       - name: Install deps (site)
         run: npm ci
 
       - name: Build site (production)
         run: npx ng build --configuration production --base-href / --deploy-url /
 
-      # ───────── PWA z drugiego repo ─────────
-      - name: Checkout PWA repo
-        uses: actions/checkout@v4
-        with:
-          repository: maciejmar/basketball-game
-          path: pwa
-
+      # ─── Build PWA (podfolder: basketball-pwa/)
       - name: Install deps (PWA)
-        working-directory: pwa
+        working-directory: basketball-pwa
         run: npm ci
 
       - name: Build PWA (production)
-        working-directory: pwa
+        working-directory: basketball-pwa
         run: npx ng build --configuration production --base-href /basketball-pwa/ --deploy-url /basketball-pwa/
 
+      # Wyciągnij folder wyjściowy PWA (Angular 16/17 czasem daje .../browser)
       - name: Find PWA build dir
         id: pwadir
         shell: bash
         run: |
-          if compgen -G "pwa/dist/*/browser/basketball-pwa" > /dev/null; then
-            echo "dir=$(ls -d pwa/dist/*/browser/basketball-pwa)" >> $GITHUB_OUTPUT
-          elif compgen -G "pwa/dist/*/basketball-pwa" > /dev/null; then
-            echo "dir=$(ls -d pwa/dist/*/basketball-pwa)" >> $GITHUB_OUTPUT
+          cd basketball-pwa
+          if compgen -G "dist/*/browser" > /dev/null; then
+            echo "dir=$(ls -d dist/*/browser)" >> $GITHUB_OUTPUT
           else
-            echo "PWA build not found"; exit 1
+            echo "dir=$(ls -d dist/*)" >> $GITHUB_OUTPUT
           fi
 
+      # Włóż PWA do dist/pagewebaby/basketball-pwa/
       - name: Put PWA into site's dist
         run: |
           mkdir -p dist/pagewebaby/basketball-pwa
           rsync -a --delete "${{ steps.pwadir.outputs.dir }}/" dist/pagewebaby/basketball-pwa/
 
-      # ───────── Deploy ─────────
-      - name: Deploy dist/ to server docroot parent
+      # ─── Deploy lokalny (runner = ten sam serwer)
+      - name: Deploy dist/ to Nginx docroot parent
         shell: bash
         run: |
           rsync -az --delete ./dist/ \
             /home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/ || EXIT=$?
-          # rsync czasem zwraca 24 (vanished) – nie traktuj jako błąd
+          # toleruj rsync code 24 (vanished)
           if [ "${EXIT:-0}" != "0" ] && [ "$EXIT" != "24" ]; then exit "$EXIT"; fi
 
       - name: Reload Nginx
