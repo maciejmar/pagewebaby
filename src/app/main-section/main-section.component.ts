@@ -23,6 +23,9 @@ export class MainSectionComponent implements AfterViewInit  {
   showElement = true;
   @Output() introEnded= new EventEmitter<boolean>();
 
+ 
+
+
   showVideo: boolean = false;
   videoHasEnded: boolean = true;
   animationState: string = 'out';

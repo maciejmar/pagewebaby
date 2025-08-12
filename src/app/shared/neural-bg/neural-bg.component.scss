@@ -1,0 +1,10 @@
+:host {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.bg-canvas {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+}

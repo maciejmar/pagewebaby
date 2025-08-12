@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ResizeFontDirective } from './../resize-font.directive'; // Adjust the import path as needed
+import { ResizeFontDirective } from './../resize-font.directive';
+
 
 @NgModule({
   declarations: [ResizeFontDirective],

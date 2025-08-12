@@ -1,9 +1,10 @@
 
+<div class="main-section-container">
+  <app-neural-bg></app-neural-bg>
+  <div class="main-section-content">
 
 <div class="main-section" data-aos="fade-up">
   <div class="logo-motto-container" [class.fade-in]="videoHasEnded" >
-
-
 
 <!--here neon logo-->
   <!-- <div *ngIf="!showVideo" data-aos="fade-up" data-aos-duration="3000" class="divImg-1 glow-logo" (click)="playVideo()">
@@ -17,16 +18,74 @@
     <ng-container *ngTemplateOutlet="showElement ? logoWhite : logoBlack"></ng-container>
   </div> -->
 
+
+
   <!-- Video displayed only when showVideo is true -->
-  <div class="logo-light-container">
-  <div class="light-inside"></div>
-</div>
+  <!--<div class="logo-light-container">  -->
+  <!-- <div class="light-inside"></div>
+</div> -->
+
+
+
+
+
+  <div class="logo-edge-run">
+    <!-- jeśli chcesz tło PNG pod spodem -->
+     <img class="logo-img" style="opacity: 0.1" src="assets/wbbaby24white2.png" alt="logo"> 
+
+    <svg class="logo-orb"
+        viewBox="0 0 595.28 841.89"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+      <defs>
+        <!-- niewidoczna trasa: Twój obrys -->
+        <path id="edge" d="M364.54,409.57c0,0-0.8,6.78-5.97,6.78h-57.78v61.09c0,5.36-6.77,6.19-6.77,6.19s-24.23,0.09-29.59,0c-5.04-0.07-5.7-5.91-5.7-5.91v-8.78c0,0-18.8,0.47-20.58-1.29c-2.79-2.74-2.41-7.11-2.41-7.11l-0.15-55.13c0-4.99,4.16-6.31,4.16-6.31s3.55-0.78,7.13-0.37c4.21,0.47,5.79,4.71,5.79,4.71l-0.4,48.34l6.89,0.24c0,0-0.16-39.34-0.25-46.36c-0.08-6.5,5.88-6.75,5.88-6.75s0.62-0.28,5.7-0.09c5.07,0.18,6.06,6,6.06,6s-0.09,54.68-0.09,60.52c0,0.28,6.51,0,6.51,0s-0.16-31.66-0.22-49.16c-0.02-5.98-0.03-10.3-0.01-11.15c0.06-3.6,2.13-5.46,3.58-6.31c0.7-0.26,1.49-0.41,2.41-0.43c0.87-0.01,5.54,0,11.88,0.01c17.08,0.07,46.29,0.22,46.29,0.22s0.27-6.5,0-6.5c-5.63,0-58.37,0.09-58.37,0.09s-5.61-0.99-5.79-6.06c-0.18-5.08,0.09-5.7,0.09-5.7s0.25-5.97,6.51-5.88c6.77,0.08,43.48,0.17,43.48,0.17l0.09-6.77l-45.71,0.36c0,0-4.09-1.58-4.55-5.79c-0.39-3.59,0.36-7.13,0.36-7.13s1.27-4.17,6.09-4.17l53.17,0.16c0,0,4.21-0.38,6.86,2.4c1.69,1.79,1.25,20.59,1.25,20.59h8.46c0,0,5.63,0.66,5.7,5.7C364.62,385.34,364.54,409.57,364.54,409.57z"
+              fill="none" stroke="none" />
+
+        <!-- maska: pokazuj światło tylko w pasie przy krawędzi -->
+        <mask id="edgeMask">
+          <rect width="100%" height="100%" fill="black"/>
+          <use href="#edge" xlink:href="#edge"
+              fill="none" stroke="white"
+              stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+        </mask>
+
+        <!-- glow -->
+        <filter id="halo" x="-150%" y="-150%" width="400%" height="400%">
+          <feGaussianBlur stdDeviation="12"/>
+        </filter>
+        <radialGradient id="hotspot" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"  stop-color="#fff" stop-opacity="1"/>
+          <stop offset="60%" stop-color="#fff" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- kula światła (rdzeń + halo) jadąca po obrysie -->
+      <g mask="url(#edgeMask)">
+        <circle r="22" fill="url(#hotspot)" filter="url(#halo)">
+          <animateMotion dur="8s" rotate="auto" repeatCount="indefinite">
+            <mpath href="#edge" xlink:href="#edge"/>
+          </animateMotion>
+        </circle>
+        <circle r="7" fill="#fff">
+          <animateMotion dur="8s" rotate="auto" repeatCount="indefinite">
+            <mpath href="#edge" xlink:href="#edge"/>
+          </animateMotion>
+        </circle>
+      </g>
+    </svg>
+  </div>
+
+
+
 
     <!--Campaign motto showing letter by letter - Enter into the game-->
     <!-- <div>
       <app-campaign-motto></app-campaign-motto>
     </div>    -->
-  </div>
+  </div>l
   <br><br>
   <div class="game-badges">
     <app-game-badge></app-game-badge>
@@ -39,13 +98,13 @@
 </div>
 
 
-<ng-template #logoBlack>
-  <img src="./../../assets/wbbaby24b-2.png" alt="Company Logo" class="img_fit sand-effect" />
+<!-- <ng-template #logoBlack>
+  <img src="./../../assets/wbbaby24b-2.png" alt="Company Logo" class="img_fit sand-effect img-glow" />
 </ng-template>
 
 <ng-template #logoWhite>
-  <img src="./../../assets/wbbaby24b-2.png" alt="Company2 Logo" class="img_fit sand-effect" />
-</ng-template>
+  <img src="./../../assets/wbbaby24b-2.png" alt="Company2 Logo" class="img_fit sand-effect img-glow" />
+</ng-template> -->
 
 
 

@@ -25,7 +25,7 @@ import { BasketballShotsComponent } from './basketball-shots/basketball-shots.co
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BasketballPwaComponent } from './basketball-pwa/basketball-pwa.component';
-
+import { NeuralBgComponent } from './shared/neural-bg/neural-bg.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +49,7 @@ import { BasketballPwaComponent } from './basketball-pwa/basketball-pwa.componen
     AppAdsComponent,
     BasketballShotsComponent,
     BasketballPwaComponent,
+    NeuralBgComponent
   ],
   imports: [
     BrowserModule,
