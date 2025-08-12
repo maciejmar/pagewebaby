@@ -15,6 +15,9 @@ import * as THREE from 'three';
   template: '',            // nic nie renderujemy w drzewie aplikacji
 })
 export class NeuralBgComponent implements AfterViewInit, OnDestroy {
+
+  
+  
   private containerEl!: HTMLElement;   // <div> w <body>, fixed, pointer-events:none
   private renderer!: THREE.WebGLRenderer;
   private scene!: THREE.Scene;
@@ -113,14 +116,15 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
   // ---------- helpers ----------
 
   private applyContainerStyles(el: HTMLElement) {
-    // pełny ekran, pod aplikacją, bez przechwytywania klików
-    el.style.position = 'fixed';
-    el.style.inset = '0';
-    el.style.pointerEvents = 'none';
-    el.style.background = 'transparent';
-    // z-index celowo nie ustawiamy: ponieważ kontener wstawiamy PRZED app-root,
-    // cała aplikacja będzie nad nim bez dotykania Twoich z-indexów/layoutu.
-  }
+  el.style.position = 'fixed';
+  el.style.left = '0';
+  el.style.top = '0';
+  el.style.width = '100vw';   // ⬅️ gwarancja pełnej szerokości
+  el.style.height = '100vh';  // ⬅️ pełna wysokość
+  el.style.pointerEvents = 'none';
+  el.style.background = 'transparent';
+  el.style.zIndex = '0';      // nadal pod appką (app-root i tak będzie wyżej)
+}
 
   private initThree(mount: HTMLElement) {
     const scene = new THREE.Scene();
@@ -136,13 +140,12 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
   }
 
   private computeNodeCount(): number {
-    // skalujemy gęstość względem 1280x720
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const base = 180;
-    const scale = Math.sqrt((w * h) / (1280 * 720));
-    return Math.max(120, Math.min(420, Math.floor(base * scale)));
-  }
+  const w = this.containerEl?.clientWidth || window.innerWidth;
+  const h = this.containerEl?.clientHeight || window.innerHeight;
+  const base = 260; // było ~180 – teraz gęściej
+  const scale = Math.sqrt((w * h) / (1280 * 720));
+  return Math.max(180, Math.min(600, Math.floor(base * scale)));
+}
 
   private initGeometry(count: number, bounds: number) {
     const geo = new THREE.BufferGeometry();
@@ -181,6 +184,7 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
       { size: 0.18, opacity: 0.35 },
       { size: 0.24, opacity: 0.5 },
       { size: 0.34, opacity: 0.75 },
+      { size: 0.52, opacity: 0.55 }, 
     ];
 
     this.pointsLayers = layerSettings.map(({ size, opacity }) => {
@@ -191,9 +195,12 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
         opacity,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
-        color: new THREE.Color(0x00ffff),
-        sizeAttenuation: true,
-      });
+      color: new THREE.Color(0x7ae7ff), // delikatniejszy, bardziej „glow”
+      sizeAttenuation: true,
+    });
+
+      
+
       const pts = new THREE.Points(geo, mat);
       this.scene!.add(pts);
       return pts;
@@ -259,11 +266,11 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
   }
 
   private onResize() {
-    if (!this.renderer || !this.camera || !this.containerEl) return;
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    this.camera.aspect = w / h;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(w, h, false);
-  }
+  if (!this.renderer || !this.camera || !this.containerEl) return;
+  const w = this.containerEl.clientWidth;
+  const h = this.containerEl.clientHeight;
+  this.camera.aspect = w / h;
+  this.camera.updateProjectionMatrix();
+  this.renderer.setSize(w, h, false);
+}
 }
