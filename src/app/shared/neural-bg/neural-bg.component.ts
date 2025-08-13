@@ -1,6 +1,10 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy } from '@angular/core';
 import * as THREE from 'three';
 
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+
 @Component({
   selector: 'app-neural-bg',
   template: '',
@@ -15,11 +19,28 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
   private lines!: THREE.LineSegments;
   private animationId: any;
 
+  private basePositions!: Float32Array;  // niezmienne anchor’y
+  private phases!: Float32Array;         // losowa faza dla każdego punktu
+  private speeds!: Float32Array;         // losowa prędkość „kołysania” dla każdego punktu
+
   // parametry
-  private BOUNDS = 28;
-  private LINK_DISTANCE = 4.5;
-  private LINE_OPACITY = 0.25;
-  private WIND = 0.0025;
+  // private BOUNDS = 28;
+  // private LINK_DISTANCE = 4.5;
+  // private LINE_OPACITY = 0.25;
+  // private WIND = 0.0025;
+  private BOUNDS = 28;          // i tak będzie nadpisywane przez recomputeBoundsToFill()
+  
+  
+  private WIND = 0.018;         // było 0.0025 → realny ruch
+  
+
+  private LINK_DISTANCE = 10.0;      // było np. 6.0
+  private MAX_LINKS_PER_NODE = 66;  // było 6
+  private MIN_LINKS_PER_NODE = 5;   // nowość: gwarantujemy min. gęstość
+  private LINE_OPACITY = 0.07;      // ciut mocniej, żeby linki były widoczne
+  private TIME_SCALE = 0.55;   // ⬅️ mniejsza wartość = wolniej (np. 0.4–0.7)
+  private _time = 0;
+  private _last = 0;
 
   ngAfterViewInit() {
     this.createContainer();
@@ -33,11 +54,18 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
     if (this.animationId) cancelAnimationFrame(this.animationId);
   }
 
-  private createContainer() {
-    this.containerEl = document.createElement('div');
-    this.applyContainerStyles(this.containerEl);
+ private createContainer() {
+  this.containerEl = document.createElement('div');
+  this.applyContainerStyles(this.containerEl);
+
+  // ZAMIAST appendChild:
+  const first = document.body.firstChild;
+  if (first) {
+    document.body.insertBefore(this.containerEl, first); // ⬅️ pod całą appką
+  } else {
     document.body.appendChild(this.containerEl);
   }
+}
 
   private applyContainerStyles(el: HTMLElement) {
     el.style.position = 'fixed';
@@ -47,6 +75,7 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
     el.style.height = '100vh';
     el.style.pointerEvents = 'none';
     el.style.background = 'transparent';
+    el.style.zIndex = '0'; 
   }
 
   private initScene() {
@@ -66,28 +95,44 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
     this.containerEl.appendChild(canvas);
 
     this.recomputeBoundsToFill();
-
+//
     const nodeCount = this.computeNodeCount();
     const positions = new Float32Array(nodeCount * 3);
     for (let i = 0; i < nodeCount; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * this.BOUNDS;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * this.BOUNDS;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * this.BOUNDS;
+      const i3 = i * 3;
+      positions[i3]     = (Math.random() - 0.5) * this.BOUNDS;
+      positions[i3 + 1] = (Math.random() - 0.5) * this.BOUNDS;
+      positions[i3 + 2] = (Math.random() - 0.5) * this.BOUNDS;
     }
+    this.basePositions = positions.slice();                 // ⬅️ zapamiętujemy anchor’y
+    this.phases  = new Float32Array(nodeCount).map(() => Math.random() * Math.PI * 2);
+    this.speeds  = new Float32Array(nodeCount).map(() => 0.6 + Math.random() * 0.8); // 0.6–1.4
+
     this.nodeGeometry = new THREE.BufferGeometry();
     this.nodeGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+//
+
+    // const nodeCount = this.computeNodeCount();
+    // const positions = new Float32Array(nodeCount * 3);
+    // for (let i = 0; i < nodeCount; i++) {
+    //   positions[i * 3] = (Math.random() - 0.5) * this.BOUNDS;
+    //   positions[i * 3 + 1] = (Math.random() - 0.5) * this.BOUNDS;
+    //   positions[i * 3 + 2] = (Math.random() - 0.5) * this.BOUNDS;
+    // }
+    // this.nodeGeometry = new THREE.BufferGeometry();
+    // this.nodeGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
     this.initLayersWithGlow(this.nodeGeometry);
     this.initLines();
   }
 
   private computeNodeCount(): number {
-    const w = this.containerEl?.clientWidth || window.innerWidth;
-    const h = this.containerEl?.clientHeight || window.innerHeight;
-    const base = 260;
-    const scale = Math.sqrt((w * h) / (1280 * 720));
-    return Math.max(200, Math.min(650, Math.floor(base * scale)));
-  }
+  const w = this.containerEl?.clientWidth || window.innerWidth;
+  const h = this.containerEl?.clientHeight || window.innerHeight;
+  const base = 340; // było 260
+  const scale = Math.sqrt((w * h) / (1280 * 720));
+  return Math.max(260, Math.min(800, Math.floor(base * scale)));
+}
 
   private recomputeBoundsToFill() {
     const halfH = Math.tan(THREE.MathUtils.degToRad(this.camera!.fov * 0.5)) * this.camera!.position.z;
@@ -156,38 +201,79 @@ export class NeuralBgComponent implements AfterViewInit, OnDestroy {
     return new THREE.CanvasTexture(canvas);
   }
 
-  private animate = () => {
-    this.animationId = requestAnimationFrame(this.animate);
+ private animate = () => {
+  this.animationId = requestAnimationFrame(this.animate);
 
-    const posAttr = this.nodeGeometry.attributes['position'] as THREE.BufferAttribute;
-    const lpArray = (this.lines.geometry.attributes['position'] as THREE.BufferAttribute)?.array as Float32Array;
+  const now = performance.now();
+  if (!this._last) this._last = now;
+  const dt = (now - this._last) / 2000;  //time parameter 2000
+  this._last = now;
 
-    for (let i = 0; i < posAttr.count; i++) {
-      posAttr.array[i * 3] += (Math.random() - 0.5) * this.WIND;
-      posAttr.array[i * 3 + 1] += (Math.random() - 0.5) * this.WIND;
-      posAttr.array[i * 3 + 2] += (Math.random() - 0.5) * this.WIND;
-    }
-    posAttr.needsUpdate = true;
+  this._time += dt * this.TIME_SCALE;  // ⬅️ regulator prędkości
+  const t = this._time;
+  const posAttr = this.nodeGeometry.attributes['position'] as THREE.BufferAttribute;
+  const posArr = posAttr.array as Float32Array;
+  const base = this.basePositions;
+  const n = posAttr.count;
 
-    const positions = posAttr.array as Float32Array;
-    const links: number[] = [];
-    for (let i = 0; i < posAttr.count; i++) {
-      for (let j = i + 1; j < posAttr.count; j++) {
-        const dx = positions[i * 3] - positions[j * 3];
-        const dy = positions[i * 3 + 1] - positions[j * 3 + 1];
-        const dz = positions[i * 3 + 2] - positions[j * 3 + 2];
-        const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
-        if (dist < this.LINK_DISTANCE) {
-          links.push(positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2]);
-          links.push(positions[j * 3], positions[j * 3 + 1], positions[j * 3 + 2]);
+  // amplitudy fal – proporcjonalne do rozmiaru sceny
+  const ampX = this.BOUNDS * 0.018;
+  const ampY = this.BOUNDS * 0.022;
+  const ampZ = this.BOUNDS * 0.014;
+
+  // płynny globalny dryf (bardzo delikatny)
+  const driftX = Math.sin(t * 0.07) * this.BOUNDS * 0.0025;
+  const driftY = Math.cos(t * 0.05) * this.BOUNDS * 0.0025;
+  const driftZ = Math.sin(t * 0.06) * this.BOUNDS * 0.0020;
+
+  for (let i = 0; i < n; i++) {
+    const i3 = i * 3;
+    const ph = this.phases[i];
+    const sp = this.speeds[i];
+
+    // 3 niezależne harmoniczne + dryf
+    posArr[i3]     = base[i3]     + Math.sin(t * (0.9 * sp) + ph + i * 0.11) * ampX + driftX;
+    posArr[i3 + 1] = base[i3 + 1] + Math.cos(t * (1.1 * sp) + ph + i * 0.07) * ampY + driftY;
+    posArr[i3 + 2] = base[i3 + 2] + Math.sin(t * (0.7 * sp) + ph + i * 0.05) * ampZ + driftZ;
+  }
+  posAttr.needsUpdate = true;
+
+  // —— połączenia: promień + limit na węzeł ——
+  const links: number[] = [];
+  const linkCount = new Uint16Array(n); // ile połączeń ma już dany węzeł
+  const maxPerNode = this.MAX_LINKS_PER_NODE;
+  const maxDist = this.LINK_DISTANCE;
+
+  for (let i = 0; i < n; i++) {
+    const ax = posArr[i * 3], ay = posArr[i * 3 + 1], az = posArr[i * 3 + 2];
+    if (linkCount[i] >= maxPerNode) continue;
+
+    for (let j = i + 1; j < n; j++) {
+      if (linkCount[i] >= maxPerNode && linkCount[j] >= maxPerNode) continue;
+
+      const bx = posArr[j * 3], by = posArr[j * 3 + 1], bz = posArr[j * 3 + 2];
+      const dx = ax - bx, dy = ay - by, dz = az - bz;
+      const dist = Math.hypot(dx, dy, dz);
+
+      if (dist < maxDist) {
+        // dodajemy krawędź, jeśli któryś z węzłów ma jeszcze „slot”
+        if (linkCount[i] < maxPerNode || linkCount[j] < maxPerNode) {
+          links.push(ax, ay, az, bx, by, bz);
+          if (linkCount[i] < maxPerNode) linkCount[i]++;
+          if (linkCount[j] < maxPerNode) linkCount[j]++;
         }
       }
     }
-    this.lines.geometry.setAttribute('position', new THREE.Float32BufferAttribute(links, 3));
-    this.lines.geometry.computeBoundingSphere();
+  }
 
-    this.renderer.render(this.scene, this.camera);
-  };
+  this.lines.geometry.setAttribute('position', new THREE.Float32BufferAttribute(links, 3));
+  (this.lines.geometry.attributes['position'] as THREE.BufferAttribute).needsUpdate = true;
+
+  // lekki oddech sceny, ale bardzo subtelny
+  this.scene.rotation.y = Math.sin(t * 0.05) * 0.12;
+
+  this.renderer.render(this.scene, this.camera);
+};
 
   private onResize = () => {
     if (!this.renderer || !this.camera || !this.containerEl) return;

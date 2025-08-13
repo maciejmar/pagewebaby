@@ -2,9 +2,6 @@
   <div class="container">
     <div class="spaceBetweenBlockAndIcons"></div>
 
-    <!-- <div class="icons-container">
-      <div *ngFor="let icon of icons"> <div class="ibi"> <i [ngClass]="icon"></i></div></div>
-    </div> -->
     <div class="icons-container">
       <div *ngFor="let icon of icons">
         <a [href]="icon.url" target="_blank" rel="noopener noreferrer" class="ibi">
@@ -16,10 +13,6 @@
     <div class="policy_privacy" (click)="togglePrivacyPolicyModal()">Privacy Policy</div>
     <app-privacy-policy [showModal]="showModal" [language_pl]="language_pl"></app-privacy-policy>
 
-
-       
-
-    
 
     <div class="block">
       <div>© 2023 Webaby Gaming Company</div>
@@ -56,7 +49,7 @@
       <ng-container data-aos="fade-left" data-aos-duration="3000" *ngTemplateOutlet="falseCondition; context: {content: mainContentTemplate}"></ng-container>
     </ng-template>
 
-    <!-- The rest of your code that remains unchanged regardless of the condition -->
+    
     <div>
       
     </div>

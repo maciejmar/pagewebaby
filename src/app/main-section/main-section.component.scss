@@ -238,12 +238,12 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
   background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0.05) 80%, rgba(0, 0, 0, 0.7) 100%);
   filter: blur(30px);
 
-  mask-image: url('./../../assets/wbbaby24b-2.png');
+  mask-image: url('./../../assets/webaby-svg4.1.svg');
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
 
-  -webkit-mask-image: url('./../../assets/wbbaby24b-2.png');
+  -webkit-mask-image: url('./../../assets/webaby-svg4.1.svg');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
@@ -265,41 +265,9 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
 
 
 
-.logo-pen{
-  position:relative;
-  width:min(70vmin, 560px);
-  aspect-ratio: var(--w) / var(--h); /* 1574 / 1633 */
-  background:#000;
-}
 
-.logo-img{
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit: contain;
-  display:block;
-}
 
-/* ścieżka – ukryta (żeby nie było niebieskiego obrysu) */
-.trace{
-  position:absolute; inset:0; width:100%; height:100%;
-}
-.trace #edge{ fill:none; stroke:transparent; }
 
-/* KULA – CSS Motion Path po tej samej ścieżce (w tej samej skali) */
-.orb{
-  --dur: 8s;
-  position:absolute; left:0; top:0;
-  width:14px; height:14px; border-radius:50%;
-  background: radial-gradient(circle, #fff 0 40%, rgba(255,255,255,.75) 60%, rgba(255,255,255,0) 70%);
-  filter: blur(4px)
-          drop-shadow(0 0 10px #9ee8ff)
-          drop-shadow(0 0 20px #9ee8ff)
-          drop-shadow(0 0 30px #9ee8ff);
 
-  /* UŻYWAMY TEGO SAMEGO 'd' CO W #edge */
-  offset-path: path("");
-  offset-rotate: auto;
-  animation: orb-move var(--dur) linear infinite;
-}
-
-@keyframes orb-move { to { offset-distance: 100%; } }
+.logo-wrap { display:grid; place-items:center; min-height:320px; }
+.logo { width:min(600px,90vw); height:auto; }

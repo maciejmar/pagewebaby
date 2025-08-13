@@ -50,3 +50,15 @@ font-family: $font-base;
 
   transition: background-position 0.05s linear;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+   
+  
+  
+}
+
+.page-content {
+  flex: -1;             /* wypycha footer na dół, gdy treści jest mało */
+}

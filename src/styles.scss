@@ -31,11 +31,18 @@ html,body {
    font-size:9px;  //9px originally
    //for Cursor Sword uncomment
    //cursor: url('./assets/frog-face-cursor.png'), pointer auto;
-
+   height: 100%;
+   margin: 0; 
 }
  app-root {
   background:$base-black;
   color:rgb(125, 125, 209);
+  height: 100%;
+  margin: 0;
   //for Cursor-Sword uncomment
   //cursor: url('./assets/cursorSword4.png') !important;
+}
+canvas.bg{
+  height:100%;
+  margin:0;
 }

@@ -7,11 +7,17 @@
   <div class="logo-motto-container" [class.fade-in]="videoHasEnded" >
 
 <!--here neon logo-->
-  <div *ngIf="!showVideo" data-aos="fade-up" data-aos-duration="3000" class="divImg-1 glow-logo" (click)="playVideo()">
+  <!-- <div *ngIf="!showVideo" data-aos="fade-up" data-aos-duration="3000" class="divImg-1 glow-logo" (click)="playVideo()">
     <div data-aos="zoom-out-right" data-aos-duration="9000" class="logo" *ngIf="!showVideo">
       <ng-container *ngTemplateOutlet="showElement ? logoBlack : logoWhite"></ng-container>
     </div>
-  </div>   
+  </div>    -->
+
+
+  
+<div class="logo-wrap">
+  <object data="assets/wbaby-vector-2.svg" type="image/svg+xml" class="logo"></object>
+</div>
 
 
   <!-- <div *ngIf="!showVideo" (click)="playVideo()">

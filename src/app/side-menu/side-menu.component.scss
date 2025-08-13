@@ -41,10 +41,14 @@ ul {
   letter-spacing: 0.09em;
   display:flex;
   gap:4%;
-  background-color:rgba($color: #301f07, $alpha: 0.4)
+  background-color:rgba($color: #301f07, $alpha: 0.4);
 }
 
- 
+.bound{
+   background-color:rgba($color: #301f07, $alpha: 0.4);
+   font-size:2.5em;
+   font-weight: 500;
+} 
   
 
 .awrap:hover {

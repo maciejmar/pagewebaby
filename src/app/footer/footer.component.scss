@@ -6,13 +6,13 @@ body, html {
 
 .footer{
   background-color: $base-black;
-  color:rgb(219, 216, 168);
+  color:rgb(102, 101, 82);
   height: 10%;
   width:100%;
   font-size:2rem;
 
   &.default-bg {
-    background-color: #333 !important; // default color
+    background-color: #333 !important; // default color , i changed from #333 to black
   }
 
   &.alternate-bg {
@@ -59,7 +59,7 @@ body, html {
 }
 
 .ibi{
-  color: rgba(226, 112, 6, 0.45);
+  color: rgba(204, 153, 104, 0.45);
 }
 
 .ibi:hover{
