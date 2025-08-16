@@ -66,7 +66,8 @@ section .air.air4{
 
 .bird {
   color:rgb(240, 232, 234);
-   font-style:Roboto;
+   
+   //font-family:'Port Lligat Sans', sans-serif;
     font-size:7em;
     margin-top:0;
     z-index:999;
@@ -80,7 +81,7 @@ section .air.air4{
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #000;
 }
 
@@ -92,6 +93,7 @@ body {
   align-items:flex-start;
   font-size: 2vw;
   font-family:'Roboto', sans-serif;
+  //font-family:'Port Lligat Sans', sans-serif;
   letter-spacing: -1rem;
   font-weight:600;
 }

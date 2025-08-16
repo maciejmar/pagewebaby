@@ -1,5 +1,5 @@
 @import './_animations.scss';
-@import './../../styles.scss';
+@import './../../variables.scss';
 
 body{
   background-color: black !important;
@@ -7,11 +7,14 @@ body{
 .text {
   @extend .colorwave;
   font-family: 'Roboto', sans-serif;
+  //font-family:'Port Lligat Sans', sans-serif;
+  
   font-size:0.5em;
 }
 
 .btn-colorchange {
   font-family: 'Roboto', sans-serif;
+  //font-family:'Port Lligat Sans', sans-serif;
   letter-spacing: -0.09em;
   font-size: 0.5em;
   animation: color-change 3s infinite;
@@ -31,6 +34,7 @@ body{
 
 body {
   font-family: 'Roboto', sans-serif;
+  //font-family:'Port Lligat Sans', sans-serif;
   font-size:2em;
   letter-spacing: 0.5em;
   background-color: $base-black !important;
@@ -49,12 +53,13 @@ body {
 .campaign_motto{
   font-size:50%;
   font-family: 'Roboto', sans-serif;
+  //font-family:'Port Lligat Sans', sans-serif;
   letter-spacing: -0.09em;
 }
 
 
 .neon {
-  font: 700 4em 'Roboto', sans-serif;
+  font: 700 4em 'Roboto' , sans-serif;
   text-align: center;
   margin: 0;
   

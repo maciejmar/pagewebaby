@@ -1,4 +1,4 @@
-@import './../../styles.scss';
+@import './../../variables.scss';
 
 body,html {
   background-color: $base-black !important;
@@ -134,8 +134,7 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
   max-width:4.2em;
   font-size:4em;
   
-  
-  font-family:'Roboto',sans-serif;
+  //font-family: 'Port Lligat Sans', sans-serif;
   // border: solid 2px #fff;
   // box-shadow:
   //   inset 60px 0 120px #f0f,  /* left magenta */
@@ -265,9 +264,65 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
 
 
 
+.logo-wrap { display:grid; place-items:center; transform: translateY(-10%);  }
+.logo { width:min(70vh); height:auto;  }
 
+.logotype{
+  // display:flex;
+  // flex-direction: row;
+  // justify-content: flex-start;
+  // left:0;
 
+  display: flex;
+  flex-direction: row; /* logo nad drugim SVG */
+  justify-content:flex-start; /* wyśrodkuj pionowo */
+  align-items: center;     /* wyśrodkuj poziomo */
+  // height: 50vh;           /* pełna wysokość okna przeglądarki */
+  gap: 10em;     /* odstęp między logo a drugim SVG */
+  top:-50vh;
+  
+}
+.enterInto{
+  margin-top:0%;
+  margin-left:-15%;
+}
 
+// //---------
+// .logotype-block {
+//   position: fixed;        // zawsze względem ekranu
+//   //top: 0;
+//   //left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   display: flex;          // centrowanie flex
+//   justify-content: center;
+//   align-items: center;
+//   opacity: 0;             // start ukryte
+//   transition: opacity 1s ease; // fade-in efekt
+//   z-index: 1000;          // ponad innymi elementami
+// }
 
-.logo-wrap { display:grid; place-items:center; min-height:320px; }
-.logo { width:min(600px,90vw); height:auto; }
+// .logotype-block.fade-in {
+//   opacity: 1;
+// }
+
+// .logotype {
+//   display: flex;
+//   flex-direction: column; // logo nad enter
+//   align-items: center;
+// }
+
+// .logo-wrap, .enterInto {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .logo {
+//   width: min(600px, 50vw); // dopasowanie do ekranu
+//   height: auto;
+// }
+
+// .enterInto {
+//   margin-top: 2rem; // odstęp między logo a “Enter”
+// }

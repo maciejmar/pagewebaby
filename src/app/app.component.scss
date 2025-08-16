@@ -1,17 +1,15 @@
-@import './../styles.scss';
+@import "../variables";
 
 body,html{
   background-color: $base-black;
 }
 body {
-  font-family:  $font-base;
+  
   font-size: 2em;
   background-color: $base-black !important;
   //background-image:  linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("./../assets/cover.png") !important;
 }
-button{
-font-family: $font-base;
-}
+
 .spotlight-layer {
   position: fixed;
   top: 0;

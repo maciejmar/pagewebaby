@@ -1,67 +1,67 @@
-
-<div class="image-container">
-   
-    
-    <div class="allOnBackgroundImage" >
-        <div class="game-title" tabindex="0" (mouseover)="showBounce()" (mouseout)="hideBounce()">
-            <div [hidden]="show">Abecadłowo</div>
-            <div [hidden]="!show" class="bounce-container">
-                <div class="bounce">
-                    <span>A</span>
-                    <span>b</span>
-                    <span>e</span>
-                    <span>c</span>
-                    <span>a</span>
-                    <span>d</span>
-                    <span>ł</span>
-                    <span>o</span>
-                    <span>w</span>
-                    <span>o</span>     
+<div class="container-game">
+        <div class="image-container">
+        
+            
+            <div class="allOnBackgroundImage" >
+                <div class="game-title" tabindex="0" (mouseover)="showBounce()" (mouseout)="hideBounce()">
+                    <div [hidden]="show">Abecadłowo</div>
+                    <div [hidden]="!show" class="bounce-container">
+                        <div class="bounce">
+                            <span>A</span>
+                            <span>b</span>
+                            <span>e</span>
+                            <span>c</span>
+                            <span>a</span>
+                            <span>d</span>
+                            <span>ł</span>
+                            <span>o</span>
+                            <span>w</span>
+                            <span>o</span>     
+                        </div>
+                    </div> 
+                    <div class="game-subtitle">Zagubione literki</div>
                 </div>
-            </div> 
-            <div class="game-subtitle">Zagubione literki</div>
-        </div>
-        <!-- <div class="Abecadłowo" *ngFor="let abc of abecadlowo"><ul>{{abc}}</ul></div>   -->
-        <div class="button-container" [@fadeIn]="buttonsState">
-          
-            <button class="transparent-button" (click)="scrollToElement(target)">
-                O grze
-            </button>
-            <button class="transparent-button">
-                <img class="storesIcons" src="./../../assets/icons/appStoreIco.ico"/>
-            </button>
-            <button class=" transparent-button">
-                <img class="storesIcons" src="./../../assets/icons/googlePayIco.ico">
-            </button>
-        </div>
-     
-    </div>
-    
-    <svg [attr.viewBox]="viewBox" preserveAspectRatio="xMidYMid meet" style="width: 100vw; height: auto;">
-        <!-- Mask definition -->
-        <defs>
-            <mask id="revealMask">
-                <rect x="0" y="0" width="100" height="100" fill="white" />
-                <rect x="0" y="0" width="100" [attr.height]="maskHeight" fill="black" />
-            </mask>
-        </defs>
-        <!-- Grayscale image -->
-        <image [attr.href]="grayImage" x="0" y="0" height="100%" width="100%"/>
+                <!-- <div class="Abecadłowo" *ngFor="let abc of abecadlowo"><ul>{{abc}}</ul></div>   -->
+                <div class="button-container" [@fadeIn]="buttonsState">
+                
+                    <button class="transparent-button" (click)="scrollToElement(target)">
+                        O grze
+                    </button>
+                    <button class="transparent-button">
+                        <img class="storesIcons" src="./../../assets/icons/appStoreIco.ico"/>
+                    </button>
+                    <button class=" transparent-button">
+                        <img class="storesIcons" src="./../../assets/icons/googlePayIco.ico">
+                    </button>
+                </div>
+            
+            </div>
+            
+            <svg [attr.viewBox]="viewBox" preserveAspectRatio="xMidYMid meet" style="width: 100vw; height: auto;">
+                <!-- Mask definition -->
+                <defs>
+                    <mask id="revealMask">
+                        <rect x="0" y="0" width="100" height="100" fill="white" />
+                        <rect x="0" y="0" width="100" [attr.height]="maskHeight" fill="black" />
+                    </mask>
+                </defs>
+                <!-- Grayscale image -->
+                <image [attr.href]="grayImage" x="0" y="0" height="100%" width="100%"/>
 
-        <!-- Color image with mask applied -->
-        <image [attr.href]="colorImage" x="0" y="0" height="100%" width="100%" mask="url(#revealMask)"/>
-    </svg>
-    
-</div>
-<div #target class="badges-container">
-    <div *ngFor = "let i of cardTable">
-        <div class="card cardS" [ngClass]="i.bgc" data-aos-duration="3000"  data-aos="fade-up">
-            {{i.name}}
-            <img class="card-img-top" [src]="i.image" alt="Card image cap">
+                <!-- Color image with mask applied -->
+                <image [attr.href]="colorImage" x="0" y="0" height="100%" width="100%" mask="url(#revealMask)"/>
+            </svg>
+            
         </div>
-    </div>
+        <div #target class="badges-container">
+            <div *ngFor = "let i of cardTable">
+                <div class="card cardS" [ngClass]="i.bgc" data-aos-duration="3000"  data-aos="fade-up">
+                    {{i.name}}
+                    <img class="card-img-top" [src]="i.image" alt="Card image cap">
+                </div>
+            </div>
+        </div>
 </div>
-
 <app-smoke></app-smoke>
 <!-- <app-footer></app-footer> -->
  

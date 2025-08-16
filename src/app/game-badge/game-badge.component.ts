@@ -83,7 +83,7 @@ export class GameBadgeComponent implements OnInit {
         createdAt: Date.now()
       },
       {
-        name: "Bubbles word",
+        name: "Bubble word",
         category: [
           "Edukacyjna",
           "Zręcznościowa"

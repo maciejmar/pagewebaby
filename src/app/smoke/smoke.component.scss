@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Finger+Paint');
+
 
 * {
   margin: 0;
@@ -11,7 +11,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   background: black;
-  font-family: "Oswald",sans-serif;
+  font-family: "Roboto",sans-serif;
   font-size:16vw;
 }
 
@@ -33,42 +33,118 @@ html, body {
   backface-visibility: hidden;
 }
 
+// span {
+//   font-size: 10vw;
+//   font-family:'Ropa Sans',sans-serif;
+//   display: inline-block;
+//   text-shadow: 0 0 0 whitesmoke;
+//   animation: smoky 5s 3s both;
+
+//   &:nth-child(even) {
+//     animation-name: smoky-mirror;
+//   }
+
+//   @for $i from 1 through 12 {
+//     &:nth-of-type(#{$i}) {
+//       animation-delay: #{3 + 0.1 * $i}s;
+//     }
+//   }
+// }
+
+// @keyframes smoky {
+//   60% {
+//     text-shadow: 0 0 40px whitesmoke;
+//   }
+//   to {
+//     transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+//     text-shadow: 0 0 20px whitesmoke;
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes smoky-mirror {
+//   60% {
+//     text-shadow: 0 0 40px whitesmoke;
+//   }
+//   to {
+//     transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+//     text-shadow: 0 0 20px whitesmoke;
+//     opacity: 0;
+//   }
+// }
+
+
+
 span {
   font-size: 10vw;
-  font-family:'Oswald',sans-serif;
+  font-family:'Ropa Sans',sans-serif;
   display: inline-block;
   text-shadow: 0 0 0 whitesmoke;
-  animation: smoky 5s 3s both;
+  animation: smokyCycle 20s infinite;
 
   &:nth-child(even) {
-    animation-name: smoky-mirror;
+    animation-name: smokyCycleMirror;
   }
 
   @for $i from 1 through 12 {
     &:nth-of-type(#{$i}) {
-      animation-delay: #{3 + 0.1 * $i}s;
+      animation-delay: #{0.1 * $i}s;
     }
   }
 }
 
-@keyframes smoky {
-  60% {
-    text-shadow: 0 0 40px whitesmoke;
+@keyframes smokyCycle {
+  0% {
+    transform: translate3d(0,0,0) rotate(0) skewX(0) scale(1);
+    opacity: 1;
+    text-shadow: 0 0 0 whitesmoke;
   }
-  to {
+  25% {
     transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
-    text-shadow: 0 0 20px whitesmoke;
     opacity: 0;
+    text-shadow: 0 0 20px whitesmoke;
+  }
+  50% {
+    transform: translate3d(0,0,0) rotate(0) skewX(0) scale(1);
+    opacity: 1;
+    text-shadow: 0 0 0 whitesmoke;
+  }
+  75% {
+    transform: translate3d(0,0,0) rotate(0) skewX(0) scale(1);
+    opacity: 1;
+    text-shadow: 0 0 0 whitesmoke;
+  }
+  100% {
+    transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+    opacity: 0;
+    text-shadow: 0 0 20px whitesmoke;
   }
 }
 
-@keyframes smoky-mirror {
-  60% {
-    text-shadow: 0 0 40px whitesmoke;
+@keyframes smokyCycleMirror {
+  0% {
+    transform: translate3d(0,0,0) rotate(0) skewX(0) scale(1);
+    opacity: 1;
+    text-shadow: 0 0 0 whitesmoke;
   }
-  to {
+  25% {
     transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
-    text-shadow: 0 0 20px whitesmoke;
     opacity: 0;
+    text-shadow: 0 0 20px whitesmoke;
+  }
+  50% {
+    transform: translate3d(0,0,0) rotate(0) skewX(0) scale(1);
+    opacity: 1;
+    text-shadow: 0 0 0 whitesmoke;
+  }
+  75% {
+    transform: translate3d(0,0,0) rotate(0) skewX(0) scale(1);
+    opacity: 1;
+    text-shadow: 0 0 0 whitesmoke;
+  }
+  100% {
+    transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+    opacity: 0;
+    text-shadow: 0 0 20px whitesmoke;
   }
 }
