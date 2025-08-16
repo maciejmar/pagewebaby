@@ -4,7 +4,7 @@
     <li><div class="awrap"><a href="#">&nbsp;&nbsp;</a></div></li>
     <li><div class="awrap"><a href="#">Start</a></div></li>
     <li><div class="awrap"><a href="#">Produkty</a></div></li>
-    <li><div class="awrap"><a href="#">O Webaby</a></div></li>
+    <li><div class="awrap"><a routerLink="/about_webaby">O&nbsp;Webaby</a></div></li>
     <!-- <li><a href="#"></a></li>
     <li><a href="#"></a></li>
     <li><a href="#"></a></li>
@@ -16,9 +16,11 @@
     <li><a href="#"></a></li>
     <li><a href="#"></a></li>
     <li><a href="#"></a></li> -->
-    <div *ngIf="showLoginRegister">
-      <li><div class="awrap"><a href="#">Login</a></div></li>
-      <li><div class="awrap"><a href="#">Register</a></div></li>
-    </div>
+    <li *ngIf="showLoginRegister">
+      <div class="awrap"><a href="#">Login</a></div>
+    </li>
+    <li *ngIf="showLoginRegister">
+      <div class="awrap"><a href="#">Register</a></div>
+    </li>
   </ul>
 </div>

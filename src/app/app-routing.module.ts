@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { GameComponent } from './game/game.component';
+import { AboutWebabyComponent } from './about-webaby/about-webaby.component';
 import { BasketballShotsComponent } from './basketball-shots/basketball-shots.component';
 import { BasketballPwaComponent } from './basketball-pwa/basketball-pwa.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'logo', component: IntroComponent },
     { path: 'game', component: GameComponent },
     { path: 'abecadlowo', component: AppComponent },
+    { path: 'about_webaby', component: AboutWebabyComponent },
     //{ path: 'app-ads.txt', component:AppComponent},
     { path: '**', component: PagenotfoundComponent },
     

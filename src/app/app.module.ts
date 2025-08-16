@@ -26,6 +26,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BasketballPwaComponent } from './basketball-pwa/basketball-pwa.component';
 import { NeuralBgComponent } from './shared/neural-bg/neural-bg.component';
+import { AboutWebabyComponent } from './about-webaby/about-webaby.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { NeuralBgComponent } from './shared/neural-bg/neural-bg.component';
     AppAdsComponent,
     BasketballShotsComponent,
     BasketballPwaComponent,
-    NeuralBgComponent
+    NeuralBgComponent,
+    AboutWebabyComponent
   ],
   imports: [
     BrowserModule,

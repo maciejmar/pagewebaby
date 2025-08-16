@@ -1,0 +1,59 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  
+   
+}
+
+.container img {
+position: absolute;  /* pozwala na centrowanie */
+  top: 50%;            /* środek w pionie */
+  left: 50%;           /* środek w poziomie */
+  transform: translate(-50%, -50%); /* przesunięcie środka obrazka do środka kontenera */
+  height: 100%;        /* pełna wysokość */
+  width: auto;  
+}
+
+.text {
+  position: absolute;
+  font-family: "Ropa Sans", sans-serif;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6em;
+  color: rgb(180, 174, 81);
+//   text-align: center;
+  z-index: 2;
+}
+
+.arrow-down {
+  position: absolute;
+  font-weight:900;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.3);
+  
+  
+  font-size: 6.5em;
+  color: rgb(180, 174, 81);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: bounceArrow 1.5s infinite;
+  z-index: 3;
+}
+
+.container_nicpon{
+    margin-top:20%;
+    margin-left:40%;
+    display: flex;
+    flex-direction: column;
+    font-size:4em;
+    font-family: "Ropa Sans", sans-serif;
+}
+
+
+
