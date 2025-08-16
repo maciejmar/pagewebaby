@@ -42,13 +42,14 @@ body, html {
 
 .icons-container{
   width: 100vw;
-  height: 25vh;
+  height: 15vh;
   display:flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap:5%;
   row-gap:6%;
+   
   
 }
 
@@ -59,10 +60,15 @@ body, html {
 
 }
 .icon{
-  font-size:10em;
+  font-size:5em !important;
   width:20vw;
   height:70vh;
   font-size:60vh;
+}
+
+.icons-container i.bi {
+  font-size: 4em !important; // !important konieczne, bo Bootstrap ma regułę media query
+  opacity:0.5;
 }
 
 .ibi{
@@ -116,4 +122,20 @@ body, html {
     width: auto;
     align-items: center;
   }
+}
+
+/* Animated social text */
+.social-text {
+  font-size: 4em;
+  font-family: 'Ropa Sans',sans-serif;
+  color: rgb(138, 117, 97);
+  text-align: center;
+  margin-top: 0em;
+  opacity: 0;
+  animation: flashText 2s ease-in-out infinite;
+}
+
+@keyframes flashText {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.5; }
 }

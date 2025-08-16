@@ -10,22 +10,34 @@ body {
   //background-image:  linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("./../assets/cover.png") !important;
 }
 
+/* Domyślnie ukryta */
 .spotlight-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 9999;
+  display: none;
+}
 
-   background: radial-gradient(
-    circle at var(--x, 50%) var(--y, 50%),
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.1) 20%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
+/* Pokazujemy tylko na ekranach >= 992px (Bootstrap lg) */
+@media (min-width: 992px) {
+  .spotlight-layer {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+
+    background: radial-gradient(
+      circle at var(--x, 50%) var(--y, 50%),
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 20%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+
+    transition: background-position 0.05s linear;
+  }
+}
 
   //mid dark
   //  background: radial-gradient(
@@ -46,8 +58,8 @@ body {
   // );
 
 
-  transition: background-position 0.05s linear;
-}
+//   transition: background-position 0.05s linear;
+// }
 
 .container {
   display: flex;
