@@ -139,3 +139,65 @@ body, html {
   0%, 100% { opacity: 0; }
   50% { opacity: 0.5; }
 }
+
+/* --- Media Queries dla ekranów telefonów --- */
+@media (max-width: 768px) {
+
+  .footer {
+    font-size: 1.5rem;
+    flex-direction: column; /* kolumnowo na telefonach */
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .icons-container {
+    
+    flex-direction: row;      /* lub column, jeśli chcesz ikony w pionie */
+    flex-wrap: wrap;          /* łamanie wierszy, gdy za szeroko */
+    justify-content: center;
+    gap: 2%;
+    row-gap: 2rem;
+    height: auto;
+  }
+
+  .icons-container i.bi {
+     font-size: clamp(2rem, 5vw, 6rem);  /* mniejsze ikony */
+  }
+
+  .logoWithNeurons {
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 1rem;
+
+    img {
+      height: auto;
+      max-width: 80%; /* dopasowanie do ekranu telefonu */
+      margin: 0 auto;
+    }
+  }
+
+  .social-text {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .policy-privacy {
+    font-size: 1.5rem;
+  }
+
+  .spaceBetweenBlockAndIcons {
+    height: 1rem; /* mniejsze odstępy */
+  }
+
+  .icon {
+    width: 25vw;    /* bardziej elastyczne dopasowanie */
+    height: auto;
+    font-size: 8vw; /* dopasowanie do szerokości ekranu */
+  }
+}

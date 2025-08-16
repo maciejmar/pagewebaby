@@ -29,11 +29,11 @@ span {
 }
 
 .button-container {
-    // position: absolute;
-    // top:10%;
-    position: absolute;
+    
+    //position: absolute;
     top: 45%; 
     left: 5%; 
+    gap: 2rem;
     //transform: translate(-50%, -50%); 
     z-index: 1;  // Ensure the buttons are above the image
     display: flex;
@@ -64,12 +64,12 @@ span {
   }
 }
 
-@media only screen and (max-width: $breakpoint) {
-    .button-container {
-      flex-direction:column;  // Adjust the size according to your needs
-      align-items:center;
-    }
+  @media only screen and (max-width: $breakpoint) {
+  .button-container {
+    flex-direction: column; /* na telefonach jeden pod drugim */
+    gap: 1rem;
   }
+}
 .image-container {
   
   position: relative;
@@ -126,17 +126,27 @@ svg{
 }
 
 .transparent-button {
-    background-color: transparent;  /* Makes the button's background transparent */
-    border: 2% solid #333;  /* This sets the border around the button */
-    padding: 1% 1%;  /* Adjust as needed to give space around the text */
-    font-size: 5rem;  /* Adjust the text size as needed */
-    color: #333;  /* Text color */
-    cursor: pointer;  /* Changes the cursor when hovering over the button */
-    transition: 0.3s;  /* Smoothens the hover effect */
-    width:auto;
-    height:13%;
-    /* animacja koloru */
-    animation: waveColors 4s infinite alternate ease-in-out;
+    // background-color: transparent;  /* Makes the button's background transparent */
+    // border: 2% solid #333;  /* This sets the border around the button */
+    // padding: 1% 1%;  /* Adjust as needed to give space around the text */
+    // font-size: 5rem;  /* Adjust the text size as needed */
+    // color: #333;  /* Text color */
+    // cursor: pointer;  /* Changes the cursor when hovering over the button */
+    // transition: 0.3s;  /* Smoothens the hover effect */
+    // width:auto;
+    // height:13%;
+     background: transparent;
+      border: 2% solid bisque;
+      border-radius: 12px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size:1.2vw;
+      display: flex;              /* dzięki temu obrazek i tekst są wyśrodkowane */
+      align-items: center;
+      justify-content: center;
+      /* animacja koloru */
+      animation: waveColors 4s infinite alternate ease-in-out;
     
 }
 @keyframes waveColors {
@@ -160,16 +170,10 @@ svg{
   .game-title{
     //position: absolute;
     z-index: 1;
-    padding-left:5%;
-    padding-top:5%;
-    top:5%;
-    left:5%;
-    width: 46vh; 
-    height:auto;
-    padding-bottom: 10%;
-    font-size:3vw;
-    
-    line-height: 100%;
+  padding: 2rem 0;
+  font-size: 3vw;
+  color: white;
+  text-align: center;
     color:white;
     align-self: flex-start;
   }
@@ -321,3 +325,4 @@ bounce-container {
                   
     }
   }
+

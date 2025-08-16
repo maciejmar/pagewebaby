@@ -1,23 +1,27 @@
 .container {
-  position: relative;
+  margin-top:2%;
   width: 100vw;
   height: 100vh;
+  gap:2%;
   
 }
 
+
 .container img {
-position: absolute;  /* pozwala na centrowanie */
+  position: absolute;  /* pozwala na centrowanie */
   top: 50%;            /* środek w pionie */
   left: 50%;           /* środek w poziomie */
   transform: translate(-50%, -50%); /* przesunięcie środka obrazka do środka kontenera */
-  height: 100%;        /* pełna wysokość */
+  //height: 100%;        /* pełna wysokość */
   width: auto;  
+  max-width:80%;
 }
 
 .text {
-  position: absolute;
+  position:absolute;
+  max-width:55%;
   font-family: "Ropa Sans", sans-serif;
-  top: 1%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 6em;
@@ -45,6 +49,15 @@ position: absolute;  /* pozwala na centrowanie */
   z-index: 3;
 }
 
+.arrow-down:hover {
+  color: rgba(180, 174, 81, 0.5);
+}
+
+@keyframes bounceArrow {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(15%); }
+}
+
 .container_nicpon{
     margin-top:20%;
     margin-left:40%;
@@ -55,5 +68,31 @@ position: absolute;  /* pozwala na centrowanie */
 }
 
 
+.nicpon img {
+  max-width: 40%;   /* obrazek nie wyjdzie poza ekran */
+  height: auto;      /* zachowuje proporcje */
+}
 
+/* Responsywność: telefony */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;       /* kolumna zamiast wiersza */
+    justify-content: center;      /* wyśrodkowanie w pionie */
+    height: auto;                 /* dopasowanie wysokości */
+    padding: 2rem;                /* odrobina marginesu */
+  }
+
+  .text {
+    max-width: 100%;              /* zajmuje całą szerokość */
+    font-size: 2em;               /* trochę mniejszy font na telefonach */
+    text-align: center;           /* wyśrodkowanie tekstu */
+    margin-bottom: 1rem;          /* odstęp od obrazka */
+  }
+
+  .container img {
+    width: 80%;                   /* dopasowanie obrazka do szerokości ekranu */
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
 

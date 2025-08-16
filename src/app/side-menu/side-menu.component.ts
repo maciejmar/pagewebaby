@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
   isToDisplay = true;
-  showLoginRegister = true;
+  showLoginRegister = false;
   constructor() { }
 
   ngOnInit(): void {
