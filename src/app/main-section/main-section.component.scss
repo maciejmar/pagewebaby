@@ -212,7 +212,7 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: black; // mocny kontrast dla widoczności
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,29 +264,54 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
 
 
 
-.logo-wrap { display:grid; place-items:center; transform: translateY(-10%);  }
-.logo { width:min(70vh); height:auto;  }
-
-.logotype{
-  // display:flex;
-  // flex-direction: row;
-  // justify-content: flex-start;
-  // left:0;
-
+.logotype {
   display: flex;
-  flex-direction: row; /* logo nad drugim SVG */
-  justify-content:flex-start; /* wyśrodkuj pionowo */
-  align-items: center;     /* wyśrodkuj poziomo */
-  // height: 50vh;           /* pełna wysokość okna przeglądarki */
-  gap: 10em;     /* odstęp między logo a drugim SVG */
-  top:-50vh;
+  flex-direction: row;      /* desktop: obok siebie */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;                /* odstęp między obrazkami */
+  flex-wrap: wrap;          /* gdy miejsca mało → przenosi */
+  width: 100%;
+  text-align: center;
+}
+
+.logo-wrap,
+.enterInto {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-wrap object,
+.enterInto object {
+  max-width: 100%;
+  height: auto;             /* zachowanie proporcji */
+}
+
+.enterInto {
+ transform: translate(-36%, 12%); 
+}
+
+/* for Mobile */
+@media (max-width: 768px) {
+  .logotype {
+    flex-direction: column;   /* jeden pod drugim */
+    gap: 1rem;
+  }
+
+  .logo-wrap,
+  .enterInto {
+    flex: unset;
+    max-width: 80%;           /* dopasowanie do ekranu */
+  }
+
+  .enterInto {
+    transform: none;          /* bez przesunięć na mobile */
+    margin-top: 1rem;         /* delikatny odstęp */
+  }
   
 }
-.enterInto{
-  margin-top:0%;
-  margin-left:-15%;
-}
-
 // //---------
 // .logotype-block {
 //   position: fixed;        // zawsze względem ekranu

@@ -167,7 +167,10 @@ body, html {
   }
 
   .icons-container i.bi {
-     font-size: clamp(2rem, 5vw, 6rem);  /* mniejsze ikony */
+    
+  font-size: clamp(20px, 5vw, 40px) !important; /* mini–telefon → desktop */
+  line-height: 1;
+
   }
 
   .logoWithNeurons {
