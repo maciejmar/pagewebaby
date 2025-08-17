@@ -5,6 +5,13 @@
     <li><div class="awrap"><a href="#">Start</a></div></li>
     <li><div class="awrap"><a href="#">Produkty</a></div></li>
     <li><div class="awrap"><a routerLink="/about_webaby">O&nbsp;Webaby</a></div></li>
+
+     <!-- "Do góry" pojawia się TYLKO gdy menu NIE pochodzi z main-section -->
+    <li *ngIf="!isFromMainSection">
+      <div class="awrap">
+        <a href="#"  (click)="scrollToTop($event)">Do góry</a> 
+      </div>
+    </li>
     <!-- <li><a href="#"></a></li>
     <li><a href="#"></a></li>
     <li><a href="#"></a></li>
