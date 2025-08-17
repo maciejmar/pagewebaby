@@ -273,6 +273,7 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
   flex-wrap: wrap;          /* gdy miejsca mało → przenosi */
   width: 100%;
   text-align: center;
+  transform:translateY(-20%);
 }
 
 .logo-wrap,
@@ -302,16 +303,25 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
 
   .logo-wrap,
   .enterInto {
-    flex: unset;
-    max-width: 80%;           /* dopasowanie do ekranu */
+    flex: 0 1 auto;           /* pozwól im dopasować się do zawartości */
+    width: 80%;               /* kontrolowana szerokość */
+    max-width: 80%;
+  }
+
+  .logo-wrap object,
+  .enterInto object {
+    width: 100%;              /* zawsze widoczne, skaluje się */
+    height: auto;
+    display: block;
   }
 
   .enterInto {
-    transform: none;          /* bez przesunięć na mobile */
-    margin-top: 1rem;         /* delikatny odstęp */
+    transform: translateY(-45%);          /* brak przesunięć */
+    margin-top: 1rem;         /* odstęp pod spodem */
   }
-  
 }
+  
+
 // //---------
 // .logotype-block {
 //   position: fixed;        // zawsze względem ekranu

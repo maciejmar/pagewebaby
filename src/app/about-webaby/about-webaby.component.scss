@@ -1,98 +1,94 @@
 .container {
-  margin-top:2%;
+  margin-top: 6%;
   width: 100vw;
-  height: 100vh;
-  gap:2%;
-  
+  min-height: 100vh;   /* zamiast height:100vh -> elastyczne */
+  gap: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .container img {
-  position: absolute;  /* pozwala na centrowanie */
-  top: 50%;            /* środek w pionie */
-  left: 50%;           /* środek w poziomie */
-  transform: translate(-50%, -50%); /* przesunięcie środka obrazka do środka kontenera */
-  //height: 100%;        /* pełna wysokość */
-  width: auto;  
-  max-width:80%;
+  position: relative;   /* już nie absolute */
+  transform: translateY(-15%);
+  width: 80%;           /* dopasuje się do ekranu */
+  max-width: 800px;     /* nie rośnie za duży */
+  height: auto;         /* zachowuje proporcje */
+  margin: 1rem 0;       /* odstęp od tekstu i strzałki */
 }
-
 .text {
-  position:absolute;
-  max-width:55%;
+  max-width: 55%;
   font-family: "Ropa Sans", sans-serif;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 6em;
+  font-size: clamp(2rem, 2vw, 3rem);
   color: rgb(180, 174, 81);
-//   text-align: center;
+  text-align: center;
+  margin-bottom: 1rem;
   z-index: 2;
 }
 
 .arrow-down {
-  position: absolute;
-  font-weight:900;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.3);
-  
-  
-  font-size: 6.5em;
-  color: rgb(180, 174, 81);
+  font-weight: 900;
+  font-size: 4rem;
+  color:  rgba(180, 174, 81, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   animation: bounceArrow 1.5s infinite;
+  margin-top: -10rem;
+  margin-bottom: 6rem;
   z-index: 3;
 }
 
-.arrow-down:hover {
-  color: rgba(180, 174, 81, 0.5);
-}
+
 
 @keyframes bounceArrow {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(15%); }
 }
 
-.container_nicpon{
-    margin-top:20%;
-    margin-left:40%;
-    display: flex;
-    flex-direction: column;
-    font-size:4em;
-    font-family: "Ropa Sans", sans-serif;
-}
-
-
-.nicpon img {
-  max-width: 40%;   /* obrazek nie wyjdzie poza ekran */
-  height: auto;      /* zachowuje proporcje */
-}
-
-/* Responsywność: telefony */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;       /* kolumna zamiast wiersza */
-    justify-content: center;      /* wyśrodkowanie w pionie */
-    height: auto;                 /* dopasowanie wysokości */
-    padding: 2rem;                /* odrobina marginesu */
-  }
-
   .text {
-    max-width: 100%;              /* zajmuje całą szerokość */
-    font-size: 2em;               /* trochę mniejszy font na telefonach */
-    text-align: center;           /* wyśrodkowanie tekstu */
-    margin-bottom: 1rem;          /* odstęp od obrazka */
+    max-width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .container img {
-    width: 80%;                   /* dopasowanie obrazka do szerokości ekranu */
-    height: auto;
-    margin-bottom: 1rem;
+    width: 90%;
+  }
+
+  .arrow-down {
+    font-size: 3rem;
   }
 }
 
+
+.container_nicpon {
+  margin-top: 5rem;               /* odstęp od sekcji wyżej */
+  display: flex;
+  flex-direction: column;
+  align-items: center;            /* wyśrodkowanie poziome */
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  font-size: 2.5rem;              /* bardziej rozsądny rozmiar bazowy */
+  font-family: "Ropa Sans", sans-serif;
+}
+
+.nicpon img {
+  max-width: 40%;                 /* większy obrazek */
+  height: auto;
+}
+@media (max-width: 768px) {
+  .container_nicpon {
+    font-size: 1.5rem;      /* mniejszy tekst */
+    margin-top: 3rem;
+    padding: 0 1rem;        /* odstęp od boków ekranu */
+  }
+
+  .nicpon img {
+    max-width: 90%;         /* obrazek dopasowany do szerokości ekranu */
+  }
+}

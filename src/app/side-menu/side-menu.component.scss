@@ -53,10 +53,13 @@ ul {
    flex-wrap: nowrap; 
    list-style:none;
    background-color:rgba($color: #312c25, $alpha: 0.4);
-   font-size:2.5em;
+   font-size:clamp(2.5rem, 2vw, 3rem);
    font-weight: 500;
 } 
   
+.awrap {
+  font-size:clamp(1rem, 2vw, 3rem);
+}
 
 .awrap:hover {
   background-color: (255,255,255,0.2);
@@ -68,7 +71,7 @@ ul {
     transform: scale(1, 1);
   }
   50% {
-    transform: scale(1.5, 1.5);
+    transform: scale(1.2, 1.2);
   }
   100% {
     transform: scale(1, 1);

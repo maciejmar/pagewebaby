@@ -60,14 +60,14 @@ body, html {
 
 }
 .icon{
-  font-size:5em !important;
+  
   width:20vw;
-  height:70vh;
-  font-size:60vh;
+  height:4vh;
+  
 }
 
 .icons-container i.bi {
-  font-size: 4em !important; // !important konieczne, bo Bootstrap ma regułę media query
+  font-size: 1em ; // !important konieczne, bo Bootstrap ma regułę media query
   opacity:0.5;
 }
 
@@ -126,7 +126,7 @@ body, html {
 
 /* Animated social text */
 .social-text {
-  font-size: 4em;
+  font-size: 1em;
   font-family: 'Ropa Sans',sans-serif;
   color: rgb(138, 117, 97);
   text-align: center;
@@ -161,16 +161,16 @@ body, html {
     flex-direction: row;      /* lub column, jeśli chcesz ikony w pionie */
     flex-wrap: wrap;          /* łamanie wierszy, gdy za szeroko */
     justify-content: center;
-    gap: 2%;
+    gap: 4%;
     row-gap: 2rem;
     height: auto;
   }
 
   .icons-container i.bi {
     
-  font-size: clamp(20px, 5vw, 40px) !important; /* mini–telefon → desktop */
+  font-size: clamp(2vw,2vw,2vw); /* mini–telefon → desktop */
   line-height: 1;
-
+  margin-top: 4rem;
   }
 
   .logoWithNeurons {
@@ -185,10 +185,7 @@ body, html {
     }
   }
 
-  .social-text {
-    font-size: 2rem;
-    margin-top: 1rem;
-  }
+ 
 
   .policy-privacy {
     font-size: 1.5rem;
@@ -201,6 +198,6 @@ body, html {
   .icon {
     width: 25vw;    /* bardziej elastyczne dopasowanie */
     height: auto;
-    font-size: 8vw; /* dopasowanie do szerokości ekranu */
+    font-size: 2vw; /* dopasowanie do szerokości ekranu */
   }
 }
