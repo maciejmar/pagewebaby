@@ -68,7 +68,7 @@ body, html {
 
 .icons-container i.bi {
   font-size: 1em ; // !important konieczne, bo Bootstrap ma regułę media query
-  opacity:0.5;
+  opacity:1;
 }
 
 .ibi{
@@ -108,21 +108,28 @@ body, html {
 
 
 .logoWithNeurons {
-  height: 90em;  
-  width: auto;
   display: flex;
-  flex-direction:row;
-  justify-content:center;
-  align-items:center;
-  margin-left:10%;
-  
-  
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;   /* odstęp góra/dół zależny od font-size */
+
   img {
-    height: 30%;
+    max-height: clamp(10rem, 20vh, 14rem);  /* elastyczna wysokość logo */
     width: auto;
-    align-items: center;
   }
 }
+
+@media (max-width: 768px) {
+  .logoWithNeurons {
+    margin: 3rem 0;
+
+    img {
+      max-height: clamp(4rem, 12vh, 8rem);
+      width: 60%;   /* dopasowanie do szerokości ekranu */
+    }
+  }
+}
+
 
 /* Animated social text */
 .social-text {
@@ -144,10 +151,10 @@ body, html {
 @media (max-width: 768px) {
 
   .footer {
-    font-size: 1.5rem;
+    font-size: 1rem;
     flex-direction: column; /* kolumnowo na telefonach */
     text-align: center;
-    gap: 1rem;
+    gap: 3rem;
   }
 
   .container {
@@ -162,37 +169,57 @@ body, html {
     flex-wrap: wrap;          /* łamanie wierszy, gdy za szeroko */
     justify-content: center;
     gap: 4%;
-    row-gap: 2rem;
+    row-gap: 1rem;
     height: auto;
   }
 
   .icons-container i.bi {
     
-  font-size: clamp(2vw,2vw,2vw); /* mini–telefon → desktop */
+  font-size: clamp(4vw,4vw,4vw); /* mini–telefon → desktop */
   line-height: 1;
   margin-top: 4rem;
   }
 
   .logoWithNeurons {
-    flex-direction: column;
-    margin-left: 0;
-    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0; /* odstęp góra/dół */
+
+   
+      img {
+        width: 40%;      /* logo zajmuje 60% szerokości kontenera */
+        max-width: 500px; /* zabezpieczenie na dużych ekranach */
+        height: auto;    /* zachowanie proporcji */
+  
+      }
+  }
+
+ @media (max-width: 768px) {
+  .logoWithNeurons {
+    margin: 2rem 0;
 
     img {
-      height: auto;
-      width: 30%; /* dopasowanie do ekranu telefonu */
-      margin: 0 auto;
+      width: 80%;   /* na telefonie większe logo */
+      max-width: none; /* brak ograniczenia max */
     }
   }
+}
 
- 
+.copyright{
+  font-size: clamp(0.6rem, 1vw, 1.2rem);
+  margin-top: 2%;
+  text-align: center; 
+  align-items: center;
+}
 
   .policy-privacy {
-    font-size: 1.5rem;
+    font-size: 0.5rem;
   }
 
+
   .spaceBetweenBlockAndIcons {
-    height: 1rem; /* mniejsze odstępy */
+    height: 2rem; /* mniejsze odstępy */
   }
 
   .icon {
@@ -201,3 +228,4 @@ body, html {
     font-size: 2vw; /* dopasowanie do szerokości ekranu */
   }
 }
+
