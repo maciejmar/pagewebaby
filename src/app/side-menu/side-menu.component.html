@@ -1,33 +1,29 @@
-<div [hidden]="isToDisplay == false" class="sticky" >
+<div [hidden]="isToDisplay == false" class="navbar" [class.scrolled]="isActuallyScrolled">
   <div hidden>MENU</div>
-  <ul class="bound">
-    <li><div class="awrap"><a href="#">&nbsp;&nbsp;</a></div></li>
-    <li><div class="awrap"><a href="#">Start</a></div></li>
-    <li><div class="awrap"><a href="#">Produkty</a></div></li>
-    <li><div class="awrap"><a routerLink="/about_webaby">O&nbsp;Webaby</a></div></li>
 
-     <!-- "Do góry" pojawia się TYLKO gdy menu NIE pochodzi z main-section -->
-    <li *ngIf="!isFromMainSection">
-      <div class="awrap">
-        <a href="#"  (click)="scrollToTop($event)">Początek</a> 
-      </div>
+  <ul class="bound" [class.open]="isMenuOpen">
+    <!-- Start: ZAWSZE widoczny -->
+    <li><div class="awrap"><a href="#">&nbsp;Start</a></div></li>
+
+    <!-- Toggle: widoczny tylko w mobile (CSS) -->
+    <li class="menu-toggle">
+      <button type="button"
+              (click)="toggleMenu()"
+              [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'"
+              [attr.aria-controls]="'menu-extra-list'">
+        <i class="bi bi-chevron-expand"></i> Menu
+      </button>
     </li>
-    <!-- <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li> -->
-    <li *ngIf="showLoginRegister">
-      <div class="awrap"><a href="#">Login</a></div>
+
+    <!-- Reszta: pokazuj dopiero po kliknięciu (mobile) -->
+    <li class="menu-extra" id="menu-extra-list"><div class="awrap"><a href="#">Produkty</a></div></li>
+    <li class="menu-extra"><div class="awrap"><a routerLink="/about_webaby">O&nbsp;Webaby</a></div></li>
+
+    <li class="menu-extra" *ngIf="!isFromMainSection">
+      <div class="awrap"><a href="#" (click)="scrollToTop($event)">Początek</a></div>
     </li>
-    <li *ngIf="showLoginRegister">
-      <div class="awrap"><a href="#">Register</a></div>
-    </li>
+
+    <li class="menu-extra" *ngIf="showLoginRegister"><div class="awrap"><a href="#">Login</a></div></li>
+    <li class="menu-extra" *ngIf="showLoginRegister"><div class="awrap"><a href="#">Register</a></div></li>
   </ul>
 </div>

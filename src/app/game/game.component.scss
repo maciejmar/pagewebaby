@@ -217,7 +217,7 @@ svg{
     height: 100vh;
     background-color:black;
     border:black;
-    font-size:2em;
+    font-size:clamp(1em, 2vw, 2rem);
     word-spacing:2%;
     font-family:"Ropa Sans", sans-serif;
     

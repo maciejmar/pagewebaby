@@ -34,15 +34,15 @@ export class GameComponent implements AfterViewInit {
   viewBox!: string;
   abecadlowo=['A', 'b', 'e','c','a', 'd', 'ł','o','w','o'];
   cardTable=[{
-    'name':'Game Description',
+    'name':'Opis gry',
     'bgc':'card-yellow',
     'image': './../../assets/bird-face.png',
   },{
-    'name':'Next releases',
+    'name':'Nowa wersja',
     'bgc':'card-red',
     'image': './../../assets/NicponRunWithSword.png',
   },{
-    'name':'Best practices',
+    'name':'Dodatki',
     'bgc':'card-cyan',
     'image': './../../assets/eyesLettersMaterial.png',
   },{
