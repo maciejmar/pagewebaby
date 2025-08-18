@@ -298,7 +298,8 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
 @media (max-width: 768px) {
   .logotype {
     flex-direction: column;   /* jeden pod drugim */
-    gap: 1rem;
+    
+    transform: none;  
   }
 
   .logo-wrap,

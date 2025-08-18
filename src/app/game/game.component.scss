@@ -40,7 +40,7 @@ span {
     flex-direction:row;
     align-items: center;
     justify-content: center;
-    width:70%;
+    width:50%;
     height: auto;
     
 
@@ -141,7 +141,7 @@ svg{
       padding: 0.5rem 1rem;
       cursor: pointer;
       transition: 0.3s;
-      font-size:1.2vw;
+      font-size:2vw;
       display: flex;              /* dzięki temu obrazek i tekst są wyśrodkowane */
       align-items: center;
       justify-content: center;
@@ -170,10 +170,10 @@ svg{
   .game-title{
     //position: absolute;
     z-index: 1;
-  padding: 2rem 0;
-  font-size: 3vw;
-  color: white;
-  text-align: center;
+    padding: 4rem 0;
+    font-size: 3vw;
+    color: white;
+    text-align: center;
     color:white;
     align-self: flex-start;
   }
