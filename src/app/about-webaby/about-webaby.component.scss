@@ -1,6 +1,6 @@
 .container {
   margin-top: 6%;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;   /* zamiast height:100vh -> elastyczne */
   gap: 2%;
   display: flex;
@@ -36,8 +36,8 @@
   align-items: center;
   cursor: pointer;
   animation: bounceArrow 1.5s infinite;
-  margin-top: -10rem;
-  margin-bottom: 6rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   z-index: 3;
 }
 
@@ -54,11 +54,22 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
+  .container {
+    /* na mobile nie wymuszaj pełnego viewportu i dużego offsetu */
+    min-height: auto;
+    margin-top: 1.5rem;   /* zamiast 6% */
+    gap: 1rem;            /* kontroluj odstępy gapem */
+  }
 
   
   .container img {
     width: 90%;
+    max-width: 600px;
+    height: auto;
     margin-bottom: 1rem; 
+    transform: none;
+    margin: 0;         /* usuń dodatkowe odstępy */
+    display: block;
   }
 
   .arrow-down {
