@@ -22,7 +22,7 @@ export class MainSectionComponent implements AfterViewInit  {
   message: string='';
   showElement = true;
   @Output() introEnded= new EventEmitter<boolean>();
-
+ 
  
 
 
@@ -31,7 +31,7 @@ export class MainSectionComponent implements AfterViewInit  {
   animationState: string = 'out';
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
-  
+  @ViewChild('contentAnchor') contentAnchor!: ElementRef;
   ngAfterViewInit() {
     this.videoPlayer.nativeElement.play(); // This will now work without TypeScript errors.
   }
@@ -67,6 +67,13 @@ export class MainSectionComponent implements AfterViewInit  {
   }
 
 
+  //dodaję funkcję dla logo - t
+  scrollDown_t(): void {
+  
+    if (this.contentAnchor) {
+      this.contentAnchor.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   
 }
@@ -105,3 +112,5 @@ export class MainSectionComponent implements AfterViewInit  {
   
 
 // }
+
+

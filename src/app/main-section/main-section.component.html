@@ -24,6 +24,16 @@
     </div>
   </div> -->
 
+<div class = "logotype_t" alt ="logo">
+  <img src="assets/logoTomek.png">
+  <img src="assets/enterintothegame-t.png"
+       alt="Slogan"
+       class="img-slogan"
+       (click)="scrollDown_t()" />
+
+</div>
+
+<!--Logo with vector lines SVG
   <div class="logotype">
     <div class="logo-wrap">
       <object data="assets/wbaby-vector-10.svg" type="image/svg+xml" class="logo"></object>
@@ -32,6 +42,7 @@
       <object data="assets/enterInto-1.2.svg" type="image/svg+xml" class="logo"></object>
     </div>
   </div>
+End of SVG part-->
 
 <!--video play-->
   <!-- <div *ngIf="!showVideo" (click)="playVideo()">
@@ -50,7 +61,7 @@
     </div>    -->
   </div>l
   <br><br>
-  <div class="game-badges">
+  <div #contentAnchor class="game-badges">
     <app-game-badge></app-game-badge>
   </div>
 </div>

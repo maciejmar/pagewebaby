@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener  } from '@angular/core';
+import { Component, OnInit, Input, HostListener , ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-side-menu',
@@ -12,7 +12,7 @@ export class SideMenuComponent implements OnInit {
   @Input() scrolled: boolean | null = null; 
   isMenuOpen = false;
   // Lokalne wykrywanie (fallback, gdy scrolled == null):
- 
+  @ViewChild('contentAnchor') contentAnchor!: ElementRef;
 
   constructor() { }
 
@@ -41,6 +41,13 @@ export class SideMenuComponent implements OnInit {
 
    toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  scrollDown_t(): void {
+  
+    if (this.contentAnchor) {
+      this.contentAnchor.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
 }
