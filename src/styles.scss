@@ -27,8 +27,11 @@ html, body {
   font-size: 9px;
   font-family: "Nunito", sans-serif !important; // <-- ustawienie fontu
   font-weight: 400; // domyślna waga
-  height: 100%;
+  
   margin: 0; 
+  overflow-x: hidden;
+  
+  padding:0;
 }
 
 app-root {
