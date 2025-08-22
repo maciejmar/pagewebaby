@@ -1,9 +1,5 @@
-import { Component, OnInit, OnDestroy, EventEmitter, Output, ViewChild,ElementRef, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { SharedBetweenSiblingsService } from './../shared-between-siblings.service';
-import { Subscription,timer } from 'rxjs';
-import AOS from 'aos';
-
 
 @Component({
   selector: 'app-main-section',
@@ -18,99 +14,220 @@ import AOS from 'aos';
     ])
   ]
 })
-export class MainSectionComponent implements AfterViewInit  {
-  message: string='';
-  showElement = true;
-  @Output() introEnded= new EventEmitter<boolean>();
- 
- 
+export class MainSectionComponent implements AfterViewInit, OnDestroy {
 
+  @Output() introEnded = new EventEmitter<boolean>();
 
-  showVideo: boolean = false;
-  videoHasEnded: boolean = true;
-  animationState: string = 'out';
+  showVideo = false;
+  videoHasEnded = true;
+  animationState = 'out';
 
-  @ViewChild('videoPlayer') videoPlayer!: ElementRef;
+  @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
   @ViewChild('contentAnchor') contentAnchor!: ElementRef;
+  @ViewChild('logoWrap', { static: true }) wrapRef!: ElementRef<HTMLElement>;
+  @ViewChild('logoFx', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
+
+  private ctx!: CanvasRenderingContext2D;
+  private particles: Particle[] = [];
+  private emitters: Emitter[] = [];
+  private rafId = 0;
+  private resizeObs?: ResizeObserver;
+  private running = false;
+
   ngAfterViewInit() {
-    this.videoPlayer.nativeElement.play(); // This will now work without TypeScript errors.
+    this.videoPlayer?.nativeElement.play();
+
+    const canvas = this.canvasRef.nativeElement;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    this.ctx = ctx;
+    this.ctx.globalCompositeOperation = 'lighter';
+
+    const resize = () => this.resizeToWrap();
+    resize();
+    this.resizeObs = new ResizeObserver(resize);
+    this.resizeObs.observe(this.wrapRef.nativeElement);
+
+    this.setupEmitters();
+
+    this.running = true;
+    const loop = () => {
+      if (!this.running) return;
+      this.tick();
+      this.rafId = requestAnimationFrame(loop);
+    };
+    loop();
+
+    setInterval(() => this.createRandomBurst(), 700);
   }
 
+  // --- Canvas resize ---
+  private resizeToWrap() {
+    const wrap = this.wrapRef.nativeElement;
+    const rect = wrap.getBoundingClientRect();
+    const DPR = Math.min(window.devicePixelRatio || 1, 2);
+    const canvas = this.canvasRef.nativeElement;
 
-  
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    canvas.width = Math.max(1, Math.floor(rect.width * DPR));
+    canvas.height = Math.max(1, Math.floor(rect.height * DPR));
 
-  playVideo(): void {
-    console.log('playVideo called');
-    this.showVideo = true;
-    this.showElement = false;
-    setTimeout(() => {
-      if (this.videoPlayer && this.videoPlayer.nativeElement) {
-        console.log('Playing video');
-        this.videoPlayer.nativeElement.play();
-      }
-    }, 0);
+    this.ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
   }
-  toggleVideo(): void {
-    this.animationState = this.animationState === 'in' ? 'out' : 'in';
-    if (this.animationState === 'in' && this.videoPlayer) {
-      setTimeout(() => this.videoPlayer.nativeElement.play(), 0);
+
+  // --- Emitters setup ---
+  private setupEmitters() {
+    const rect = this.wrapRef.nativeElement.getBoundingClientRect();
+    const W = rect.width;
+    const H = rect.height;
+
+    this.emitters = [
+      new Emitter(W * 0.25, H * 0.35, 0.8, 0.4),
+      new Emitter(W * 0.6, H * 0.45, -0.6, 0.3),
+      new Emitter(W * 0.4, H * 0.65, 0.5, -0.5)
+    ];
+  }
+
+  private createRandomBurst() {
+    if (!this.emitters.length) return;
+    const e = this.emitters[Math.floor(Math.random() * this.emitters.length)];
+    this.spawnBurst(e.x, e.y, 16 + Math.floor(Math.random() * 10));
+  }
+
+  private spawnBurst(cx: number, cy: number, count: number) {
+    for (let i = 0; i < count; i++) {
+      const ang = Math.random() * Math.PI * 2;
+      const spd = 0.8 + Math.random() * 2.2;
+      const size = 1 + Math.random() * 2.5;
+
+      this.particles.push(
+      new Particle(
+        cx + (Math.random() - 0.5) * 12,
+        cy + (Math.random() - 0.5) * 12
+      )
+    );
     }
   }
 
+  private tick() {
+    const ctx = this.ctx;
+    const canvas = this.canvasRef.nativeElement;
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+
+    // Fade background
+    ctx.fillStyle = 'rgba(0,0,0,0.05)'; // mała alfa -> subtelne smugi
+    ctx.fillRect(0, 0, w, h);
+
+    // Update emitters
+    for (const e of this.emitters) {
+      e.update(w, h);
+      this.spawnBurst(e.x, e.y, 2);
+    }
+
+    // Update particles
+    this.particles = this.particles.filter(p => {
+      p.update();
+      p.draw(ctx);
+      return !p.dead();
+    });
+
+    if (this.particles.length > 1200) {
+      this.particles.splice(0, this.particles.length - 1200);
+    }
+  }
+
+  // --- Video & scroll ---
+  playVideo(): void {
+    this.showVideo = true;
+    this.videoHasEnded = false;
+    setTimeout(() => this.videoPlayer?.nativeElement.play(), 0);
+  }
 
   onVideoEnd(): void {
-    
     this.animationState = 'out';
-    
     this.showVideo = false;
-    this.videoHasEnded = true; // Set to true when video ends to trigger fade-in
+    this.videoHasEnded = true;
   }
 
-
-  //dodaję funkcję dla logo - t
   scrollDown_t(): void {
-  
-    if (this.contentAnchor) {
-      this.contentAnchor.nativeElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    this.contentAnchor?.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
-  
+  ngOnDestroy(): void {
+    this.running = false;
+    cancelAnimationFrame(this.rafId);
+    this.resizeObs?.disconnect();
+  }
 }
 
-  
-//   private subscription: Subscription = Subscription.EMPTY;
-//   val=10;
-//   constructor(private sharedService:SharedBetweenSiblingsService) { 
-//     timer(5500).subscribe(() => (this.val = -1));
-//   }
+// --- Particle class ---
+class Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  size: number;
+  opacity: number;
+  life: number;
+  maxLife: number;
 
-//   ngOnInit(): void {
-//     this.subscription = this.sharedService.clickedButton$.subscribe(data => {
-//         this.toggleDisplay(data)
-//     AOS.init();
-//     });
-//   }
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
 
-//   toggleDisplay(data: any) {
-//     this.message = data;
-//     this.showElement = !this.showElement;
-//   }
+    // losowe prędkości
+    this.vx = (Math.random() - 0.5) * 2.5; // delikatniejsze ruchy
+    this.vy = (Math.random() - 0.5) * 2.5;
 
-//   playVideo() {
-//     console.log('Logo clicked, attempting to trigger video...');
-//     this.sharedService.triggerVideo(true);
-//   }
+    // losowy rozmiar cząstki (max 3 px)
+    this.size = 0.5 + Math.random() * 2.5;   // rozmiar 0.5 - 3
+    this.opacity = 0.2 + Math.random() * 0.8; // losowa przezroczystość
 
-//   ngOnDestroy() {
-//     this.subscription.unsubscribe();
-//     this.introEnded.emit(true);
-    
-//   }
+    this.life = 0;
+    this.maxLife = 50 + Math.random() * 50; // życie w klatkach
+  }
 
- 
-  
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.life++;
+    this.opacity = Math.max(0, this.opacity - 0.01); // stopniowe zanikanie
+  }
 
-// }
+  draw(ctx: CanvasRenderingContext2D) {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(10,10,100,${this.opacity})`;
+    ctx.fill();
+  }
 
+  dead(): boolean {
+    return this.life >= this.maxLife;
+  }
+}
 
+// --- Emitter class ---
+class Emitter {
+  x: number;
+  y: number;
+  spreadX: number;
+  spreadY: number;
+
+  constructor(x: number, y: number, spreadX: number, spreadY: number) {
+    this.x = x;
+    this.y = y;
+    this.spreadX = spreadX;
+    this.spreadY = spreadY;
+  }
+
+  update(W: number, H: number) {
+    this.x += this.spreadX;
+    this.y += this.spreadY;
+
+    // Bounce off edges
+    if (this.x < 0 || this.x > W) this.spreadX *= -1;
+    if (this.y < 0 || this.y > H) this.spreadY *= -1;
+  }
+}

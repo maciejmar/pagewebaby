@@ -289,7 +289,7 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
 
   @keyframes glowPulse {
     0%, 100% {
-      filter: drop-shadow(0 0 5px #363333) drop-shadow(0 0 10px rgb(81, 94, 94));
+      filter: drop-shadow(0 0 5px #201e1e) drop-shadow(0 0 10px rgb(35, 36, 36));
     }
     50% {
       filter: drop-shadow(0 0 15px rgb(34, 73, 73)) drop-shadow(0 0 25px rgb(43, 58, 58));
@@ -356,3 +356,74 @@ background: linear-gradient(217deg, #16446c, rgba(255, 0, 0, 0) 70.71%), linear-
   }
 }
   
+
+
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;   /* wizualne rozciągnięcie */
+  height: 100%;
+  pointer-events: none; /* żeby nie przeszkadzał w klikaniu */
+  z-index: 1;    /* efekt pod logo */
+}
+
+
+#sparkleCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+//
+// .logo-particles-container {
+//   position: relative;
+//   display: inline-block;
+//   /* jeśli chcesz pełen ekran: */
+//    width: 100vw; height: 100vh; 
+//   overflow: hidden;
+//   opacity:0.1;
+// }
+
+// .particles-canvas {
+//   position: absolute;
+//   inset: 0;
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   pointer-events: none;
+//   z-index: 3; /* NAD logiem – żeby było widać iskry na wierzchu */
+// }
+
+.logo-particles-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; // kliknięcia przechodzą przez canvas
+  z-index: 1;           // canvas poniżej loga
+}
+
+.logotype_t {
+  position: relative;
+  z-index: 2;           // logo nad canvasem
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
