@@ -1,22 +1,88 @@
 <app-side-menu></app-side-menu>
 <app-neural-bg></app-neural-bg>
-<div class="container">
-  <div class="card-body text">
-    Webaby tworzy gry rozwijające myślenie i zręczność oraz aplikacje przydatne na każdy dzień
-  </div>
 
-  <img src="./../../assets/webabyPromo-1.0.png" alt="promo">
+<!-- SCENA PARALLAX 3D -->
+<section #scene class="parallax-scene" 
+         (pointermove)="onParallaxMove($event)" 
+         (pointerleave)="resetParallax()">
+  <div class="parallax-inner">
+    <div class="energy-orb"></div>
+    <!-- centralny obraz -->
+    <div class="promo-center" aria-hidden="true">
+      <img src="./../../assets/webabyPromo-1.0.png" alt="promo">
+    </div>
+
+    <!-- karty (bootstrap + nasze klasy) -->
+    <article class="card glass z2 pos pos-top">
+      <div class="card-body">
+        <h5 class="card-title">Webaby</h5>
+        <p class="card-text">
+          Tworzymy gry rozwijające myślenie i zręczność oraz aplikacje na każdy dzień.
+          Łączymy zabawę z nauką i pięknym designem.
+        </p>
+      </div>
+    </article>
+
+    <article class="card glass z3 pos pos-right">
+      <div class="card-body">
+        <h5 class="card-title">Nasza misja</h5>
+        <p class="card-text">
+          Inspirujemy do ciekawości i twórczego rozwiązywania problemów.
+          Uczymy poprzez interaktywne doświadczenia.
+        </p>
+      </div>
+    </article>
+
+    <article class="card glass z1 pos pos-bottom-right">
+      <div class="card-body">
+        <h5 class="card-title">Technologia</h5>
+        <p class="card-text">
+          Stosujemy nowoczesny web, płynne animacje i dostępność.
+          Każdy piksel liczy się dla wrażeń gracza.
+        </p>
+      </div>
+    </article>
+
+    <article class="card glass z3 pos pos-bottom-left">
+      <div class="card-body">
+        <h5 class="card-title">Zespół</h5>
+        <p class="card-text">
+          Pasjonaci gier, edukacji i UX. Słuchamy użytkowników
+          i iterujemy szybko, by dowozić wartość.
+        </p>
+      </div>
+    </article>
+
+    <article class="card glass z2 pos pos-left">
+      <div class="card-body">
+        <h5 class="card-title">Efekt końcowy</h5>
+        <p class="card-text">
+          Produkty, które wciągają i uczą. Eleganckie, szybkie i przyjazne.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Twoja dotychczasowa sekcja -->
+<div class="container">
+  <!-- <div class="card-body text">
+    Webaby tworzy gry rozwijające myślenie i zręczność oraz aplikacje przydatne na każdy dzień
+  </div> -->
+
+  <!-- <img src="./../../assets/webabyPromo-1.0.png" alt="promo"> -->
 
   <div class="arrow-down" onclick="window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })">
     <i class="bi bi-arrow-down-square"></i>
   </div>
 </div>
+
 <div class="container_nicpon">
-    <div class="card-body">
-         Poznaj najnowszą grę przygodową Abecadłowo - Zagubione literki
-    </div>
-    <div class="nicpon">
-         <img src="./../../assets/NicponExtractedForAdAndPromo.png" alt="nicpon">
-    </div>
-    <app-footer bgClass="alternate-bg"></app-footer>
+  <div class="card-body">
+      Poznaj najnowszą grę przygodową Abecadłowo - Zagubione literki
+  </div>
+  <div class="nicpon">
+      <img src="./../../assets/NicponExtractedForAdAndPromo.png" alt="nicpon">
+  </div>
+  <app-footer bgClass="alternate-bg"></app-footer>
 </div>
