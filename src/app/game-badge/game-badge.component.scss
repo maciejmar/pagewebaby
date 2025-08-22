@@ -278,7 +278,7 @@
 
 .card-text {
   text-align: left;
-  color: black;
+  color: rgb(230, 226, 176);
   font-size: clamp(1.5rem, 3vw, 3rem);
   line-height: 1.4;
 }
@@ -294,9 +294,9 @@
 }
 
 .card-text-description {
-  color: #3f87a6;
+  color:  #cad4f0;// #3f87a6;
   opacity: 0.4;
-  font-size: clamp(1rem, 1vw, 2rem);
+  font-size: clamp(1rem, 2.3vw, 1.6rem);
 }
 
 // .font-size-header{
