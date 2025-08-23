@@ -81,7 +81,6 @@ span {
   display: inline-block;
   text-shadow: 0 0 0 whitesmoke;
   animation: smokyCycle 20s infinite;
-
   &:nth-child(even) {
     animation-name: smokyCycleMirror;
   }
