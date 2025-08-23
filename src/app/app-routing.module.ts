@@ -15,9 +15,8 @@ import { PrivacyPolicyEquationsComponent } from './privacy-policy-equations/priv
 
 
 const routes: Routes = [
-    //{ path: '', redirectTo: '/', pathMatch: 'full' },
-    
-    { path: '', component: MainComponent },
+    { path: '', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule) },
+    { path: 'legacy', component: MainComponent },  // Twoja poprzednia strona główna
     { path: 'privacy-policy', component: PrivacyPolicyComponent },
     { path: 'privacy-policy-en', component: PolicyPrivacyEnComponent},
     { path: 'privacy-policy-basketball', component: PrivacyPolicyBasketballComponent },
@@ -25,10 +24,20 @@ const routes: Routes = [
     { path: 'basketball-shots', component: BasketballShotsComponent },
     { path: 'logo', component: IntroComponent },
     { path: 'game', component: GameComponent },
-    { path: 'abecadlowo', component: AppComponent },
     { path: 'about_webaby', component: AboutWebabyComponent },
-    //{ path: 'app-ads.txt', component:AppComponent},
     { path: '**', component: PagenotfoundComponent },
+    // { path: '', component: MainComponent },
+    // { path: 'privacy-policy', component: PrivacyPolicyComponent },
+    // { path: 'privacy-policy-en', component: PolicyPrivacyEnComponent},
+    // { path: 'privacy-policy-basketball', component: PrivacyPolicyBasketballComponent },
+    // { path: 'privacy-policy-system-of-equations', component: PrivacyPolicyEquationsComponent },
+    // { path: 'basketball-shots', component: BasketballShotsComponent },
+    // { path: 'logo', component: IntroComponent },
+    // { path: 'game', component: GameComponent },
+    // { path: 'abecadlowo', component: AppComponent },
+    // { path: 'about_webaby', component: AboutWebabyComponent },
+    // //to zakomentowane //{ path: 'app-ads.txt', component:AppComponent},
+    // { path: '**', component: PagenotfoundComponent },
     
 ];
 
