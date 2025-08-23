@@ -15,6 +15,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 // (opcjonalnie) jeżeli chcesz używać ResizeFontDirective wewnątrz landing:
 import { SharedModule as GlobalSharedModule } from '../shared/shared.module';
+import { ScrollToInShadowDirective } from './shared/scroll-to-in-shadow.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SharedModule as GlobalSharedModule } from '../shared/shared.module';
     ProductsCarouselComponent,
     AboutComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    ScrollToInShadowDirective
   ],
   imports: [
     CommonModule,
