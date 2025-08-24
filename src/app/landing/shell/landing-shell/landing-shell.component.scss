@@ -1,1 +1,22 @@
-@import '../../styles/landing-styles.scss'
+@import '../../styles/landing-styles.scss';
+
+:host {
+  /* Twoje zmienne z zipa – będą dziedziczone w całym Shadow DOM */
+  --bg:#0b0f14; --panel:#10161d; --line:#1e2a36; --text:#e8eaed; --accent:#4fd1c5;
+
+  /* Zgaś wpływ globali: ustaw kolor i font dla całego landinga */
+  color: var(--text);
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  line-height: 1.55;
+
+  //display: block; /* na wszelki wypadek */
+}
+
+/* jeśli używasz wrappera .landing-scope – możesz też tło dać tu: */
+// .landing-scope {
+//   min-height: 100vh;
+//   background: var(--bg);
+// }
+
+/* (opcjonalnie) box-sizing jak w zipie */
+//:host * { box-sizing: border-box; }
