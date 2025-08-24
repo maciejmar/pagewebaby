@@ -8,4 +8,7 @@ export class HeroComponent{
   scrollToProducts(){
     const el = document.querySelector('#products'); if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
   }
+  scrollToAboutUs(){
+    const el = document.querySelector('#aboutus'); if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
 }
