@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LandingRoutingModule } from './landing-routing.module';
 import { LandingShellComponent } from './shell/landing-shell/landing-shell.component';
 import { LandingHomeComponent } from './pages/home/landing-home/landing-home.component';
-
+import { BrowserModule } from '@angular/platform-browser';
 // ZIP components:
 import { HeaderComponent } from './shared/header/header.component';
 import { HeroComponent } from './shared/hero/hero.component';
@@ -12,7 +12,9 @@ import { ProductsCarouselComponent } from './shared/products-carousel/products-c
 import { AboutComponent } from './shared/about/about.component';
 import { ContactComponent } from './shared/contact/contact.component';
 import { FooterComponent } from './shared/footer/footer.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { QRCodeComponent } from 'angularx-qrcode';
 // (opcjonalnie) jeżeli chcesz używać ResizeFontDirective wewnątrz landing:
 import { SharedModule as GlobalSharedModule } from '../shared/shared.module';
 import { ScrollToInShadowDirective } from './shared/scroll-to-in-shadow.directive';
@@ -32,6 +34,9 @@ import { ScrollToInShadowDirective } from './shared/scroll-to-in-shadow.directiv
   imports: [
     CommonModule,
     LandingRoutingModule,
+    MatDialogModule,
+    MatButtonModule,
+    QRCodeComponent 
     //GlobalSharedModule // <- tylko jeśli potrzebujesz ResizeFontDirective w landing
   ]
 })
