@@ -1,25 +1,17 @@
-import { Component,Input, Output } from '@angular/core';
-import { Router } from '@angular/router';
+// app.component.ts (recap)
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './landing/shared/header/header.component';
+import { FooterComponent } from './landing/shared/footer/footer.component';
+
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  
+  template: `
+    <header></header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  `
 })
-export class AppComponent {
-  title = 'pagewebaby';
-  @Input() isToDisplay:boolean = false;
-  @Input () introEnded: boolean = false;
-
-  ngOnInit(): void {
-  document.addEventListener('mousemove', (e) => {
-    const x = `${e.clientX}px`;
-    const y = `${e.clientY}px`;
-    const layer = document.querySelector('.spotlight-layer') as HTMLElement;
-
-    if (layer) {
-      layer.style.setProperty('--x', x);
-      layer.style.setProperty('--y', y);
-    }
-  });
- }
-}
+export class AppComponent {}

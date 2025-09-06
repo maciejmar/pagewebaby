@@ -38,7 +38,9 @@ const routes: Routes = [
     // { path: 'about_webaby', component: AboutWebabyComponent },
     // //to zakomentowane //{ path: 'app-ads.txt', component:AppComponent},
     // { path: '**', component: PagenotfoundComponent },
-    
+  { path: 'products/basketball-shots', component: BasketballShotsComponent },
+  { path: 'products/:slug', component: PagenotfoundComponent },
+  { path: 'tutorial/:slug', component: PagenotfoundComponent },
 ];
 
 @NgModule({
