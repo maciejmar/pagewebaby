@@ -3,9 +3,10 @@ import * as THREE from 'three';
 
 
 @Component({
-  selector: 'app-smoke',
-  templateUrl: './smoke.component.html',
-  styleUrls: ['./smoke.component.scss']
+    selector: 'app-smoke',
+    templateUrl: './smoke.component.html',
+    styleUrls: ['./smoke.component.scss'],
+    standalone: false
 })
 export class SmokeComponent implements OnInit, AfterViewInit, OnDestroy {
   

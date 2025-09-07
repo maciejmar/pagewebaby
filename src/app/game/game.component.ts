@@ -3,24 +3,25 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import AOS from "aos";
 
 @Component({
-  selector: 'app-game',
-  templateUrl: './game.component.html',
-  styleUrls: ['./game.component.scss'],
-  animations: [
-    trigger('fadeIn', [
-      state('hidden', style({
-        opacity: 0,
-        transform: 'translateY(-50px)'
-      })),
-      state('visible', style({
-        opacity: 1,
-        transform: 'translateY(0)'
-      })),
-      transition('hidden => visible', [
-        animate('0.5s')
-      ])
-    ])
-  ]
+    selector: 'app-game',
+    templateUrl: './game.component.html',
+    styleUrls: ['./game.component.scss'],
+    animations: [
+        trigger('fadeIn', [
+            state('hidden', style({
+                opacity: 0,
+                transform: 'translateY(-50px)'
+            })),
+            state('visible', style({
+                opacity: 1,
+                transform: 'translateY(0)'
+            })),
+            transition('hidden => visible', [
+                animate('0.5s')
+            ])
+        ])
+    ],
+    standalone: false
 })
 export class GameComponent implements AfterViewInit {
   @ViewChild('target') target!: ElementRef;

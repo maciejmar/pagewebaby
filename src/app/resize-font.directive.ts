@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appResizeFont]'
+    selector: '[appResizeFont]',
+    standalone: false
 })
 export class ResizeFontDirective implements OnInit {
   private element: HTMLElement;

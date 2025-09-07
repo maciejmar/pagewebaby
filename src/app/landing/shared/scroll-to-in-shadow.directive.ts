@@ -1,6 +1,9 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
-@Directive({ selector: '[scrollToInShadow]' })
+@Directive({
+    selector: '[scrollToInShadow]',
+    standalone: false
+})
 export class ScrollToInShadowDirective {
   @Input('scrollToInShadow') targetId = '';
 

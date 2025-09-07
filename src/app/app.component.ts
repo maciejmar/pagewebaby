@@ -6,12 +6,12 @@ import { HeaderComponent } from './landing/shared/header/header.component';
 import { FooterComponent } from './landing/shared/footer/footer.component';
 
 @Component({
-  selector: 'app-root',
-  
-  template: `
+    selector: 'app-root',
+    template: `
     <header></header>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
-  `
+  `,
+    standalone: false
 })
 export class AppComponent {}

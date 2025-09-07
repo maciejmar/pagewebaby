@@ -2,9 +2,10 @@ import { Component, AfterViewInit } from '@angular/core';
 import AOS from 'aos';
 
 @Component({
-  selector: 'app-campaign-motto',
-  templateUrl: './campaign-motto.component.html',
-  styleUrls: ['./campaign-motto.component.scss']
+    selector: 'app-campaign-motto',
+    templateUrl: './campaign-motto.component.html',
+    styleUrls: ['./campaign-motto.component.scss'],
+    standalone: false
 })
 export class CampaignMottoComponent implements AfterViewInit {
   word = 'Enter into the Game';

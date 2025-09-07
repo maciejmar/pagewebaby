@@ -2,17 +2,18 @@ import { Component, AfterViewInit, OnDestroy, EventEmitter, Output, ViewChild, E
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
-  selector: 'app-main-section',
-  templateUrl: './main-section.component.html',
-  styleUrls: ['./main-section.component.scss'],
-  animations: [
-    trigger('fadeInOut', [
-      state('in', style({ opacity: 1 })),
-      state('out', style({ opacity: 0 })),
-      transition('out => in', animate('600ms ease-in')),
-      transition('in => out', animate('600ms ease-out'))
-    ])
-  ]
+    selector: 'app-main-section',
+    templateUrl: './main-section.component.html',
+    styleUrls: ['./main-section.component.scss'],
+    animations: [
+        trigger('fadeInOut', [
+            state('in', style({ opacity: 1 })),
+            state('out', style({ opacity: 0 })),
+            transition('out => in', animate('600ms ease-in')),
+            transition('in => out', animate('600ms ease-out'))
+        ])
+    ],
+    standalone: false
 })
 export class MainSectionComponent implements AfterViewInit, OnDestroy {
 

@@ -5,9 +5,10 @@ import { timer } from 'rxjs';
 import AOS from 'aos'
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss'],
+    standalone: false
 })
 export class NavbarComponent  {
   @Input() introEnded: boolean = false;

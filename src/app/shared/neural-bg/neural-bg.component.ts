@@ -6,8 +6,9 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
 @Component({
-  selector: 'app-neural-bg',
-  template: '',
+    selector: 'app-neural-bg',
+    template: '',
+    standalone: false
 })
 export class NeuralBgComponent implements AfterViewInit, OnDestroy {
   private containerEl!: HTMLElement;

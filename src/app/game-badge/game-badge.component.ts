@@ -4,9 +4,10 @@ import AOS from "aos";
 import { ResizeFontDirective } from '../resize-font.directive';
 
 @Component({
-  selector: 'app-game-badge',
-  templateUrl: './game-badge.component.html',
-  styleUrls: ['./game-badge.component.scss']
+    selector: 'app-game-badge',
+    templateUrl: './game-badge.component.html',
+    styleUrls: ['./game-badge.component.scss'],
+    standalone: false
 })
 export class GameBadgeComponent implements OnInit {
   gameimg = "./../../assets/NicponRunWithSword.png";

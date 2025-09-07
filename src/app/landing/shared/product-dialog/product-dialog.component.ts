@@ -7,10 +7,9 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-product-dialog',
-  standalone: true, 
-  imports: [QRCodeComponent, CommonModule, MatButtonModule],
-  template: `
+    selector: 'app-product-dialog',
+    imports: [QRCodeComponent, CommonModule, MatButtonModule],
+    template: `
   <div class="dialog">
     <button class="close" aria-label="Close" (click)="close()">×</button>
 
@@ -34,7 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
   </div>
   </div>
   `,
-  styles: [`
+    styles: [`
     .dialog {
       width: min(92vw, 720px);
       background: rgba(18,18,22,0.72);

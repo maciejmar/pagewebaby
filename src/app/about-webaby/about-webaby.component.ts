@@ -1,9 +1,10 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef} from '@angular/core';
 
 @Component({
-  selector: 'app-about-webaby',
-  templateUrl: './about-webaby.component.html',
-  styleUrls: ['./about-webaby.component.scss']
+    selector: 'app-about-webaby',
+    templateUrl: './about-webaby.component.html',
+    styleUrls: ['./about-webaby.component.scss'],
+    standalone: false
 })
 export class AboutWebabyComponent implements OnInit {
    @ViewChild('scene', { static: true }) sceneRef!: ElementRef<HTMLElement>;

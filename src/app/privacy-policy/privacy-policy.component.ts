@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-privacy-policy',
-  templateUrl: './privacy-policy.component.html',
-  styleUrls: ['./privacy-policy.component.scss']
+    selector: 'app-privacy-policy',
+    templateUrl: './privacy-policy.component.html',
+    styleUrls: ['./privacy-policy.component.scss'],
+    standalone: false
 })
 export class PrivacyPolicyComponent implements OnInit {
   @Input() showModal: boolean = true;
