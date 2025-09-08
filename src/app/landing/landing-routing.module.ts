@@ -9,7 +9,23 @@ const routes: Routes = [
     component: LandingShellComponent,
     children: [
       { path: '', component: LandingHomeComponent },
-      // tu będziemy dopisywać kolejne podstrony landing:
+      // SPECYFICZNE slugi – PRZED generykami:
+      { path: 'products/system-of-equations-trainer',
+        loadChildren: () => import('./tutorials/system-of-equations-trainer/tutorial.route').then(m => m.default) },
+
+      { path: 'products/abecadlowo',
+        loadChildren: () => import('./tutorials/abecadlowo/tutorial.route').then(m => m.default) },
+
+      { path: 'products/abc-land',
+        loadChildren: () => import('./tutorials/abc-land/tutorial.route').then(m => m.default) },
+
+      // GENERYCZNE – NA KOŃCU:
+      { path: 'products/:slug',
+        loadComponent: () => import('./pages/tutorial-page/tutorial-page.component').then(m => m.TutorialPageComponent) },
+
+      { path: 'tutorial/:slug',
+        loadComponent: () => import('./pages/tutorial-page/tutorial-page.component').then(m => m.TutorialPageComponent) },
+            // tu będziemy dopisywać kolejne podstrony landing:
       // { path: 'pricing', component: LandingPricingComponent },
       // { path: 'contact', component: LandingContactComponent },
     ]

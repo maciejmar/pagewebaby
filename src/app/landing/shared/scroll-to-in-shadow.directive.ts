@@ -20,7 +20,7 @@ export class ScrollToInShadowDirective {
     const byId = (root as any).getElementById?.bind(root);
     const target =
       (byId ? byId(id) : null) ??
-      (root as Document | ShadowRoot).querySelector('#' + (window as any).CSS?.escape?.(id) ?? '#' + id);
+      root.querySelector('#' + ((window as any).CSS?.escape?.(id) ?? id))
 
     target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
