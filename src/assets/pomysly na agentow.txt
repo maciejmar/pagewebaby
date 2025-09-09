@@ -1,0 +1,10 @@
+1.agent kredytowy
+wpisuje sytuacje agent dopytuje jaka masz sytuacje
+a agent dalej dopasowuje kredyt z kredytow dostepnych w bankach
+
+
+2. Agent porównujący oferty od developerów - czy dana oferta developera jest przestrzelona. Agent sprawdza czy dana oferta jest przeceniona. Na czerwono pokazywałby że dana oferta ma za wysokoą cenę w stosunku do ofert transakcyjnych. Porównanie developerów, nie z rynku wtórnego.
+
+WPISANE DO PLIKU z Pomysłami
+
+
