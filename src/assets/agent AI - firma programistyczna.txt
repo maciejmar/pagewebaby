@@ -1,0 +1,5 @@
+Agent AI będzie najpierw analizował Twoje projekty z GitHuba, zaproponuje zmiany i ulepszenia, a potem Ty zaznaczysz, które rzeczy chcesz faktycznie realizować. Na tej podstawie agent wygeneruje realistyczne deadline’y i podział pracy na Ciebie i Twojego kolegę, uwzględniając Wasz czas i dostępne godziny w tygodniu.
+
+Potem agent będzie śledził postęp, przypominał o nadchodzących terminach i zapisywał w Excelu, co zostało zrobione, a co jeszcze jest do dopracowania. W skrócie: pełen cykl zarządzania projektem.
+
+To zaczniemy od tego, że przygotujesz listę tych repozytoriów, a ja potem mogę Ci podpowiedzieć, jak krok po kroku skonfigurować takiego agenta. Brzmi dobrze?

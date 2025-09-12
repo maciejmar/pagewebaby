@@ -1,0 +1,46 @@
+Plan kilometrowy
+Km	Czas na danym km	Czas łączny	Tempo do utrzymania
+0 – 10 km	58:00	0:58:00	(średnio 5:48)
+11 km	5:35	1:03:35	nie przyspieszaj za mocno
+12 km	5:35	1:09:10	
+13 km	5:35	1:14:45	
+14 km	5:35	1:20:20	
+15 km	5:35	1:25:55	
+16 km	5:35	1:31:30	
+17 km	5:35	1:37:05	
+18 km	5:35	1:42:40	
+19 km	5:35	1:48:15	
+20 km	5:35	1:53:50	✅
+Półmaraton (21,1 km)	5:35	1:59:30	Masz zapas ~30 sek
+22 km	5:35	2:05:05	
+23 km	5:35	2:10:40	
+24 km	5:35	2:16:15	
+25 km	5:35	2:21:50	
+26 km	5:35	2:27:25	
+27 km	5:35	2:33:00	
+28 km	5:35	2:38:35	
+29 km	5:35	2:44:10	
+30 km	5:35	2:49:45	Wchodzimy w końcówkę
+31 km	5:45	2:55:30	zwolnij minimalnie
+32 km	5:45	3:01:15	
+33 km	5:45	3:07:00	
+34 km	5:45	3:12:45	
+35 km	5:45	3:18:30	
+36 km	5:45	3:24:15	
+37 km	5:50	3:30:05	zmęczenie, ale pilnuj tempa
+38 km	5:50	3:35:55	
+39 km	5:50	3:41:45	
+40 km	5:50	3:47:35	
+41 km	5:45	3:53:20	pełna koncentracja
+42,195 km	5:40	3:59:00	🏁 MIEŚCISZ SIĘ!
+Kluczowe wskazówki
+
+Żele & nawodnienie → co 6–8 km żel + popijanie wodą.
+
+Negatywny split → pierwsza połowa wolniej, druga trochę szybciej.
+
+Kontroluj tętno → pilnuj, żeby na 10–25 km było na poziomie komfortu.
+
+Od 30 km — zwolnisz, ale nie więcej niż do 5:50.
+
+Ostatnie 2 km — jeśli masz siły, daj z siebie wszystko.

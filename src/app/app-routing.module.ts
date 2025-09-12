@@ -25,7 +25,27 @@ const routes: Routes = [
     { path: 'logo', component: IntroComponent },
     { path: 'game', component: GameComponent },
     { path: 'about_webaby', component: AboutWebabyComponent },
-    { path: '**', component: PagenotfoundComponent },
+    
+
+    // SPECYFICZNE (nad generycznymi)
+{ path: 'products/abecadlowo',
+  loadChildren: () => import('./landing/tutorials/abecadlowo/tutorial.route').then(m => m.default) },
+
+{ path: 'products/abc-land',
+  loadChildren: () => import('./landing/tutorials/abc-land/tutorial.route').then(m => m.default) },
+
+{ path: 'products/system-of-equations-trainer',
+  loadChildren: () => import('./landing/tutorials/system-of-equations-trainer/tutorial.route').then(m => m.default) },
+
+// GENERYCZNE (na końcu)
+{ path: 'products/:slug',
+  loadComponent: () => import('./landing/pages/tutorial-page/tutorial-page.component')
+    .then(m => m.TutorialPageComponent) },
+
+{ path: 'tutorial/:slug',
+  loadComponent: () => import('./landing/pages/tutorial-page/tutorial-page.component')
+    .then(m => m.TutorialPageComponent) },
+   
     // { path: '', component: MainComponent },
     // { path: 'privacy-policy', component: PrivacyPolicyComponent },
     // { path: 'privacy-policy-en', component: PolicyPrivacyEnComponent},
@@ -38,9 +58,12 @@ const routes: Routes = [
     // { path: 'about_webaby', component: AboutWebabyComponent },
     // //to zakomentowane //{ path: 'app-ads.txt', component:AppComponent},
     // { path: '**', component: PagenotfoundComponent },
-  { path: 'products/basketball-shots', component: BasketballShotsComponent },
-  { path: 'products/:slug', component: PagenotfoundComponent },
-  { path: 'tutorial/:slug', component: PagenotfoundComponent },
+    //to w komentarzu jako powtórzone - to poniżej:
+  // { path: 'products/basketball-shots', component: BasketballShotsComponent },
+  // { path: 'products/:slug', component: PagenotfoundComponent },
+  // { path: 'tutorial/:slug', component: PagenotfoundComponent },
+
+  { path: '**', component: PagenotfoundComponent }, 
 ];
 
 @NgModule({

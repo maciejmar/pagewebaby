@@ -1,17 +1,15 @@
 import { Component, Inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { QRCodeComponent } from 'angularx-qrcode';
-
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Product } from '../models/products';
+import { Router } from '@angular/router';
+import { QRCodeComponent } from 'angularx-qrcode'; //
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-product-dialog',
   standalone: true, 
-  imports: [CommonModule, MatDialogModule, MatButtonModule, QRCodeComponent], // ✅ standalone imports
+  imports: [QRCodeComponent, CommonModule, MatButtonModule],
   template: `
   <div class="dialog">
     <button class="close" aria-label="Close" (click)="close()">×</button>
@@ -25,15 +23,15 @@ import { Product } from '../models/products';
       <div class="qr-caption">
         <a [href]="data.appUrl" target="_blank" rel="noopener">Open app link</a>
         <p>Scan the QR code to open the app on your phone</p>
-        <p></p>
+         <p></p>
       </div>
     </div>
 
-    <div class="dialog-actions">
-      <button mat-raised-button color="primary" class="glow-btn" (click)="goToDetails()">
-        Detailed tutorial
-      </button>
-    </div>
+<div class="dialog-actions">
+    <button mat-raised-button color="primary" class="glow-btn" (click)="goToDetails()">
+      Detailed tutorial
+    </button>
+  </div>
   </div>
   `,
   styles: [`
