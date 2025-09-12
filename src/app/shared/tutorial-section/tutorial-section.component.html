@@ -1,0 +1,12 @@
+<section class="tut-row" [ngClass]="{ reverse: reverse }">
+  <div class="tut-text">
+    <h3 *ngIf="title">{{ title }}</h3>
+    <ng-content></ng-content>
+  </div>
+
+  <!-- remove *ngIf for a moment if you want to verify -->
+  <figure class="tut-media" *ngIf="src" fadeInOnScroll>
+    <img [src]="src" [alt]="alt || title || 'Tutorial image'">
+    <figcaption *ngIf="caption">{{ caption }}</figcaption>
+  </figure>
+</section>
