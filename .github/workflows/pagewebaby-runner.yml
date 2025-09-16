@@ -1,0 +1,98 @@
+name: pagewebaby runner (OLD on :4204 via PM2)
+
+on:
+  schedule:
+    - cron: '0 8,20 * * *'
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+    timeout-minutes: 602
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [16.x]   # trzymaj jak dotąd; (możesz później przejść na 18/20)
+
+    steps:
+      # ───────── STRONA (stara apka) ─────────
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install deps (site)
+        run: npm ci
+
+      - name: Build Angular App (production)
+        # Jeśli wolisz jak dawniej: npm run build -- --prod
+        run: npm run build -- --configuration production
+
+      # ───────── PWA z zewnętrznego repo (basketball-pwa) ─────────
+      - name: Checkout PWA repo
+        uses: actions/checkout@v4
+        with:
+          repository: maciejmar/basketball-game
+          path: basketball-pwa
+          # Jeśli repo prywatne, odkomentuj i dodaj secret GH_PAT:
+          # token: ${{ secrets.GH_PAT }}
+
+      - name: Use Node.js 20 for PWA
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          cache-dependency-path: basketball-pwa/package-lock.json
+
+      - name: Install deps (PWA)
+        working-directory: basketball-pwa
+        run: npm ci
+
+      - name: Build PWA (production, under /basketball-pwa)
+        working-directory: basketball-pwa
+        run: npx ng build --configuration production --base-href /basketball-pwa/ --deploy-url /basketball-pwa/
+
+      - name: Copy PWA build into site's dist
+        shell: bash
+        run: |
+          # Obsługa Angular 15–18 (czasem jest podkatalog /browser)
+          if compgen -G "basketball-pwa/dist/*/browser" > /dev/null; then
+            PWA_DIR=$(ls -d basketball-pwa/dist/*/browser | head -n1)
+          else
+            PWA_DIR=$(ls -d basketball-pwa/dist/* | head -n1)
+          fi
+          # Zmień 'pagewebaby' poniżej jeśli nazwa projektu w dist jest inna
+          mkdir -p dist/pagewebaby/basketball-pwa
+          rsync -a --delete "$PWA_DIR/" dist/pagewebaby/basketball-pwa/
+          ls -lah dist/pagewebaby/basketball-pwa | head -n 50
+
+      # ───────── SSH + DEPLOY do workspacu starego runnera ─────────
+      - name: Setup SSH agent (use private key)
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add server host key
+        run: ssh-keyscan -Hv ${{ secrets.OVH_VPS_IP }} >> ~/.ssh/known_hosts
+
+      - name: Upload dist to runner workspace (as before)
+        # Uwaga: ścieżka docelowa odpowiada PM2: serve -s .../dist/pagewebaby -l 4204
+        run: |
+          ssh ubuntu@${{ secrets.OVH_VPS_IP }} 'mkdir -p /home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/dist/pagewebaby'
+          rsync -az --delete dist/pagewebaby/ ubuntu@${{ secrets.OVH_VPS_IP }}:/home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/dist/pagewebaby/
+
+      # ───────── PM2: start/restart serwowania na :4204 ─────────
+      - name: Start/Restart PM2 (serve :4204)
+        run: |
+          ssh ubuntu@${{ secrets.OVH_VPS_IP }} '
+            command -v pm2 >/dev/null || sudo npm i -g pm2 serve;
+            pm2 start "serve -s /home/ubuntu/pagewebaby/actions-runner/_work/pagewebaby/pagewebaby/dist/pagewebaby -l 4204" --name pagewebaby \
+              || pm2 restart pagewebaby;
+            pm2 save
+          '
